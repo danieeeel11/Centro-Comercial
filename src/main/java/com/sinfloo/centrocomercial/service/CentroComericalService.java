@@ -20,9 +20,7 @@ public class CentroComericalService implements ICentroComercialService {
     }
 
     @Override
-    public Optional<CentrosComerciales> listarId(int id) {
-        return null;
-    }
+    public Optional<CentrosComerciales> listarId(int id) {return data.findById(id);}
 
     @Override
     public int save(CentrosComerciales c) {

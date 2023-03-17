@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <title>Mall</title>
+</head>
+<body>
+<div class="container mt-4">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Horario</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="centroscomerciales:${elemento}">
+      <td th:text="${centroscomerciales.nombre}"></td>
+      <td th:text="${centroscomerciales.descripcion}"></td>
+      <td th:text="${centroscomerciales.horario}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+</html>
