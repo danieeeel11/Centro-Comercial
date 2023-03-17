@@ -10,24 +10,19 @@
   <title>Mall</title>
 </head>
 <body>
-<div class="container mt-4">
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-      <th>Horario</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="centroscomerciales:${elemento}">
-      <td th:text="${centroscomerciales.nombre}"></td>
-      <td th:text="${centroscomerciales.descripcion}"></td>
-      <td th:text="${centroscomerciales.horario}"></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-</div>
+    <div class="container mt-4">
+      <table class="table text-center mt-4">
+        <tbody>
+        <tr th:action="@{/{nombre}}">
+          <td th:each="d : ${informacion}" th:utext="${d}"></td>
+        </tr>
+
+        <!--<tr th:each="enlace : ${enlacesHtml}">
+            <td><a th:href="@{/detalle/{id}(id=${enlace})}" th:id="${enlace}" th:utext="${enlace}"></a></td>
+        </tr>-->
+
+        </tbody>
+      </table>
+    </div>
 </body>
 </html>

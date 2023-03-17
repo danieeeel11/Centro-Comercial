@@ -29,6 +29,7 @@ public class Controlador {
         return "index";
     }
     List<String> listaEnlacesHtml = new ArrayList<>();
+    List<String> informacion = new ArrayList<>();
     @GetMapping("/listaCC")
     public String obtenerEnlacesHtml(Model model) {
         for (CentrosComerciales elemento : cc) {
@@ -43,17 +44,24 @@ public class Controlador {
     public String getCentroComercial(@PathVariable String nombre, Model model) {
         for (CentrosComerciales elemento : cc) {
             if (nombre.equals(elemento.getNombre())){
-                model.addAttribute("info", elemento);
-                return "infoCC";
+                String info = "<div align='center'>"+
+                        "<h1>" + elemento.getNombre() + "</h1>" +
+                        "<img src='" + elemento.getLogo() + "' alt='logo'>"+
+                        "<h2> DESCRIPCION:</h2>" +
+                        "<h3>" + elemento.getDescripcion() + "</h3><br>"+
+                        "<h2> HORARIO:</h2>" +
+                        "<h3>" + elemento.getHorario() + " </h3><br>"+
+                        "<h2> DIRECCION:</h2>" +
+                        "<h3>" + elemento.getDireccion() + "</h3><br>"+
+                        "</div>";
+
+                informacion.add(info);
+                System.out.println(info);
             }else{
-                return "ListaCC";
+                return "infoCC";
             }
-        }return "ListaCC";
+            model.addAttribute("informacion", informacion);
+        }return "infoCC";
 
     }
-
-
-
-
-
 }

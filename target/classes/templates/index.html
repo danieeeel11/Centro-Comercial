@@ -15,10 +15,74 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="estiloPrincipal.css">
     <title>MALLFforYOU</title>
 </head>
 <body>
+    <div hidden>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Horario</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="centroscomerciales:${cc}">
+                <td th:text="${centroscomerciales.nombre}"></td>
+                <td th:text="${centroscomerciales.descripcion}"></td>
+                <td th:text="${centroscomerciales.horario}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container" align="center">
+    <div class='sec_sup'>
+        <button class='btn menu'></button>
+        <button class='btn perfil'></button>
+        <button class='btn campana'></button>
+        <h1 class='txt_user'>Bienvenido Usuario</h1>
+    </div>
+    <div class='sec_tend'>
+        <div class='sec_tend_inicio'>
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
+                </button>
+                <button class='btn star_cc'></button>
+            </div>
+            <div class='tend_tit'>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+                <button class='btn des_1'></button>
+                <button class='btn des_2'></button>
+                <button class='btn des_3'></button>
+                <button class='btn des_4'></button>
+            </div>
+        </div>
+    </div>
+    <div class='sec_bot'>
+        <button class='btn parq'>
+            <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
+            <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
+        </button>
+        <button class='btn cc'>
+            <a th:href="@{/listaCC}" class="btn btn-primary">BUSCAR</a>
+            <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
+            <img class='img_' style='' src='https://cdn1.iconfinder.com/data/icons/shopping-online-37/64/shop-store-online-shopping-shopping_mall-512.png'></img>
+        </button>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+<!--
     <div class="container mt-4">
         <table class="table">
             <thead>
@@ -29,6 +93,7 @@
             </tr>
             </thead>
             <tbody>
+
             <tr th:each="centroscomerciales:${cc}">
                 <td th:text="${centroscomerciales.nombre}"></td>
                 <td th:text="${centroscomerciales.descripcion}"></td>
@@ -42,7 +107,7 @@
         <table class="table">
             <a th:href="@{/listaCC}" class="btn btn-primary">ListaCC</a>
         </table>
-    </div>
+    </div>-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -18,8 +18,8 @@
     <title>Centros Comerciales</title>
 </head>
 <body>
-    <div class="container mt-4">
-        <table class="table text-center">
+    <div class="container my-4">
+        <table class="ui single line table text-center">
             <thead>
             <tr>
                 <th style="font-family: 'Pacifico', cursive;">
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
            <tr th:action="@{/listaCC}">
-                <td><a th:each="enlace : ${enlacesHtml}" th:utext="${enlace}"></a></td>
+               <td><h2><a th:each="enlace : ${enlacesHtml}" th:utext="${enlace}"></a></h2></td>
             </tr>
 
            <!--<tr th:each="enlace : ${enlacesHtml}">
