@@ -220,10 +220,15 @@ public class Controlador {
     public String paginaLogin(Model model){
         return "login";
     }
-    /*@GetMapping("/CC_nolog")
+    @GetMapping("/CC_nolog")
     public String obtenerCC_noLog(Model model) {
         return "ListaCC_noLog";
-    }*/
+    }
+
+    @GetMapping("/registro")
+    public String paginaRegistro(Model model) {
+        return "registro";
+    }
     @GetMapping("/loc")
     public String obtenerLoc(Model model) {
         File archivo = null;
