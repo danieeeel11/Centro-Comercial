@@ -1,4 +1,4 @@
-package com.sinfloo.centrocomercial.interfaceService;
+package com.sinfloo.centrocomercial.repository;
 
 import com.sinfloo.centrocomercial.modelo.CentrosComerciales;
 
@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface ICentroComercialService {
     public List<CentrosComerciales> listar();
-    public Optional<CentrosComerciales> listarId(int id);
-    public int save(CentrosComerciales cc);
-    public void delete(int id);
+    public Optional<CentrosComerciales> getCentroComercial(int id);
+    public CentrosComerciales save(CentrosComerciales c);
 }

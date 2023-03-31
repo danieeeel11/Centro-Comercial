@@ -1,6 +1,6 @@
 package com.sinfloo.centrocomercial.service;
 
-import com.sinfloo.centrocomercial.interfaceService.ICentroComercialService;
+import com.sinfloo.centrocomercial.repository.ICentroComercialService;
 import com.sinfloo.centrocomercial.interfaces.ICentrosComerciales;
 import com.sinfloo.centrocomercial.modelo.CentrosComerciales;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +14,28 @@ public class CentroComericalService implements ICentroComercialService {
     @Autowired
     private ICentrosComerciales data;
 
+
     @Override
     public List<CentrosComerciales> listar() {
         return (List<CentrosComerciales>)data.findAll();
     }
 
     @Override
-    public Optional<CentrosComerciales> listarId(int id) {return data.findById(id);}
-
-    @Override
-    public int save(CentrosComerciales c) {
-        return 0;
+    public Optional<CentrosComerciales> getCentroComercial(int id) {
+        return data.findById(id);
     }
 
     @Override
-    public void delete(int id) {
-
+    public CentrosComerciales save(CentrosComerciales c) {
+        if(c.getId() <=0){
+            return data.save(c);
+        }else {
+            Optional<CentrosComerciales> e = data.findById(c.getId());
+            if(e.isPresent()){
+                return c;
+            }else {
+                return data.save(c);
+            }
+        }
     }
 }

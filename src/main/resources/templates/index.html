@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -7,6 +7,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <!--
     <style>
         body {
             margin: 20px;
@@ -307,12 +308,13 @@
             border-radius: 10px;
         }
     </style>
+-->
 
-
-    <!--<link rel="stylesheet" href="estiloPrincipal.css">-->
+    <link rel="stylesheet" href="principal/stylePrincipal.css">
     <title>MALLforYOU</title>
 </head>
 <body>
+    <!--
     <div hidden>
         <table class="table">
             <thead>
@@ -331,9 +333,9 @@
             </tr>
             </tbody>
         </table>
-    </div>
+    </div>-->
     <div class='sec_sup'>
-        <a class='btn menu' th:href="@{/menu}"></a>
+        <a class='btn menu' href="/principal/Menu.html"></a>
         <a class='btn perfil' th:href="@{/principal_noLog}"></a>
         <button class='btn campana'></button>
         <h1 class='txt_user'>Bienvenido Usuario</h1>
@@ -366,35 +368,7 @@
         </a>
     </div>
 
-<!--
-    <div class="container mt-4">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Horario</th>
-            </tr>
-            </thead>
-            <tbody>
 
-            <tr th:each="centroscomerciales:${cc}">
-                <td th:text="${centroscomerciales.nombre}"></td>
-                <td th:text="${centroscomerciales.descripcion}"></td>
-                <td th:text="${centroscomerciales.horario}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="containner mt-4">
-        <table class="table">
-            <a th:href="@{/listaCC}" class="btn btn-primary">ListaCC</a>
-        </table>
-    </div>-->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

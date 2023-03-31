@@ -1,6 +1,6 @@
 package com.sinfloo.centrocomercial.controller;
 
-import com.sinfloo.centrocomercial.interfaceService.ICentroComercialService;
+import com.sinfloo.centrocomercial.repository.ICentroComercialService;
 import com.sinfloo.centrocomercial.modelo.CentrosComerciales;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,18 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-@Controller
-@RequestMapping
 public class Controlador {
     List<CentrosComerciales> cc = new ArrayList<>();
     public List<String> nameCC = new ArrayList<>();
@@ -95,7 +90,8 @@ public class Controlador {
         /*for (int i = 0; i < informacion.size(); i++) {
             System.out.println(informacion.get(i));
         }*/
-        informacion.clear();
+
+    informacion.clear();
         for (CentrosComerciales elemento : cc) {
             //System.out.println(nombre + " = "+elemento.getNombre());
             //if (nombre.equals(elemento.getNombre())) {
