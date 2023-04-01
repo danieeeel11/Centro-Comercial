@@ -3,7 +3,7 @@ package com.sinfloo.centrocomercial.modelo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name= "centroscomerciales")
+@Table(name= "centros_comerciales")
 public class CentrosComerciales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class CentrosComerciales {
         this.coordenadas = coordenadas;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

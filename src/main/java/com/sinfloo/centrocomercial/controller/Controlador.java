@@ -1,30 +1,31 @@
 package com.sinfloo.centrocomercial.controller;
 
-import com.sinfloo.centrocomercial.repository.ICentroComercialService;
+import com.sinfloo.centrocomercial.repository.CentroComercialRepository;
 import com.sinfloo.centrocomercial.modelo.CentrosComerciales;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-
+@RestController
+@RequestMapping
 public class Controlador {
     List<CentrosComerciales> cc = new ArrayList<>();
     public List<String> nameCC = new ArrayList<>();
     @Autowired
-    private ICentroComercialService service;
+    private CentroComercialRepository service;
 
     @GetMapping("/principal")
     public String Listar(Model model) {
         if(cc.isEmpty()) {
-            cc = service.listar();
+            cc = service.getAll();
         }
         if(nameCC.isEmpty()) {
             for (int i = 0; i < cc.size(); i++) {
