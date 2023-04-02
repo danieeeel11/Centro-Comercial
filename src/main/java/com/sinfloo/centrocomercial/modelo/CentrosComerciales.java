@@ -3,7 +3,7 @@ package com.sinfloo.centrocomercial.modelo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name= "centroscomerciales")
+@Table(name= "centros_comerciales")
 public class CentrosComerciales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,18 +13,24 @@ public class CentrosComerciales {
     private String descripcion;
     private String horario;
     private String direccion;
+    private String foto;
+    private String vinculo;
+    private String coordenadas;
 
     public CentrosComerciales(){
 
     }
 
-    public CentrosComerciales(int id, String logo, String nombre, String descripcion, String horario, String direccion) {
+    public CentrosComerciales(int id, String logo, String nombre, String descripcion, String horario, String direccion, String foto, String vinculo, String coordenadas) {
         this.id = id;
         this.logo = logo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.horario = horario;
         this.direccion = direccion;
+        this.foto = foto;
+        this.vinculo = vinculo;
+        this.coordenadas = coordenadas;
     }
 
     public int getId() {
@@ -74,4 +80,29 @@ public class CentrosComerciales {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getVinculo() {
+        return vinculo;
+    }
+
+    public void setVinculo(String vinculo) {
+        this.vinculo = vinculo;
+    }
+
+    public String getCoordenadas() {
+        return vinculo;
+    }
+
+    public void setCoordenadas(String coordenadas) {
+        this.coordenadas = coordenadas;
+    }
+
 }

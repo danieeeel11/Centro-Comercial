@@ -120,12 +120,16 @@ public class Controlador {
                                 "<div class='sec_info_mid'>" +
                                 "<div class='sec_mid1'>" +
                                   "<div class='sec_images'>" +
-                                    "<p class='txt_info' style='position:absolute;'>" + elemento.getDescripcion() + "</p>" +
+                                    //"<p class='txt_info' style='position:absolute;'>" + elemento.getDescripcion() + "</p>" +
+                                    "<img src='"+ elemento.getFoto() +"' style='width:100%; height:100%; border-radius:20px;'></img>" +
                                   "</div>" +
                                   "<p class='txt_info'>" + elemento.getDireccion() + "</p>" +
                                 "</div>" +
                                 "<div class='sec_mid2'>" +
-                                  "<div class='sec_maps'></div>" +
+                                  "<div class='sec_maps'>" +
+                                    //"<a class='btn tiendas' href='" + elemento.getVinculo() + "' target='_blank'></a>" +
+                                    "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15905.72913174752!2d-74.086188!3d4.694708!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b25144634c9%3A0xaa39a3ad6b78b4cb!2sCentro%20Comercial%20Tit%C3%A1n%20Plaza!5e0!3m2!1ses!2sco!4v1680275811061!5m2!1ses!2sco' width='100%' height='100%' style='border-radius:20px; border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" +
+                                  "</div>" +
                                   "<p class='txt_info'>Mapa</p>" +
                                 "</div>" +
                                 "</div>" +
