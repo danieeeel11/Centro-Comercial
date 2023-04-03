@@ -1,5 +1,5 @@
 function limpiarPantalla(){
-    $(".registro").empty();
+    $(".sec_btn2").empty();
     let content ="<h3 class='iniciarSesion'>Registrate</h3>";
     content +=`
     <input class = "inputInicio" type="text" id="nombre" placeholder="Nombre">
@@ -7,19 +7,19 @@ function limpiarPantalla(){
     <input class = "inputInicio" type="text" id="usuario" placeholder="Usuario">
     <input class = "inputInicio" type="password" id="password" placeholder="Contraseña">
     <button class="signup" onclick='agregarUsuario()'>Registrarse</button>`
-    $(".registro").append(content);
+    $(".sec_btn2").append(content);
 }
 
 function agregarUsuario(){
     let dataToSend = JSON.stringify(obtenerDatos());
     $.ajax({
-        url:"/api/Client/save",
+        url:"/api/Cliente/save",
         type:"POST",
         datatype:"JSON",
         contentType:"application/json",
         data:dataToSend,
         success:function(respuesta){
-            localStorage.setItem("idClient",respuesta.idClient);
+            localStorage.setItem("id_Cliente",respuesta.id_Cliente);
             window.open("/code/principal/paginaPrincipal.html", "_self");
         },
         error:function(xhr, respuesta){
@@ -30,12 +30,12 @@ function agregarUsuario(){
 
 function iniciarSesion(){
     $.ajax({
-        url:"/api/Client/ingresar/"+$("#nombre").val()+"/"+$("#password").val(),
+        url:"/api/Cliente/ingresar/"+$("#nombre").val()+"/"+$("#contrasenia").val(),
         datatype:"JSON",
         success:function(respuesta){
             if(respuesta.usuario != null){
-                localStorage.setItem("idClient",respuesta.idClient);
-                window.open("/code/principal/paginaPrincipal.html", "_self");
+                localStorage.setItem("id_Cliente",respuesta.id_Cliente);
+                window.open("../index.html", "_self");
             }else{
                 alert("No existe el usuario o la contraseña es incorrecta")
             }
@@ -48,10 +48,11 @@ function iniciarSesion(){
 
 function obtenerDatos(){
     let data = {
-        name:$("#nombre").val(),
-        email:$("#correo").val(),
+        id_Cliente:$("#id_Cliente").val(),
+        nombre:$("#nombre").val(),
+        email:$("#email").val(),
         usuario:$("#usuario").val(),
-        password:$("#password").val(),
+        contrasenia:$("#contrasenia").val(),
     };
     return data;
 }

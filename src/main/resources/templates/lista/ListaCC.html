@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class='sec_sup'>
-    <a class='btn menu' th:href="@{/menu}"></a>
+    <a class='btn menu' href="../principal/Menu.html"></a>
     <div class='sec_tit'>
         <h1 class='txt_user'>CENTROS COMERCIALES</h1>
     </div>
@@ -29,6 +29,7 @@
     </div>
 </div>
 <div class='sec_cc' th:action="@{/listaCC}">
+
     <a th:each="enlace : ${enlacesHtml}" th:utext="${enlace}"></a>
 </div>
 
