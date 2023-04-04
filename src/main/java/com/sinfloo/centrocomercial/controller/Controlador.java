@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping
+@RequestMapping("/api/cc")
 public class Controlador {
     List<CentrosComerciales> cc = new ArrayList<>();
     public List<String> nameCC = new ArrayList<>();
