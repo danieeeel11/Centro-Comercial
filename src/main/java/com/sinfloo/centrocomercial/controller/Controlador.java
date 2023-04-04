@@ -92,24 +92,19 @@ public class Controlador {
 
     @GetMapping("/{nombre}")
     public String getCentroComercial(@PathVariable String nombre, Model model) {
-        /*for (int i = 0; i < informacion.size(); i++) {
-            System.out.println(informacion.get(i));
-        }*/
         informacion.clear();
         for (CentrosComerciales elemento : cc) {
             //System.out.println(nombre + " = "+elemento.getNombre());
             //if (nombre.equals(elemento.getNombre())) {
             if (elemento.getNombre().contains(nombre)) {
-                /*String info = "<div align='center'>" +
-                        "<h1>" + elemento.getNombre() + "</h1>" +
-                        "<img src='" + elemento.getLogo() + "' alt='logo'>" +
-                        "<h2> DESCRIPCION:</h2>" +
-                        "<h3>" + elemento.getDescripcion() + "</h3><br>" +
-                        "<h2> HORARIO:</h2>" +
-                        "<h3>" + elemento.getHorario() + " </h3><br>" +
-                        "<h2> DIRECCION:</h2>" +
-                        "<h3>" + elemento.getDireccion() + "</h3><br>" +
-                        "</div>";*/
+                String[] linksFotos =  elemento.getFoto().split(", ");
+                String htmlFotos = "";
+                for (int i = 0; i < linksFotos.length; i++) {
+                    htmlFotos = htmlFotos + "<div class='slider_content'>" +
+                            "                <img src='" + linksFotos[i] + "' alt=''>" +
+                            //"                <h3>" + i + "</h3>" +
+                            "            </div>" ;
+                }
                 String info = "<div class='sec_info_sup'>" +
                                 "<div class='sec_logo' style='background-image:url(\"" + elemento.getLogo() + "\")'>" +
                                 "</div>" +
@@ -120,15 +115,30 @@ public class Controlador {
                                 "<div class='sec_info_mid'>" +
                                 "<div class='sec_mid1'>" +
                                   "<div class='sec_images'>" +
-                                    //"<p class='txt_info' style='position:absolute;'>" + elemento.getDescripcion() + "</p>" +
-                                    "<img src='"+ elemento.getFoto() +"' style='width:100%; height:100%; border-radius:20px;'></img>" +
+                                    /*"<p class='txt_info' style='position:absolute;'>" + elemento.getDescripcion() + "</p>" +
+                                    "<img src='"+ linksFotos[0] +"' style='width:100%; height:100%; border-radius:20px; position:absolute;'></img>" +
+                                    "<a class='btn atras'><-</a>" +
+                                    "<a class='btn siguiente'>-></a>" +*/
+                                    "<div class='container'>" +
+                                        "<div class='slider'>" +
+                                        htmlFotos +
+                                        "</div>" +
+                                        "<div class='controls'>" +
+                                        //"    <div class='control prev' style='position:absolute; top:50%; left:0;' ><i class='fa-solid fa-angle-left'></i></div>" +
+                                        //"    <div class='control next' style='position:absolute; top:50%; right:0%;'><i class='fa-solid fa-angle-right'></i></div>" +
+                                        "    <div class='control prev' style='left:0;' ><i class='fa-solid fa-angle-left'></i></div>" +
+                                        "    <div class='control next' style='right:0%;'><i class='fa-solid fa-angle-right'></i></div>" +
+                                        "</div>" +
+                                    "</div>"+
+
                                   "</div>" +
                                   "<p class='txt_info'>" + elemento.getDireccion() + "</p>" +
                                 "</div>" +
                                 "<div class='sec_mid2'>" +
                                   "<div class='sec_maps'>" +
                                     //"<a class='btn tiendas' href='" + elemento.getVinculo() + "' target='_blank'></a>" +
-                                    "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15905.72913174752!2d-74.086188!3d4.694708!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b25144634c9%3A0xaa39a3ad6b78b4cb!2sCentro%20Comercial%20Tit%C3%A1n%20Plaza!5e0!3m2!1ses!2sco!4v1680275811061!5m2!1ses!2sco' width='100%' height='100%' style='border-radius:20px; border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" +
+                                    //"<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15905.72913174752!2d-74.086188!3d4.694708!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b25144634c9%3A0xaa39a3ad6b78b4cb!2sCentro%20Comercial%20Tit%C3%A1n%20Plaza!5e0!3m2!1ses!2sco!4v1680275811061!5m2!1ses!2sco' width='100%' height='100%' style='border-radius:20px; border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" +
+                                    "<iframe src='"+ elemento.getVinculo() + "' width='100%' height='100%' style='border-radius:20px; border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>" +
                                   "</div>" +
                                   "<p class='txt_info'>Mapa</p>" +
                                 "</div>" +
