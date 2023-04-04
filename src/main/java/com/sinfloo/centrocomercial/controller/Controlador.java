@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/cc")
+@RequestMapping //("/api/cc")
 public class Controlador {
     List<CentrosComerciales> cc = new ArrayList<>();
     public List<String> nameCC = new ArrayList<>();
