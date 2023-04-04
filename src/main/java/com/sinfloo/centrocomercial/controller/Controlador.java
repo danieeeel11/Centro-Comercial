@@ -1,7 +1,9 @@
 package com.sinfloo.centrocomercial.controller;
 
 import com.sinfloo.centrocomercial.interfaceService.ICentroComercialService;
+import com.sinfloo.centrocomercial.interfaceService.INovedadesService;
 import com.sinfloo.centrocomercial.modelo.CentrosComerciales;
+import com.sinfloo.centrocomercial.modelo.Novedades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,21 +24,30 @@ import java.util.Optional;
 @RequestMapping
 public class Controlador {
     List<CentrosComerciales> cc = new ArrayList<>();
+    List<Novedades> nvd = new ArrayList<>();
     public List<String> nameCC = new ArrayList<>();
     @Autowired
     private ICentroComercialService service;
+
+    @Autowired
+    private INovedadesService serviceNvd;
 
     @GetMapping("/principal")
     public String Listar(Model model) {
         if(cc.isEmpty()) {
             cc = service.listar();
         }
+        if(nvd.isEmpty()){
+            nvd = serviceNvd.listar();
+        }
+
         if(nameCC.isEmpty()) {
             for (int i = 0; i < cc.size(); i++) {
                 nameCC.add(cc.get(i).getNombre());
             }
         }
         model.addAttribute("cc", cc);
+        model.addAttribute("nvd",nvd);
         // Se especifica el nombre del archivo .html
         return "index";
     }
