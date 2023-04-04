@@ -1,3 +1,7 @@
+body {
+    margin: 20px;
+}
+
 .sec_sup {
     /*Sección De la cabezecera,inludios botones*/
     position: relative;
