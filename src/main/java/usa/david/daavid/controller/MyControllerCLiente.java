@@ -27,5 +27,4 @@ public class MyControllerCLiente {
     public cliente clsave(@RequestBody cliente cl){
         return clienteService.save(cl);
     }
-    
 }

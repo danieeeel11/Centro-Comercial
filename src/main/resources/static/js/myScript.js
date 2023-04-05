@@ -69,7 +69,7 @@ function saveClientes() {
 */
 function getCcs() {
     $.ajax({
-        url: 'api/centrocomerical/ccAll',
+        url: 'api/centrocomerical/ccall',
         type: 'GET', 
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
