@@ -20,7 +20,7 @@ public class ControladorCC {
     public List<CentrosComerciales> getAll(){ return service.getAll(); }
 
     @GetMapping("/{id}")
-    public Optional<CentrosComerciales> getEquipo(@PathVariable("id") int idCC) {
+    public Optional<CentrosComerciales> getCC(@PathVariable("id") int idCC) {
         return service.getCC(idCC);
     }
 

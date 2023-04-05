@@ -1,31 +1,24 @@
-// Función para iniciar sesión
 function iniciarSesion() {
-    // Obtener los valores de usuario y contraseña
     var usuario = $("#user").val();
-    var contrasena = $("#password").val();
-
-    // Validar que ambos campos no estén vacíos
-    if (usuario == "" || contrasena == "") {
-        alert("Por favor, ingrese su usuario y contraseña.");
+    var password = $("#password").val();
+    console.log(password);
+    if (!usuario || !password) {
+        alert("Por favor ingrese usuario y contraseña");
         return;
     }
 
-    // Hacer la solicitud AJAX para iniciar sesión
     $.ajax({
-        url: "api/Cliente/save",
-        type: "POST",
-        data: {
-            usuario: usuario,
-            contrasena: contrasena
-        },
-        success: function(response) {
-            // Si la respuesta es "ok", redireccionar a la página principal
-            if (response == "ok") {
-                window.location.href = "index.html";
+        url: "/api/Cliente/ingresar/" + usuario + "/" + password,
+        dataType: "JSON",
+        success: function (respuesta) {
+            if (respuesta.usuario != null) {
+                window.open("http://localhost:8080", "_self");
             } else {
-                // Si la respuesta no es "ok", mostrar el mensaje de error
-                alert(response);
+                alert("No existe el usuario o la contraseña es incorrecta");
             }
-        }
+        },
+        error: function (xhr, respuesta) {
+            alert("Datos incorrectos o aun no se ha registrado.");
+        },
     });
 }

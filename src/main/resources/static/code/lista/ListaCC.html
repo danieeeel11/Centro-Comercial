@@ -28,9 +28,9 @@
         <input class='custom' type="text" id="name" name="name" size="10">
     </div>
 </div>
-<div class='sec_cc' th:action="@{/listaCC}">
+<div class='sec_cc'>
 
-    <a th:each="enlace : ${enlacesHtml}" th:utext="${enlace}"></a>
+    <a id="resultadoCC"></a>
 </div>
 
 <!-- Optional JavaScript -->

@@ -9,15 +9,3 @@ listaEnlacesHtml.forEach(function (enlaceHtml) { // Iterar a través de la lista
     listaEnlacesElemento.innerHTML += enlaceHtml; // Agregar cada enlace HTML al contenido del elemento div
 });
 
-
-
-function mostrarCC(){
-    $(".sec_cc").empty();
-    let content ="";
-    content +=`
-    <input class = "inputInicio" type="text" id="correo" placeholder="Correo">
-    <input class = "inputInicio" type="text" id="usuario" placeholder="Usuario">
-    <input class = "inputInicio" type="password" id="password" placeholder="Contraseña">
-    <button class="signup" onclick='agregarUsuario()'>Registrarse</button>`
-    $(".sec_btn2").append(content);
-}
