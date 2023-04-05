@@ -1,5 +1,5 @@
 package usa.david.daavid.repository;
-import usa.david.daavid.entity.centrosComerciales;
+import usa.david.daavid.entity.centros_comerciales;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,11 +13,11 @@ public class CCsRepository {
     /*
      * Método que guarda un cliente y lo retorna
      */
-    public centrosComerciales save(centrosComerciales cl) {
+    public centros_comerciales save(centros_comerciales cl) {
         return  crudRepository.save(cl);
     }
 
-    public <S extends centrosComerciales> List<S> saveAll(Iterable<S> entidades) {
+    public <S extends centros_comerciales> List<S> saveAll(Iterable<S> entidades) {
         return (List<S>) crudRepository.saveAll(entidades);
     }
 
@@ -25,7 +25,7 @@ public class CCsRepository {
      * Método que busca un elemento de los clientes que hay por medio del id
      * @return se retorna el cliente
      */
-    public Optional<centrosComerciales> findById(Integer id) {
+    public Optional<centros_comerciales> findById(Integer id) {
         return crudRepository.findById(id);
     }
 
@@ -37,8 +37,8 @@ public class CCsRepository {
      * Método que busca todos los clientes
      * @return lista de los clientes o usuarios 
      */
-    public List<centrosComerciales> findAll() {
-        return (List<centrosComerciales>) crudRepository.findAll();
+    public List<centros_comerciales> findAll() {
+        return (List<centros_comerciales>) crudRepository.findAll();
     }
 
     public long count() {
@@ -52,15 +52,15 @@ public class CCsRepository {
         crudRepository.deleteById(id);
     }
 
-    public void delete(centrosComerciales entity) {
+    public void delete(centros_comerciales entity) {
         crudRepository.delete(entity);
     }
 
-    public List<centrosComerciales> findAllById(Iterable<Integer> ids) {
-        return (List<centrosComerciales>) crudRepository.findAllById(ids);
+    public List<centros_comerciales> findAllById(Iterable<Integer> ids) {
+        return (List<centros_comerciales>) crudRepository.findAllById(ids);
     }
 
-    public void deleteAll(List<centrosComerciales> entities) {
+    public void deleteAll(List<centros_comerciales> entities) {
         crudRepository.deleteAll(entities);
     }
 
@@ -69,7 +69,7 @@ public class CCsRepository {
     }
 
     public void deleteAllById(List<Integer> ids) {
-        List<centrosComerciales> entidades = this.findAllById(ids);
+        List<centros_comerciales> entidades = this.findAllById(ids);
         crudRepository.deleteAll(entidades);
     }
 }

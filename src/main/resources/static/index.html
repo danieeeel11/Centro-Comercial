@@ -21,6 +21,7 @@
 <script src="js/myScript.js"></script>
 
 <!--
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -86,9 +87,28 @@
 
     </div>
 
-    <button class="ui button" onclick="getClientes()">OK!</button>
     <div id="parrilla" class="ui cards"></div>
 
+    <div class="ui form">
+        <input placeholder="logo" id="logo">
+        <input placeholder="Nombre" id="nombre">
+        <input placeholder="descripcion" id="descripcion">
+        <input placeholder="horario" id="horario">
+        <input placeholder="direccion" id="direccion">
+        <input placeholder="foto" id="foto">
+        <input placeholder="vinculo" id="vinculo">
+        <input placeholder="cordenadas" id="cordenadas">
+
+
+        <button class="ui button" onclick="saveCCs()">Guardar!</button>
+
+    </div>
+
+    <!--
+    <button class="ui button" onclick="getClientes()">OK!</button>-->
+    <button class="ui button" onclick="getCcs()">OK!</button>
+    
+    <div id="parrilla2" class="ui cards"></div>
 </body>
 
 </html>

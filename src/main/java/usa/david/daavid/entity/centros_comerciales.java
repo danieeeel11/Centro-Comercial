@@ -5,10 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
-//import lombok.NonNull;
+// import lombok.NonNull;
 @Entity
 @Data
-public class centrosComerciales {
+public class centros_comerciales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
