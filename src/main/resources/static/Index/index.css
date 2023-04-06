@@ -4,8 +4,8 @@ body {
   
   /*display: grid;*/
   /*grid-template-rows: 500px 100px;
-  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;*/
-  /*align-items: center;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+  align-items: center;
   justify-items: center;*/
 }
 .sec_sup {
@@ -121,6 +121,7 @@ body {
     width:28px;
     background-size:28px 28px;
     border-radius:10px;
+    
 }
 .btn.star_cc:hover{
     background-color: transparent;
@@ -461,4 +462,5 @@ input:nth-of-type(5) {
 
 input:nth-of-type(5):checked~.carousel {
     --position: 5;
+    
 }
