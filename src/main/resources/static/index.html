@@ -31,7 +31,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 -->
-
+<script src="./Index/index.js"></script>s
 
 <body>
     <div class='sec_sup'>
@@ -46,7 +46,7 @@
     <input type="radio" name="position" />
     <input type="radio" name="position" />
     <input type="radio" name="position" />
-    
+
     <div class="carousel">
         <div class='item'>
             <div class='sec_tend_inicio'>
@@ -54,8 +54,20 @@
                     <button class='btn tit_cc'>
                         <p class='txt_btn_tit_cc'>GRAN ESTACIÓN</p>
                     </button>
-                    <script src="Js/myScript.js"></script>
-                    <button class='btn star_cc' onclick=""></button>
+                    <script>
+                        var estado = 0;
+                        const star = document.querySelector(".btn.star_cc");
+                        function addFav() {
+                            if (estado == 0) {
+                                star.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
+                                estado = 1;
+                            } else {
+                                star.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
+                                estado = 0;
+                            }
+                        }
+                    </script>
+                    <button class='btn star_cc' onclick="addFav()"></button>
                 </div>
                 <div class='tend_tit'>
                     <section>
@@ -68,11 +80,24 @@
         </div>
 
         <div class="item">
-            
+            <div class='sec_tend_inicio'>
+                <div class='cc_tit'>
+                    <button class='btn tit_cc'>
+                        <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
+                    </button>
+                    <button class='btn star_cc' onclick="addFav()"></button>
+                </div>
+                <div class='tend_tit'>
+                    <section>
+                        <img src="" alt="">
+                    </section>
+                    <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+                </div>
+            </div>
         </div>
+        <!--<div class="item"></div>
         <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+        <div class="item"></div>-->
     </div>
 
 
