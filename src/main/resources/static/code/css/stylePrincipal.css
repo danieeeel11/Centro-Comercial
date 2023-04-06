@@ -58,6 +58,7 @@ body {
 .btn.perfil{
     left: 93%;
     background-image:url('https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png');
+    /*background-size: cover;*/
     border-radius:50px;
 }
 

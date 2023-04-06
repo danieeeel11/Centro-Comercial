@@ -550,5 +550,4 @@ input:nth-of-type(5) {
 
 input:nth-of-type(5):checked~.carousel {
     --position: 5;
-    
 }
