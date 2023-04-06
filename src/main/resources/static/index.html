@@ -13,21 +13,58 @@
     <a class='btn menu' href="code/principal/Menu.html"></a>
     <a class='btn perfil' href="code/principal/login.html"></a>
 ¿</div>
-<div class='sec_tend'>
-    <div class='sec_tend_inicio'>
-        <div class='cc_tit'>
-            <button class='btn tit_cc'>
-                <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
-            </button>
-        </div>
-        <div class='tend_tit'>
-            <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
-            <button class='btn des_1'></button>
-            <button class='btn des_2'></button>
-            <button class='btn des_3'></button>
-            <button class='btn des_4'></button>
+
+<div class="carousel">
+    <div class='item'>
+        <div class='sec_tend_inicio'>
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>GRAN ESTACIÓN</p>
+                </button>
+                <script>
+                    var estado = 0;
+                    const star = document.querySelector(".btn.star_cc");
+                    function addFav() {
+                        if (estado == 0) {
+                            star.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
+                            estado = 1;
+                        } else {
+                            star.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
+                            estado = 0;
+                        }
+                    }
+                </script>
+                <button class='btn star_cc' onclick="addFav()"></button>
+            </div>
+            <div class='tend_tit'>
+                <section>
+                    <img src="" alt="">
+                </section>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN EL EXITO, CINECOLOMBIA,
+                    Y UN ENTRENAMIENTO GRATIS EN BODYTECH.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+            </div>
         </div>
     </div>
+
+    <div class="item">
+        <div class='sec_tend_inicio'>
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
+                </button>
+                <button class='btn star_cc' onclick="addFav()"></button>
+            </div>
+            <div class='tend_tit'>
+                <section>
+                    <img src="" alt="">
+                </section>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+            </div>
+        </div>
+    </div>
+    <!--<div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>-->
 </div>
 <div class='sec_bot'>
     <button class='btn parq'>
