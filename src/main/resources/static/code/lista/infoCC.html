@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -7,231 +7,18 @@
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
-
-   <style>
-    body {
-      margin: 20px;
-    }
-    .sec_sup {
-      position: relative;
-      width:100% !important;
-      height: 50px;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 10px;
-    }
-    .sec_info {
-      position: relative;
-      top: 5px;
-      left: 10%;
-      width: 85%;
-      height: 700px;
-      background-color: #ac8153;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-    .sec_info_sup{
-      position: relative;
-      top: 5%;
-      left: 5%;
-      width: 90%;
-      height: 30%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;
-      border-radius: 10px;*/
-    }
-    .sec_logo{
-      position: absolute;
-      width:30%;
-      height:95%;
-      background-color:white;
-      background-size: cover;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-    .sec_name{
-      position: absolute;
-      left:32%;
-      width:68%;
-      height:95%;
-      background-color:white;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-    .txt_name{
-      text-align:center;
-      font-size:50px;
-      font-weight:bold;
-    }
-    .sec_info_mid{
-      position: relative;
-      top: 8%;
-      left: 5%;
-      width: 90%;
-      height: 50%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 10px;
-    }
-    .sec_mid1{
-      position: absolute;
-      width: 49%;
-      height:100%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 10px;
-    }
-    .sec_images{
-      position: relative;
-      width: 100%;
-      height:80%;
-      background-color:white;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-    .txt_info{
-      text-align: center;
-    }
-    .sec_mid2{
-      position: absolute;
-      left:51%;
-      width: 49%;
-      height:100%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 10px;
-    }
-    .sec_maps{
-      position: relative;
-      width: 100%;
-      height:80%;
-      background-color:white;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-    .sec_info_bot{
-      position: relative;
-      top: 8%;
-      left: 5%;
-      width: 90%;
-      height: 10%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 10px;
-    }
-    .sec_horario{
-      position:absolute;
-      top:2%;
-      width:49%;
-      height:98%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-    .sec_btnes{
-      position:absolute;
-      left:51%;
-      width:49%;
-      height:100%;
-      /*border-width: 1px;
-      border-style: solid;
-      border-color: black;*/
-      border-radius: 20px;
-    }
-
-    .btn{
-      position: absolute;
-      background-repeat:no-repeat;
-      height:50px;
-      width:50px;
-      /*background-size: 50px 50px;*/
-      background-color: transparent;
-      border-color: transparent;
-    }
-    .btn:hover{
-      background-color:#c1beb6;
-      cursor: pointer;
-    }
-    .btn.back{
-      /*top:2px;*/
-      height:45px;
-      background-size: 50px 45px;
-      background-image:url('https://cdn-icons-png.flaticon.com/512/318/318493.png');
-      border-radius:50px;
-    }
-    .btn.tiendas{
-      position:absolute;
-      height:60%;
-      width:33%;
-      background-color: black;
-      color:white;
-      text-align: center;
-      padding: 10px;
-      border-radius:20px;
-    }
-    .btn.tiendas:hover{
-      background-color: #5b5b5b;
-    }
-    .btn.mapIn{
-      position:absolute;
-      left:41%;
-      height:60%;
-      width:53%;
-      background-color: black;
-      color:white;
-      padding: 10px;
-      text-align: center;
-      border-radius:20px;
-    }
-    .btn.mapIn:hover{
-      background-color: #5b5b5b;
-    }
-  </style>
-
+  <link rel="stylesheet" href="../css/styleInfoCC.css">
   <title>Mall</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="../js/semantic.min.js"></script>
+<script src="../js/funcionesInfoCC.js"></script>
 <body>
 <div class='sec_sup'>
   <button class='btn back' onclick="history.back()"></button>
 </div>
-<div class='sec_info' th:action="@{/{nombre}}" th:each="data : ${informacion}" th:utext="${data}">
-
+<div class='sec_info' id="data">
 </div>
 
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"
-></script>
 </body>
 </html>
