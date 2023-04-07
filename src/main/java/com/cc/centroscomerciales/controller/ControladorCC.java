@@ -19,18 +19,9 @@ public class ControladorCC {
     @GetMapping("/all")
     public List<CentrosComerciales> getAll(){ return service.getAll(); }
 
-    public CentrosComerciales infCC = null;
     @GetMapping("/{id}")
-    public CentrosComerciales getInfoCC(@PathVariable("id") int id) {
-        if(service.getCC(id).isPresent()){
-            infCC = service.getCC(id).get();
-            return infCC;
-        }
-        return service.getCC(id).get();
-    }
-    @GetMapping("/getId")
-    public CentrosComerciales getId() {
-        return infCC;
+    public Optional<CentrosComerciales> getCC(@PathVariable("id") int idCC) {
+        return service.getCC(idCC);
     }
 
     @PostMapping("/save")

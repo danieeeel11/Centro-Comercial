@@ -68,9 +68,8 @@ function paintCC(data){
             fila=1;
         }
         if(fila == 0){
-            //onclick="saveId(${data[i].id})"
             code += `
-                <a onclick="getBuscar(${data[i].id})" class="btn cc" style="left:${des_lat}%;background-image:url('${data[i].logo}')">
+                <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="left:${des_lat}%;background-image:url('${data[i].logo}')">
                     <p class='txt_btn_cc'> ${data[i].nombre} </p>
                     <button id="${data[i].nombre}" class="btn star_cc" onclick="addFav('${data[i].nombre}')"></button>
                 </a>`;
@@ -78,7 +77,7 @@ function paintCC(data){
             des_lat += 23;
         }else if(fila==1) {
             code += `
-                <a href="../lista/infoCC.html" class="btn cc" style="left:${des_lat}%;top:${des_top}%;background-image:url('${data[i].logo}')">
+                <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="left:${des_lat}%;top:${des_top}%;background-image:url('${data[i].logo}')">
                     <p class='txt_btn_cc'> ${data[i].nombre} </p>
                     <button id="${data[i].nombre}" class="btn star_cc" onclick="addFav('${data[i].nombre}')"></button>
                 </a>`;
@@ -89,31 +88,8 @@ function paintCC(data){
     $("#grid").html(code);
 }
 
-let datoId = 0;
-function saveId(id){
-    datoId = id;
-    console.log(datoId + 'rffrf');
-}
-//export { datoId };
-
-
-function getBuscar(dato){
-    $.ajax({
-        //url: `/api/CC/${id}`,
-        url: "/api/CC/"+dato,
-        type:'GET',
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function(data) {
-            // Aquí procesamos los datos obtenidos
-            console.log(data);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Aquí manejamos cualquier error que pueda haber ocurrido
-            console.log(textStatus + ': ' + dato + ' ' + errorThrown);
-        }
-    });
-
+function setId(id){
+    window.localStorage.setItem('id',id);
 }
 
 var estado = 0;
