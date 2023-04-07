@@ -487,6 +487,11 @@ div.item {
     z-index: calc((var(--position) - var(--abs)));
 }
 
+.desp{
+    position: absolute;
+    top:70%;
+}
+
 div.item:nth-of-type(1) {
     --offset: 1;
     background-image: url('http://4.bp.blogspot.com/-lm_SKduB5cU/U_-CIroziKI/AAAAAAAAGKA/RZr7xNipvGQ/s1600/Gran-Estaci%C3%B3n-Bogot%C3%A1.jpg');
