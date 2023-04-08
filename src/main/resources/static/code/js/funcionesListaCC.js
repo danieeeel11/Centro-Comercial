@@ -73,7 +73,7 @@ function paintCC(data){
                     <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
                         <p class='txt_btn_cc'> ${data[i].nombre} </p>
                     </a>
-                    <button id="${data[i].nombre}" class="btn star_cc" onclick="addFav('${data[i].nombre}')"></button>
+                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
                 </div>`;
             conteo++;
             des_lat += 23;
@@ -83,7 +83,7 @@ function paintCC(data){
                     <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
                         <p class='txt_btn_cc'> ${data[i].nombre} </p>
                     </a>
-                    <button id="${data[i].nombre}" class="btn star_cc" onclick="addFav('${data[i].nombre}')"></button>
+                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
                 </div>`;
             conteo++;
             des_lat += 23;
