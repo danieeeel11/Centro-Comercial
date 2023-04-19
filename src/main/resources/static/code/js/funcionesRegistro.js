@@ -22,7 +22,8 @@ function registrar(){
             $("#email").val("");
             $("#user").val("");
             $("#password").val("");
-            localStorage.setItem("id_Cliente", respuesta.id_Cliente);
+            localStorage.setItem("id_Cliente", data.id_Cliente);
+            localStorage.setItem("name_Cliente", data.nombre);
 
             window.open("/code/principal/principalLog.html", "_self");
         },
