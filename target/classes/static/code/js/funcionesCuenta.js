@@ -1,5 +1,10 @@
 let id_Cliente = localStorage.getItem("id_Cliente");
+let key = localStorage.getItem("contrasenia");
+$('document').ready(function (){
+    getCuenta();
+});
 function getCuenta(){
+
     $.ajax({
         url: '/api/Cliente/'+id_Cliente,
         type:'GET',
@@ -36,5 +41,64 @@ function paintCuenta(r){
                   <p class='txt_campo user'>${r.usuario}</p>
                 </div>
     `;
-    $("#parrilla").html(d);
+
+    $('#parrilla').html(d);
+}
+
+function actualizarInfo(){
+    console.log("entro input")
+    $('.sec_data').empty();
+    $('#parrilla').empty();
+
+    let content ="";
+    content +=`
+        <div class="ui card">
+                <br><br>
+                <p class='txt_campo_info'>Nombre</p>
+                <div>
+                  <input class='custom' type="text" id="nameN" name="name" size="10">
+                </div>
+                <p class='txt_campo_info'>Correo</p>
+                <div>
+                  <input class='custom' type="text" id="emailN" name="email" size="10">
+                </div>
+                <p class='txt_campo_info'>Usuario</p>
+                <div> <!--class='sec_campo_info'-->
+                  <input class='custom' type="text" id="userN" name="user" size="10">
+                </div>
+        </div>
+
+    <div class='sec_bottom'>
+        <a class='btn edit' onclick="guardarActualizado()" ">Actualizar</a>
+    </div>`
+    $('.sec_data').append(content);
+}
+
+function guardarActualizado(){
+    let cliente={
+        id : localStorage.getItem("id_Cliente"),
+        nombre : $("#nameN").val(),
+        email : $("#emailN").val(),
+        usuario : $("#userN").val(),
+        password : localStorage.getItem("contrasenia"),
+
+
+    }
+    //let dataToSend=JSON.stringify(cliente);
+    $.ajax({
+        url: '/api/Cliente/update',
+        type:'PUT',
+        data: JSON.stringify(cliente),
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function(data) {
+            // Aquí procesamos los datos obtenidos
+            console.log('Cliente actualizado:', data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Aquí manejamos cualquier error que pueda haber ocurrido
+            console.log(textStatus + ': ' + errorThrown);
+        }
+    });
+
 }

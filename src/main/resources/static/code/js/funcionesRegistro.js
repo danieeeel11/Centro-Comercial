@@ -23,6 +23,7 @@ function registrar(){
             $("#user").val("");
             $("#password").val("");
             localStorage.setItem("id_Cliente", respuesta.id_Cliente);
+            localStorage.setItem("contrasenia", respuesta.contrasenia);
 
             window.open("/code/principal/principalLog.html", "_self");
         },

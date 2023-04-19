@@ -31,7 +31,7 @@
      for(let i=0;i<r.length;i++){
              d += `
                 <div>
-                      <h1 class='modal-label'>${r[i].titular}</h1>
+                      <p class='modal-label'>${r[i].titular}</p>
                       <p class='modal-label'>${r[i].noticia}</p>
                       <p class='modal-label'>${r[i].tiempo_pub}</p>
                 </div>`;
