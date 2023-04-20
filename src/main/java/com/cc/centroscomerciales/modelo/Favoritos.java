@@ -1,10 +1,12 @@
 package com.cc.centroscomerciales.modelo;
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name= "favoritos_prueba")
+@Data
 public class Favoritos {
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int id_CC;

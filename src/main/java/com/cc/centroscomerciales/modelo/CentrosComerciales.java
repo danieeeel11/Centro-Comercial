@@ -1,10 +1,12 @@
 package com.cc.centroscomerciales.modelo;
 
 import jakarta.persistence.Entity;
+import lombok.Data;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name= "centros_comerciales")
+@Data
 public class CentrosComerciales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
