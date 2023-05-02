@@ -13,55 +13,51 @@ public class FavoritosService {
     @Autowired
     private FavoritosRepository favoritosRepository;
 
+    /**
+     * Obtener todos los favoritos
+     * @return
+     */
+    public List<Favoritos> getAll(){ return favoritosRepository.getAll(); }
 
-    public List<Favoritos> getAll(){
-        return favoritosRepository.getAll();
-    }
+    /**
+     * Obtener lista de favoritos de un usuario
+     * @param id_Cliente
+     * @return
+     */
+    public List<Favoritos> getClientsFav(int id_Cliente){ return favoritosRepository.getClientsFav(id_Cliente); }
 
-    public Optional<Favoritos> getFavorito(int favoritoId) {
-        return favoritosRepository.getFavorito(favoritoId);
-    }
+    /**
+     * Obtener favorito
+     * @param id_Cliente
+     * @param id_CC
+     * @return
+     */
+    public Favoritos getFav(int id_Cliente, int id_CC){ return favoritosRepository.getFav(id_Cliente, id_CC); }
 
-    /*public List<Favoritos> getUserFavorito(String user) {
-        return favoritosRepository.getUserFavorito(user);
-    }*/
+    /**
+     * Guardar favorito
+     * @param favorito
+     * @return
+     */
+    public Favoritos save(Favoritos favorito){ return favoritosRepository.save(favorito); }
 
-    public Favoritos save(Favoritos favorito){
-        return favoritosRepository.save(favorito);
-        /*if(favorito.getId()==null){
-            return favoritosRepository.save(favorito);
+    /**
+     * Borrar favorito
+     * @param favorito
+     */
+    public void delete(Favoritos favorito){ favoritosRepository.delete(favoritosRepository.getFav(favorito.getId_Cliente(), favorito.getId_CC())); }
+
+    /**
+     * Determinar el estado, 1 si esta presente en favoritos, 0 si no esta presente
+     * @param id_Cliente
+     * @param id_CC
+     * @return
+     */
+    public int estado(int id_Cliente, int id_CC){
+        if (favoritosRepository.getFav(id_Cliente, id_CC) != null){
+            return 1;
         }else{
-            Optional<Favoritos> e= favoritosRepository.getFavorito(favorito.getId());
-            if(!e.isPresent()){
-                return favoritosRepository.save(favorito);
-            }else{
-                return favorito;
-            }
-        }*/
-    }
-
-    /*public Favoritos update(Favoritos favorito){
-        if(favorito.getId_Cliente()!=null){
-            Optional<Favoritos> e= favoritosRepository.getFavorito(favorito.getId_Cliente());
-            if(e.isPresent()){
-                if(favorito.favorito()!=null) {
-                    e.get().setNombre(favorito.getNombre());
-                }
-                favoritosRepository.save(e.get());
-                return e.get();
-            }else{
-                return favorito;
-            }
-        }else{
-            return favorito;
+            return 0;
         }
-    }*/
-
-    public boolean deleteFavorito(int id) {
-        Boolean aBoolean = getFavorito(id).map(favorito -> {
-            favoritosRepository.delete(favorito);
-            return true;
-        }).orElse(false);
-        return aBoolean;
     }
 }
