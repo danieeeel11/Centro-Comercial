@@ -13,8 +13,8 @@ body {
 }
 .sec_tit {
     position: relative;
-    left: 5%;
-    width: 90%;
+    left: 26%;
+    width: 45%;
     /*400px;*/
     /*top: -18px;*/
     height: 100%;
@@ -139,23 +139,12 @@ body {
 .btn.loc:hover{
     background-color: #999999;
 }
-.sec_btn_cc{
-    position: absolute;
-    top:2%;
-    height:45%;
-    width:20%;
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;*/
-}
 .btn.cc{
-    /*height:35%;
-    width:15%;*/
-    height: 80%;
-    width: 100%;
+    top:2%;
+    height:35%;
+    width:15%;
     background-color: #bcbcbc;
-    /*padding-left: 40px;*/
+    padding-left: 40px;
     border-radius:30px;
     background-size: cover;
 }
@@ -171,26 +160,10 @@ body {
     border-radius:10px;
 }
 
-.btn.star_cc{
-    background-image:url('https://cdn-icons-png.flaticon.com/512/16/16666.png');
-    top:85%;
-    left:85%;
-    height:28px;
-    width:28px;
-    background-size:28px 28px;
-    border-radius:10px;
-}
-.btn.star_cc:hover{
-    background-color: transparent;
-    cursor: pointer;
-    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png');
-}
-
 .txt_btn_cc{
     position: absolute;
     top: 95%;
-    width: 80%;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
     color: black;

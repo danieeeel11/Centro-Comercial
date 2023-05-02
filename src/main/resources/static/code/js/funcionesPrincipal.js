@@ -1,4 +1,5 @@
- var estado = 0;
+let id_Cliente = localStorage.getItem("id_Cliente");
+var estado = 0;
     const star = document.querySelector(".btn.star_cc");
     function addFav(){
     if(estado==0){
@@ -9,3 +10,57 @@
     estado = 0;
 }
 }
+ function getNovedad(){
+     $.ajax({
+         url: '/api/Novedades/all',
+         type:'GET',
+         dataType: 'json',
+         contentType: 'application/json; charset=utf-8',
+         success: function(data) {
+             // Aquí procesamos los datos obtenidos
+             console.log(data);
+             paintNovedad(data);
+         },
+         error: function(jqXHR, textStatus, errorThrown) {
+             // Aquí manejamos cualquier error que pueda haber ocurrido
+             console.log(textStatus + ': ' + errorThrown);
+         }
+     });
+ }
+ function paintNovedad(r){
+     let d="";
+     for(let i=0;i<r.length;i++){
+             d += `
+                <div>
+                      <p class='modal-label'>${r[i].titular}</p>
+                      <p class='modal-label'>${r[i].noticia}</p>
+                      <p class='modal-label'>${r[i].tiempo_pub}</p>
+                </div>`;
+         }
+     $("#info").html(d);
+ }
+ function getNombre(){
+     $.ajax({
+         url: '/api/Cliente/'+id_Cliente,
+         type:'GET',
+         dataType: 'json',
+         contentType: 'application/json; charset=utf-8',
+         success: function(data) {
+             // Aquí procesamos los datos obtenidos
+             console.log(data);
+             paintNombre(data);
+         },
+         error: function(jqXHR, textStatus, errorThrown) {
+             // Aquí manejamos cualquier error que pueda haber ocurrido
+             console.log(textStatus + ': ' + errorThrown);
+         }
+     });
+ }
+ function paintNombre(r){
+     let d="";
+     d += `
+                <div>
+                   <p class='modal-label2'>${r.nombre}</p>
+                </div>`;
+     $("#name").html(d);
+ }

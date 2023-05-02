@@ -1,6 +1,7 @@
 package com.cc.centroscomerciales.controller;
 
 import com.cc.centroscomerciales.modelo.Cliente;
+import com.cc.centroscomerciales.modelo.Novedades;
 import com.cc.centroscomerciales.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
