@@ -1,5 +1,5 @@
 package com.cc.centroscomerciales.controller;
-import com.cc.centroscomerciales.modelo.novedades;
+import com.cc.centroscomerciales.modelo.Novedades;
 import com.cc.centroscomerciales.service.NovedadesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +14,12 @@ public class ControladorNovedades {
     private NovedadesService novedadesService;
 
     @GetMapping("/all")
-    public List<novedades> getNovedades(){
+    public List<Novedades> getNovedades(){
         return novedadesService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<novedades> getNovedades(@PathVariable("id") int novID) {
+    public Optional<Novedades> getNovedades(@PathVariable("id") int novID) {
         return novedadesService.getNovedad(novID);
     }
 
