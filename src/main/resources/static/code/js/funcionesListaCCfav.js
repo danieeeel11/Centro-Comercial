@@ -57,7 +57,6 @@ function getCC(dataFavs){
     });
 }*/
 
-}
 function getId(dato){
     $.ajax({
         url: "/api/CC/"+dato,
