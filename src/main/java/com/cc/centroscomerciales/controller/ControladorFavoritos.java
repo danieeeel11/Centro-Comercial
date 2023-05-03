@@ -34,6 +34,9 @@ public class ControladorFavoritos {
     @GetMapping("/estadoFav")
     public int getEstado(@RequestParam int id_Cliente, int id_CC){
         return favoritosService.estado(id_Cliente, id_CC);
+    @GetMapping("/{id}")
+    public Optional<Favoritos> getFavorito(@PathVariable("id") int favId) {
+        return favoritosService.getFavorito(favId);
     }
 
     @PostMapping("/save")
@@ -52,12 +55,9 @@ public class ControladorFavoritos {
     public List<Favoritos> getUserClient(@PathVariable("user") String userClient) {
         return favoritosService.getUserFavorito("%"+userClient+"%");
     }*/
+    
     /*@PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Favoritos update(@RequestBody Favoritos favoritos) {
-        return favoritosService.update(favoritos);
-    }*/
-    /*@GetMapping("/{id}")
     public Optional<Favoritos> getFavorito(@PathVariable("id") int favId) {
         return favoritosService.getFavorito(favId);
     }*/
@@ -67,4 +67,10 @@ public class ControladorFavoritos {
     public boolean delete(@PathVariable("id") int clientId) {
         return favoritosService.deleteFavorito(clientId);
     }*/
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int clientId) {
+        return favoritosService.deleteFavorito(clientId);
+    }
 }

@@ -1,12 +1,18 @@
 package com.cc.centroscomerciales.modelo;
 
 import jakarta.persistence.Entity;
+<<<<<<< HEAD
 import lombok.Data;
+=======
+>>>>>>> origin/LauraST4
 import jakarta.persistence.*;
 
 @Entity
 @Table(name= "centros_comerciales")
+<<<<<<< HEAD
 @Data
+=======
+>>>>>>> origin/LauraST4
 public class CentrosComerciales {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

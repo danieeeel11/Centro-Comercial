@@ -390,7 +390,6 @@ body {
     /*object-fit:fill;*/
     border-radius: 10px;
 }
-
 .modal {
     display: none;
     position: fixed;

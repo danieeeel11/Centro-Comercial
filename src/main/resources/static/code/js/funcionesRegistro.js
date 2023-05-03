@@ -16,7 +16,11 @@ function registrar(){
         success: function(data) {
             // Aquí procesamos los datos obtenidos
             console.log(data);
+<<<<<<< HEAD
             alert("Los datos han sido registrados en el sistema");
+=======
+
+>>>>>>> origin/LauraST4
             $("#idClient").val("");
             $("#name").val("");
             $("#email").val("");

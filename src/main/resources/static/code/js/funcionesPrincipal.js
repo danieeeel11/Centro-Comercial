@@ -1,4 +1,11 @@
 let id_Cliente = localStorage.getItem("id_Cliente");
+$('document').ready(function (){
+    setCliente();
+});
+function setCliente(){
+    localStorage.setItem("name_Cliente", "");
+}
+
 var estado = 0;
 const star = document.querySelector(".btn.star_cc");
 function addFav() {
