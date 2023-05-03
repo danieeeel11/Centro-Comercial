@@ -387,8 +387,8 @@ body {
 .modal-label {
     background-color: white;
     border-bottom: 1px solid black;
-    padding: 2px;
-    height: 50%;
+    padding: 10px;
+    height: 100%;
     font-weight: bold;
     font-size: 20px;
     color: black;
@@ -496,28 +496,28 @@ div.item {
 
 div.item:nth-of-type(1) {
     --offset: 1;
-    background-image: url('http://4.bp.blogspot.com/-lm_SKduB5cU/U_-CIroziKI/AAAAAAAAGKA/RZr7xNipvGQ/s1600/Gran-Estaci%C3%B3n-Bogot%C3%A1.jpg');
-    
+    background-image: url('https://puntocomercial.org/wp-content/uploads/2022/03/Tamano-Banner-Revista-Punto-Comercial-45.jpg');
+
 }
 
 div.item:nth-of-type(2) {
     --offset: 2;
-    background-image: url('https://parquearauco.modyocdn.com/uploads/d8144ca8-7809-4de8-ac0f-9829645f9cc6/original/parque_la_colina.png');
+    background-image: url('https://www.bbva.com/wp-content/uploads/2016/12/Hombre-comprando-con-tarjeta-de-cr%C3%A9dito-en-l%C3%ADnea-e1522052307593.jpg');
 }
 
 div.item:nth-of-type(3) {
     --offset: 3;
-    background-color: #ff9770;
+    background-image: url('https://i0.wp.com/centroandino.com.co/wp-content/uploads/2021/06/Banner-web-pet.jpg?w=1024&ssl=1');
 }
 
 div.item:nth-of-type(4) {
     --offset: 4;
-    background-color: #ffd670;
+    background-image: url('https://atlantiscc.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/03/anima.jpg.webp');
 }
 
 div.item:nth-of-type(5) {
     --offset: 5;
-    background-color: #e9ff70;
+    background-image: url('https://files.lafm.com.co/assets/public/styles/i_a_750x375/public/2020-01/foto_de_kartz_publicacion.jpg.webp?AYIUZ0DiodFebwuGdILyxlArExw.5.93&itok=yhLUYg4v');
 }
 
 input:nth-of-type(1) {

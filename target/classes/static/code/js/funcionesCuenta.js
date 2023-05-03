@@ -51,7 +51,6 @@ function paintCuenta(r){
 }
 
 function actualizarInfo(){
-
     console.log("entro input")
     $('.sec_data').empty();
     $('#parrilla').empty();
@@ -70,10 +69,6 @@ function actualizarInfo(){
                 </div>
                 <p class='txt_campo_info'>Usuario</p>
                 <div> <!--class='sec_campo_info'-->
-                  <input class='custom' type="text" id="userN" name="user" size="10">
-                </div>
-                 <p class='txt_campo_info'>Contraseña</p>
-                <div class='sec_campo_info'>
                   <input class='custom' type="text" id="userN" name="user" size="10">
                 </div>
         </div>
@@ -104,7 +99,6 @@ function guardarActualizado(){
         contentType: 'application/json; charset=utf-8',
         success: function(data) {
             // Aquí procesamos los datos obtenidos
-            alert("Los datos han sido actualizados");
             console.log('Cliente actualizado:', data);
         },
         error: function(jqXHR, textStatus, errorThrown) {

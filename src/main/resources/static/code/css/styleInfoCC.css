@@ -135,6 +135,9 @@ body {
     width:49%;
     height:98%;
     font-size: 15px;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: black;*/
     border-radius: 20px;
 }
 .sec_btnes{
@@ -169,8 +172,6 @@ body {
     border-radius:50px;
 }
 .btn.tiendas{
-    font-size:25px;
-
     position:absolute;
     height:60%;
     width:33%;
@@ -187,9 +188,8 @@ body {
     background-color: #5b5b5b;
 }
 .btn.mapIn{
-    font-size:25px;
     position:absolute;
-    left:40%;
+    left:41%;
     height:60%;
     width:53%;
     background-color: black;

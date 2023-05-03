@@ -32,6 +32,36 @@ function paintInfo(data){
                                         </div>`;*/
         htmlFotos.push(`<img src="${linksFotos[i]}" alt="">`);
     }
+    /*code = `<div class="sec_info_sup">
+                                <div class="sec_logo" style="background-image:url('${data.logo}')">
+                                </div>
+                                <div class="sec_name">
+                                  <p class="txt_name"> ${data.nombre} </p>
+                                </div>
+                                </div>
+                                <div class="sec_info_mid">
+                                <div class="sec_mid1">
+                                  <div class="sec_images">
+
+                                  </div>
+                                  <p class="txt_info"> ${data.direccion} </p>
+                                </div>
+                                <div class="sec_mid2">
+                                  <div class="sec_maps">
+                                    <iframe src=" ${data.vinculo} " width="100%" height="100%" style="border-radius:20px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                  </div>
+                                  <p class="txt_info">Mapa</p>
+                                </div>
+                                </div>
+                                <div class="sec_info_bot">
+                                <div class="sec_horario">
+                                  <p class="txt_info" style="font-size:12px;"> ${data.horario} </p>
+                                </div>
+                                <div class="sec_btnes">
+                                  <a class="btn tiendas">Tiendas</a>
+                                  <a class="btn mapIn">Mapa Interactivo</a>
+                                </div>
+                            </div>`;*/
     code.push(
         `<div class="sec_logo" style="background-image:url('${data.logo}')">
         </div>
