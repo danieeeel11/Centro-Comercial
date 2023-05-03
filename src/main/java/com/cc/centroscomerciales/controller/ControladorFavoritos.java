@@ -34,6 +34,8 @@ public class ControladorFavoritos {
     @GetMapping("/estadoFav")
     public int getEstado(@RequestParam int id_Cliente, int id_CC){
         return favoritosService.estado(id_Cliente, id_CC);
+    }
+    
     @GetMapping("/{id}")
     public Optional<Favoritos> getFavorito(@PathVariable("id") int favId) {
         return favoritosService.getFavorito(favId);
