@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="code/css/stylePrincipal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>MallForYou</title>
+</head>
+<!--<script src="code/js/funcionesPrincipal.js"></script>-->
+<body>
+
+<input class="desp" style="left:43%" type="radio" name="position" checked/>
+<input class="desp" style="left:46%" type="radio" name="position" />
+<input class="desp" style="left:49%" type="radio" name="position" />
+<input class="desp" style="left:52%" type="radio" name="position" />
+<input class="desp" style="left:55%" type="radio" name="position" />
+
+<div class='sec_sup'>
+    <a class='btn menu' href="code/principal/Menu.html"></a>
+    <a class='btn perfil' href="code/principal/login.html"></a>
+</div>
+
+<div class="carousel">
+    <div class='item'>
+        <!--<div class='sec_tend_inicio'>-->
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>GRAN ESTACIÓN</p>
+                </button>
+                <button class='btn star_cc' onclick="addFav()"></button>
+            </div>
+            <div class='tend_tit'>
+                <section>
+                    <img src="" alt="">
+                </section>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN EL EXITO, CINECOLOMBIA,
+                    Y UN ENTRENAMIENTO GRATIS EN BODYTECH.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+            </div>
+        <!--</div>-->
+    </div>
+
+    <div class="item">
+        <!--<div class='sec_tend_inicio'>-->
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
+                </button>
+                <button class='btn star_cc' onclick="addFav()"></button>
+            </div>
+            <div class='tend_tit'>
+                <section>
+                    <img src="" alt="">
+                </section>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+            </div>
+        <!--</div>-->
+    </div>
+</div>
+
+
+
+<div class='sec_bot'>
+    <button class='btn parq'>
+        <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
+        <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
+    </button>
+    <a href="code/lista/ListaCC.html" class='btn cc'>
+        <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
+        <img class='img_' style='' src='https://cdn1.iconfinder.com/data/icons/shopping-online-37/64/shop-store-online-shopping-shopping_mall-512.png'></img>
+    </a>
+</div>
+
+<!--<script>
+    var estado = 0;
+    const star = document.querySelector(".btn.star_cc");
+    function addFav() {
+        if (estado == 0) {
+            star.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
+            estado = 1;
+        } else {
+            star.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
+            estado = 0;
+        }
+    }
+</script>-->
+<script src="code/js/funcionesPrincipal.js"></script>
+</body>
+</html>
