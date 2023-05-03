@@ -8,6 +8,9 @@ import jakarta.persistence.*;
 @Table(name= "centros_comerciales")
 @Data
 public class CentrosComerciales {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String logo;
     private String nombre;
