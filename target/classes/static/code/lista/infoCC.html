@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <link rel="stylesheet" href="../css/styleInfoCC.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Mall</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="../js/semantic.min.js"></script>
+<script src="../js/funcionesInfoCC.js"></script>
+<body>
+
+<div class="sec_sup">
+  <button class="btn back" onclick="history.back()"></button>
+</div>
+<div class="sec_info">
+  <div class="sec_info_sup" id="insert1">
+    <!--<div class="sec_logo" style="background-image:url('${data.logo}')">
+    </div>
+    <div class="sec_name">
+      <p class="txt_name"> ${data.nombre} </p>
+    </div>-->
+  </div>
+  <div class="sec_info_mid">
+    <div class="sec_mid1">
+      <div class="sec_images">
+        <div class="container">
+          <div class="slider">
+            <div class="slider_content" id="insertImage1">
+            </div>
+            <div class="slider_content" id="insertImage2">
+            </div>
+            <div class="slider_content" id="insertImage3">
+            </div>
+            <div class="slider_content" id="insertImage4">
+            </div>
+          </div>
+          <div class="controls">
+            <div class="control prev" style='left:0;' ><i class="fa-solid fa-angle-left"></i></div>
+            <div class="control next" style='right:0;' ><i class="fa-solid fa-angle-right"></i></div>
+          </div>
+        </div>
+      </div>
+      <!--<p class="txt_info"> ${data.direccion} </p>-->
+      <p class="txt_info" id="insert2"> </p>
+    </div>
+    <div class="sec_mid2">
+      <div class="sec_maps" id="insert3">
+        <!--<iframe src=" ${data.vinculo} " width="100%" height="100%" style="border-radius:20px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+      </div>
+      <p class="txt_info">Mapa</p>
+    </div>
+  </div>
+  <div class="sec_info_bot">
+    <div class="sec_horario" id="insert4">
+      <!--<p class="txt_info" style="font-size:12px;"> ${data.horario} </p>-->
+    </div>
+    <div class="sec_btnes">
+      <a class="btn tiendas">Tiendas</a>
+      <a class="btn mapIn">Mapa Interactivo</a>
+    </div>
+  </div>
+</div>
+
+<script src="../js/funcionesSliderInfoCC.js"></script>
+</body>
+</html>
