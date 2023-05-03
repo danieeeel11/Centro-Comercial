@@ -13,7 +13,11 @@ function iniciarSesion() {
         success: function (respuesta) {
             if (respuesta.usuario != null) {
                 localStorage.setItem("id_Cliente", respuesta.id_Cliente);
+<<<<<<< HEAD
                 localStorage.setItem("name_Cliente", respuesta.nombre);
+=======
+                localStorage.setItem("contrasenia", respuesta.contrasenia);
+>>>>>>> main
                 window.open("/code/principal/principalLog.html", "_self");
             } else {
                 alert("No existe el usuario o la contraseña es incorrecta");

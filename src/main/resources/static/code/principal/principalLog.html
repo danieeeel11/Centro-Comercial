@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <!-- Required meta tags -->
   <link rel="stylesheet" href="../css/stylePrincipal.css">
-  <script src="../js/funcionesPrincipal.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <title>MallForYou</title>
+    <script src="../js/semantic.min.js"></script>
+    <script src="../js/funcionesPrincipal.js"></script>
+    <script src="../js/funcionesCuenta.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>MallForYou</title>
 </head>
 <body>
 
@@ -17,13 +20,24 @@
   <button class='btn perfil' onclick="mostrarVentana()"></button>
   <div id="miVentana" class="modal">
     <div class="modal-contenido">
-      <span class="cerrar" onclick="ocultarVentana()">&times;</span>
+        <span class="cerrar" onclick="ocultarVentana()">&times;</span>
       <div style="text-align: center;">
+<<<<<<< HEAD
         <div class="botones">
           <a class='cuenta-btn' href="../cuenta/cuenta.html">Cuenta</a>
           <a class='config-btn' href="../cuenta/configuracion.html">Configuracion</a>
           <a onclick="removeCliente()" class='config-btn' href="../../index.html">Cerrar Sesion</a>
         </div>
+=======
+          <div class="modal-label2">
+              <div id="name" className="ui cards"></div>
+          </div>
+            <div class="botones">
+                    <a class='cuenta-btn' href="../cuenta/cuenta.html">Cuenta</a>
+                    <a class='config-btn' href="../cuenta/configuracion.html">Configuracion</a>
+                    <a class='config-btn' href="../../index.html">Cerrar Sesion</a>
+            </div>
+>>>>>>> main
       </div>
     </div>
   </div>
@@ -34,7 +48,7 @@
       <div style="text-align: center;">
         <p>Notificaciones</p>
         <div class="modal-label">
-          <p>Aquí va tu contenido...</p>
+            <div id="info" className="ui cards"></div>
         </div>
       </div>
     </div>
@@ -104,8 +118,10 @@
 
 <div class='sec_bot'>
   <button class='btn parq'>
-    <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
-    <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
+      <a href="../principal/parqueadero.html">
+        <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
+        <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
+      </a>
   </button>
   <a href="../lista/ListaCC.html" class='btn cc'>
     <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
@@ -113,8 +129,11 @@
   </a>
 </div>
 
+<<<<<<< HEAD
 <script src="../js/funcionesPrincipalLog.js"></script>
 
+=======
+>>>>>>> main
 <script>
   const btnCampana = document.querySelector('.btn.campana');
 
@@ -125,7 +144,7 @@
 </script>
 <script>function mostrarVentana() {
   document.getElementById("miVentana").style.display = "block";
-  ocultarVentana2();
+  ocultarVentana2();getNombre()
 }
 
 function ocultarVentana() {
@@ -134,7 +153,7 @@ function ocultarVentana() {
 </script>
 <script>function mostrarVentana2() {
   document.getElementById("miVentana2").style.display = "block";
-  ocultarVentana();
+  ocultarVentana();getNovedad()
 }
 
 function ocultarVentana2() {

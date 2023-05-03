@@ -90,9 +90,14 @@ body {
     border-color: black;*/
     border-radius: 20px;
 }
-.txt_info{
+.txt_info {
+    font-weight: bold;
     text-align: center;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    color: black;
 }
+
 .sec_mid2{
     position: absolute;
     left:51%;
@@ -129,9 +134,7 @@ body {
     top:2%;
     width:49%;
     height:98%;
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: black;*/
+    font-size: 15px;
     border-radius: 20px;
 }
 .sec_btnes{
@@ -166,6 +169,8 @@ body {
     border-radius:50px;
 }
 .btn.tiendas{
+    font-size:25px;
+
     position:absolute;
     height:60%;
     width:33%;
@@ -173,21 +178,28 @@ body {
     color:white;
     text-align: center;
     padding: 10px;
-    border-radius:20px;
+    border-radius:25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn.tiendas:hover{
     background-color: #5b5b5b;
 }
 .btn.mapIn{
+    font-size:25px;
     position:absolute;
-    left:41%;
+    left:40%;
     height:60%;
     width:53%;
     background-color: black;
     color:white;
     padding: 10px;
     text-align: center;
-    border-radius:20px;
+    border-radius:25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn.mapIn:hover{
     background-color: #5b5b5b;

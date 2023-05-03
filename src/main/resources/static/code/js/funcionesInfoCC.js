@@ -32,6 +32,7 @@ function paintInfo(data){
                                         </div>`;*/
         htmlFotos.push(`<img src="${linksFotos[i]}" alt="">`);
     }
+<<<<<<< HEAD
     /*code = `<div class="sec_info_sup">
                                 <div class="sec_logo" style="background-image:url('${data.logo}')">
                                 </div>
@@ -62,6 +63,8 @@ function paintInfo(data){
                                   <a class="btn mapIn">Mapa Interactivo</a>
                                 </div>
                             </div>`;*/
+=======
+>>>>>>> main
     code.push(
         `<div class="sec_logo" style="background-image:url('${data.logo}')">
         </div>
@@ -77,7 +80,11 @@ function paintInfo(data){
             loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>`
     );
     code.push(
+<<<<<<< HEAD
         `<p class="txt_info" style="font-size:12px;"> ${data.horario} </p>`
+=======
+        `<p class="txt_info" style="font-size:18px;"> ${data.horario} </p>`
+>>>>>>> main
     );
 
     $("#insert1").html(code[0]);
@@ -85,6 +92,10 @@ function paintInfo(data){
     $("#insertImage2").html(htmlFotos[1]);
     $("#insertImage3").html(htmlFotos[2]);
     $("#insertImage4").html(htmlFotos[3]);
+<<<<<<< HEAD
+=======
+    $("#insertImage5").html(htmlFotos[4]);
+>>>>>>> main
     $("#insert2").html(code[1]);
     $("#insert3").html(code[2]);
     $("#insert4").html(code[3]);

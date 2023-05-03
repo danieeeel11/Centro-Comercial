@@ -16,14 +16,19 @@ function registrar(){
         success: function(data) {
             // Aquí procesamos los datos obtenidos
             console.log(data);
-
+            alert("Los datos han sido registrados en el sistema");
             $("#idClient").val("");
             $("#name").val("");
             $("#email").val("");
             $("#user").val("");
             $("#password").val("");
+<<<<<<< HEAD
             localStorage.setItem("id_Cliente", data.id_Cliente);
             localStorage.setItem("name_Cliente", data.nombre);
+=======
+            localStorage.setItem("id_Cliente", respuesta.id_Cliente);
+            localStorage.setItem("contrasenia", respuesta.contrasenia);
+>>>>>>> main
 
             window.open("/code/principal/principalLog.html", "_self");
         },
