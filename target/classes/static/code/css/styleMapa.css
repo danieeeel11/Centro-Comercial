@@ -1,0 +1,92 @@
+body {
+    margin: 20px;
+}
+.sec_sup {
+    position: relative;
+    width:100% !important;
+    height: 50px;
+    border-radius: 10px;
+}
+.sec_info {
+    position: relative;
+    top: 150px;
+    left: 20%;
+    width: 65%;
+    height: 600px;
+    background-color: #0A373C;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: black;*/
+    border-radius: 20px;
+}
+.sec_tit {
+    font-size:25px;
+    position: relative;
+    left: 20%;
+    width: 65%;
+    color:white;
+    height: 100px;
+    background-color: #0A373C;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec_info_mid{
+    position: relative;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    border-radius: 20px;
+}
+.sec_mid1{
+    position: absolute;
+    width: 49%;
+    height:100%;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: black;*/
+    border-radius: 10px;
+}
+.sec_mid2{
+    position: absolute;
+    left:10%;
+    width: 80%;
+    height:140%;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: black;*/
+    border-radius: 10px;
+}
+.sec_maps{
+    top:25px;
+    position: relative;
+    width: 100%;
+    height:100%;
+    background-color:white;
+    border-radius: 20px;
+}
+
+.btn{
+    position: absolute;
+    background-repeat:no-repeat;
+    height:50px;
+    width:50px;
+    /*background-size: 50px 50px;*/
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn:hover{
+    background-color:#c1beb6;
+    cursor: pointer;
+}
+.btn.back{
+    /*top:2px;*/
+    height:45px;
+    background-size: 50px 45px;
+    background-image:url('https://cdn-icons-png.flaticon.com/512/318/318493.png');
+    border-radius:50px;
+}
+
