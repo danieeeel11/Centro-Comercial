@@ -13,8 +13,8 @@ body {
 }
 .sec_tit {
     position: relative;
-    left: 5%;
-    width: 90%;
+    left: 26%;
+    width: 45%;
     /*400px;*/
     /*top: -18px;*/
     height: 100%;
@@ -42,27 +42,15 @@ body {
     border-color: black;
     border-radius: 10px;*/
 }
-.sec_opc_tipo {
+
+.sec_opc_loc {
     position: absolute;
     top: 10px;
-    width: 10%;
+    width: 20%;
     top: -1px;
-    left: 15%;
+    left: 10%;
     height: 25px;
     background-color: #bcbcbc;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;
-}
-.sec_opc_loc {
-    position: relative;
-    top: 10px;
-    width: 10%;
-    top: -1px;
-    left: 45%;
-    /*400px;*/
-    height: 25px;
     border-width: 1px;
     border-style: solid;
     border-color: black;
@@ -117,17 +105,7 @@ body {
 .btn.menu:hover{
     transform: rotate(90deg);
 }
-.btn.fav{
-    height:100%;
-    width:100%;
-    background-color:transparent;
-    /*padding-left: 30px;*/
-    text-align: center;
-    border-radius:10px;
-}
-.btn.fav:hover{
-    background-color: #999999;
-}
+
 .btn.loc{
     height:100%;
     width:100%;
@@ -171,20 +149,6 @@ body {
     border-radius:10px;
 }
 
-.btn.star_cc{
-    background-image:url('https://cdn-icons-png.flaticon.com/512/16/16666.png');
-    top:85%;
-    left:85%;
-    height:28px;
-    width:28px;
-    background-size:28px 28px;
-    border-radius:10px;
-}
-.btn.star_cc:hover{
-    background-color: transparent;
-    cursor: pointer;
-    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png');
-}
 
 .txt_btn_cc{
     position: absolute;
@@ -203,37 +167,4 @@ body {
     width: 30%;
     /*object-fit:fill;*/
     border-radius: 10px;
-}
-
-/*--------------- Aspectos de 'Cerca de mi' ----------------*/
-.sec_distancia_cc{
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 45%;
-    height: 15%;
-    background-color: white;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;
-}
-.sec_logo_ubi{
-    position: relative;
-    top: -2%;
-    width: 25%;
-    height: 95%;
-    background-image: url("https://images.vexels.com/media/users/3/131261/isolated/preview/b2e48580147ca0ed3f970f30bf8bb009-marcador-de-ubicacion-del-mapa.png");
-    background-size: cover;
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;*/
-}
-.txt_distancia_cc{
-    position: absolute;
-    top: -37%;
-    left: 25%;
-    font-size: 14px;
-    color: black;
 }

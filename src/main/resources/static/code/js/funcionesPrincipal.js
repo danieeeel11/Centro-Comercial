@@ -67,6 +67,7 @@ function paintNombre(r) {
 
 $('document').ready(function () {
     getCarrusel();
+    setCliente();
     //paintGames();
 });
 
@@ -117,4 +118,7 @@ function paintCarrusel(r) {
         `;
     }
     $("#carousel").html(d);
+}
+function setCliente() {
+    localStorage.setItem("name_Cliente", "");
 }
