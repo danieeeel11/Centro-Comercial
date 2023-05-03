@@ -5,11 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<<<<<<< HEAD
 		<version>3.0.5</version>
-=======
-		<version>3.0.4</version>
->>>>>>> origin/LauraST4
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cc</groupId>
@@ -21,15 +17,12 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-=======
->>>>>>> origin/LauraST4
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
