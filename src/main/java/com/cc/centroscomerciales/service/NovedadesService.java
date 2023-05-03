@@ -1,6 +1,6 @@
 package com.cc.centroscomerciales.service;
 
-import com.cc.centroscomerciales.modelo.Novedades;
+import com.cc.centroscomerciales.modelo.novedades;
 import com.cc.centroscomerciales.repository.NovedadesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +12,10 @@ public class NovedadesService {
     @Autowired
     private NovedadesRepository novedadesRepository;
 
-    public List<Novedades> getAll(){
+    public List<novedades> getAll(){
         return novedadesRepository.getAll();
     }
-    public Optional<Novedades> getNovedad(int clientId) {
+    public Optional<novedades> getNovedad(int clientId) {
         return novedadesRepository.getNovedad(clientId);
     }
 }

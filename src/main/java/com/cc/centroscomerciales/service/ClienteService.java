@@ -27,10 +27,10 @@ public class ClienteService {
     }
 
     public Cliente save(Cliente client){
-        if(client.getId_Cliente()==null){
+        if(client.getId()==null){
             return clientRepository.save(client);
         }else{
-            Optional<Cliente> e= clientRepository.getClient(client.getId_Cliente());
+            Optional<Cliente> e= clientRepository.getClient(client.getId());
             if(!e.isPresent()){
                 return clientRepository.save(client);
             }else{
@@ -41,8 +41,8 @@ public class ClienteService {
 
 
     public Cliente update(Cliente client){
-        if(client.getId_Cliente()!=null){
-            Optional<Cliente> e= clientRepository.getClient(client.getId_Cliente());
+        if(client.getId()!=null){
+            Optional<Cliente> e= clientRepository.getClient(client.getId());
             if(e.isPresent()){
                 if(client.getNombre()!=null) {
                     e.get().setNombre(client.getNombre());

@@ -91,6 +91,7 @@ function paintCC(data){
                     </a>
                     <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
                 </div>`;
+<<<<<<< HEAD
             conteo++;
             des_lat += 23;
         }
@@ -113,6 +114,8 @@ function paintCC(data){
                     </a>
                     <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
                 </div>`;
+=======
+>>>>>>> DavidST3
             conteo++;
             des_lat += 23;
         }

@@ -1,6 +1,6 @@
 package com.cc.centroscomerciales.repository;
 
-import com.cc.centroscomerciales.modelo.Novedades;
+import com.cc.centroscomerciales.modelo.novedades;
 import com.cc.centroscomerciales.interfaces.INovedades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -11,17 +11,17 @@ import java.util.Optional;
 public class NovedadesRepository {
     @Autowired
     private INovedades NovedadesCrudRepository;
-    public List<Novedades> getAll(){
-        return (List<Novedades>) NovedadesCrudRepository.findAll();
+    public List<novedades> getAll(){
+        return (List<novedades>) NovedadesCrudRepository.findAll();
     }
-    public Optional<Novedades> getNovedad(int id){
+    public Optional<novedades> getNovedad(int id){
         return NovedadesCrudRepository.findById(id);
     }
 
-    public Novedades save(Novedades novedades){
+    public novedades save(novedades novedades){
         return NovedadesCrudRepository.save(novedades);
     }
-    public void delete(Novedades novedades){
+    public void delete(novedades novedades){
         NovedadesCrudRepository.delete(novedades);
     }
 }

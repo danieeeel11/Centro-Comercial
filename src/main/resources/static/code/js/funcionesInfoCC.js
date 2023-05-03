@@ -32,6 +32,39 @@ function paintInfo(data){
                                         </div>`;*/
         htmlFotos.push(`<img src="${linksFotos[i]}" alt="">`);
     }
+<<<<<<< HEAD
+=======
+    /*code = `<div class="sec_info_sup">
+                                <div class="sec_logo" style="background-image:url('${data.logo}')">
+                                </div>
+                                <div class="sec_name">
+                                  <p class="txt_name"> ${data.nombre} </p>
+                                </div>
+                                </div>
+                                <div class="sec_info_mid">
+                                <div class="sec_mid1">
+                                  <div class="sec_images">
+
+                                  </div>
+                                  <p class="txt_info"> ${data.direccion} </p>
+                                </div>
+                                <div class="sec_mid2">
+                                  <div class="sec_maps">
+                                    <iframe src=" ${data.vinculo} " width="100%" height="100%" style="border-radius:20px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                  </div>
+                                  <p class="txt_info">Mapa</p>
+                                </div>
+                                </div>
+                                <div class="sec_info_bot">
+                                <div class="sec_horario">
+                                  <p class="txt_info" style="font-size:12px;"> ${data.horario} </p>
+                                </div>
+                                <div class="sec_btnes">
+                                  <a class="btn tiendas">Tiendas</a>
+                                  <a class="btn mapIn">Mapa Interactivo</a>
+                                </div>
+                            </div>`;*/
+>>>>>>> DavidST3
     code.push(
         `<div class="sec_logo" style="background-image:url('${data.logo}')">
         </div>
@@ -47,7 +80,11 @@ function paintInfo(data){
             loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>`
     );
     code.push(
+<<<<<<< HEAD
         `<p class="txt_info" style="font-size:18px;"> ${data.horario} </p>`
+=======
+        `<p class="txt_info" style="font-size:12px;"> ${data.horario} </p>`
+>>>>>>> DavidST3
     );
 
     $("#insert1").html(code[0]);
@@ -55,7 +92,10 @@ function paintInfo(data){
     $("#insertImage2").html(htmlFotos[1]);
     $("#insertImage3").html(htmlFotos[2]);
     $("#insertImage4").html(htmlFotos[3]);
+<<<<<<< HEAD
     $("#insertImage5").html(htmlFotos[4]);
+=======
+>>>>>>> DavidST3
     $("#insert2").html(code[1]);
     $("#insert3").html(code[2]);
     $("#insert4").html(code[3]);
