@@ -31,7 +31,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 //.requestMatchers(HttpMethod.GET, "/").permitAll()
-                .requestMatchers(HttpMethod.GET, "/index**").permitAll()
+                .requestMatchers("/api/auth/**", "/code/css/**", "/code/js/**", "/code/lista/**",
+                            "/index.html", "/code/principal/**", "/api/Cliente/**", "/api/CC/**").permitAll()
 
 
                 //.requestMatchers("/api/auth/**")

@@ -1,20 +1,20 @@
 function iniciarSesion() {
     var usuario = $("#user").val();
     var password = $("#password").val();
-    console.log(password);
     if (!usuario || !password) {
         alert("Por favor ingrese usuario y contraseña");
         return;
     }
 
     $.ajax({
-        url: "/api/Cliente/ingresar/" + usuario + "/" + password,
+        //url: "/api/Cliente/ingresar/" + usuario + "/" + password,
+        url: "/api/auth/authenticate",
+        type:"POST",
         dataType: "JSON",
         success: function (respuesta) {
             if (respuesta.usuario != null) {
-                localStorage.setItem("id_Cliente", respuesta.id_Cliente);
-                localStorage.setItem("contrasenia", respuesta.contrasenia);
-                window.open("/code/principal/principalLog.html", "_self");
+                Cookies.set('token', respuesta.token)
+                window.location.replace("/code/principal/principalLog.html");
             } else {
                 alert("No existe el usuario o la contraseña es incorrecta");
             }

@@ -6,6 +6,7 @@
     <script src="../js/semantic.min.js"></script>
     <script src="../js/funcionesPrincipal.js"></script>
     <script src="../js/funcionesCuenta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
@@ -28,7 +29,7 @@
             <div class="botones">
                     <a class='cuenta-btn' href="../cuenta/cuenta.html">Cuenta</a>
                     <a class='config-btn' href="../cuenta/configuracion.html">Configuracion</a>
-                    <a class='config-btn' href="../../index.html">Cerrar Sesion</a>
+                    <a class='config-btn' onclick="cerrarSesion()">Cerrar Sesion</a>
             </div>
       </div>
     </div>
@@ -145,6 +146,12 @@ function ocultarVentana() {
 
 function ocultarVentana2() {
   document.getElementById("miVentana2").style.display = "none";
+}
+
+function cerrarSesion(){
+    // Eliminar la cookie "miCookie"
+    Cookies.remove('token');
+    window.location.replace("../../index.html")
 }
 </script>
 </body>
