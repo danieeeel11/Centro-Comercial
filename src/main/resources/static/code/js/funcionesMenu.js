@@ -12,7 +12,7 @@ function setCliente(){
             <div class='h-line' style='top:-15%;'></div>
             <a href="../lista/ListaCC_noLog.html" class='btn opc' style='top:40%;left:20%;width:60%;'>CENTROS COMERCIALES</a>
             <div class='h-line' style='top:5%;'></div>
-            <a class='btn opc' style='top:60%;'>TIENDAS</a>
+            <a href="../tiendas/ListaTienda_noLog.html" class='btn opc' style='top:60%;'>TIENDAS</a>
             <div class='h-line' style='top:24%;'></div>
             <a class='btn opc' style='top:80%;'>PAGO PARQUEADERO</a>
         `;
@@ -24,7 +24,7 @@ function setCliente(){
             <div class='h-line' style='top:-15%;'></div>
             <a href="../lista/ListaCC.html" class='btn opc' style='top:40%;left:20%;width:60%;'>CENTROS COMERCIALES</a>
             <div class='h-line' style='top:5%;'></div>
-            <a class='btn opc' style='top:60%;'>TIENDAS</a>
+            <a href="../tiendas/ListaTiendas.html" class='btn opc' style='top:60%;'>TIENDAS</a>
             <div class='h-line' style='top:24%;'></div>
             <a class='btn opc' style='top:80%;'>PAGO PARQUEADERO</a>
         `;
