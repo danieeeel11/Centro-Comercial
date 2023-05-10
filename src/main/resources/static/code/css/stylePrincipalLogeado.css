@@ -1,6 +1,5 @@
 body {
-    margin: 20px;
-}
+    margin: 20px;}
 .sec_sup {
     position: relative;
     /*left: 60px;*/
@@ -68,11 +67,11 @@ body {
     width:20%;
     vertical-align: middle;
     text-align: center;
-    background-color: #49f5aa;
+    background-color: #2c3e50;
     border-radius:20px;
 }
 .btn.registro:hover{
-    background-color: #39b981;
+    background-color: #2c3e50;
 }
 .btn.login{
     top:10%;
@@ -125,27 +124,31 @@ body {
     left:10%;
     height:80%;
     width:35%;
-    background-color: #bcbcbc;
+    background-color: #5b5b5b;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     padding-left: 40px;
     border-radius:30px;
 }
 .btn.parq:hover{
-    background-color: #999999;
+    background-color: #5b5b5b;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.cc{
     top:8%;
     left:55%;
     height:80%;
     width:35%;
-    background-color: #bcbcbc;
+    background-color: #5b5b5b;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     padding-left: 40px;
     border-radius:30px;
 }
 .btn.cc:hover{
-    background-color: #999999;
+    background-color: #5b5b5b;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.tend{
-    top:8%;
+    top:30%;
     width:100%;
     font-size: 12px;
     font-weight: bold;
@@ -163,10 +166,12 @@ body {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    background: #bcbcbc;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_1:hover{
-    background: #999999;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_2{
     bottom:10%;
@@ -176,10 +181,12 @@ body {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    background: #bcbcbc;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_2:hover{
-    background: #999999;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_3{
     bottom:10%;
@@ -189,10 +196,12 @@ body {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    background: #bcbcbc;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_3:hover{
-    background: #999999;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_4{
     bottom:10%;
@@ -202,17 +211,17 @@ body {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    background: #bcbcbc;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .btn.des_4:hover{
-    background: #999999;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-
-
 
 .sec_tend {
     position: relative;
-    top: 20px;
+    top: 30px;
     width: 100%;
     /*400px;*/
     height: 220px;
@@ -251,13 +260,13 @@ body {
     font-weight: bold;
     left: 6%;
     top: -10%;
-    color: black;
+    color: white;
 }
 .tend_tit{
     position: absolute;
     top: 65%;
     width: 100%;
-    height: 35%;
+    height: 40%;
     border-width: 1px;
     border-style: solid;
     border-color: black;
@@ -290,16 +299,38 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    color: black;
+    color: white;
 }
 .img_{
     position: absolute;
     top:12%;
     left:65%;
-    height: 75%;
-    width: 30%;
-    /*object-fit:fill;*/
+    height: 100%;
+    width: 100%;
+    object-fit:fill;
     border-radius: 10px;
+}
+.store{
+    position: relative;
+    top:8%;
+    left:65%;
+    border-radius:50px;
+    color:white;
+    font-size: 95px;
+    height:30px;
+    width:30px;
+    /*object-fit:fill;*/
+}
+.parking{
+    top:-70px;
+    position: relative;
+    left:65%;
+    border-radius:50px;
+    color:white;
+    font-size: 100px;
+    height:30px;
+    width:30px;
+    /*object-fit:fill;*/
 }
 .txt_btn_cc{
     position: absolute;
@@ -307,7 +338,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    color: black;
+    color: white;
 }
 .txt_btn_tit_cc{
     top:-40%;
@@ -335,7 +366,8 @@ body {
     height: 10%;
     overflow: auto;
     border-radius: 10px;
-    background-color: #999999;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .modal2 {
     display: none;
@@ -347,7 +379,8 @@ body {
     overflow: auto;
     height: 20px;
     border-radius: 10px;
-    background-color: #999999;
+    background-color: #2c3e50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
 }
 .modal-contenido {
@@ -356,7 +389,7 @@ body {
     width: 95%;
     font-weight: bold;
     font-size: 20px;
-    color: black;
+    color: white;
 
 }
 .modal-contenido2 {
@@ -368,14 +401,14 @@ body {
     height: 20px;
     font-weight: bold;
     font-size: 20px;
-    color: black;
+    color: white;
 
 }
 .modal-label {
     background-color: white;
     border-bottom: 1px solid black;
-    padding: 10px;
-    height: 100%;
+    padding: 2px;
+    height: 50%;
     font-weight: bold;
     font-size: 20px;
     color: black;
@@ -399,35 +432,32 @@ body {
     cursor: pointer;
 }
 .botones {
-    flex-direction: column;
-    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    color: white;
-
+    margin-top: 20px;
 }
-.botones button {
-    background-color: white;
-    border: none;
+
+.botones a {
+    display: inline-block;
     padding: 10px 20px;
+    margin: 10px;
+    background-color: #CE7D35;
+    border: none;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 85%;
-    color: white;
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif; /*Aqui se especifica la fuente*/
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+}
 
+.botones a:hover {
+    background-color: #F0A05F;
 }
-.botones button:hover {
-    background-color: black;
-    color: white;
-}
-.botones button i {
-    font-size: 20px;
-    margin-right: 10px;
-    color: white;
 
-}
 .registro{
     padding-bottom: 30px;
     padding-top: 30px;
@@ -555,3 +585,5 @@ input:nth-of-type(5):checked~.carousel {
     --position: 5;
     
 }
+/* Submenu*/
+

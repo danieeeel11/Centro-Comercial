@@ -63,9 +63,15 @@ function paintCC(data){
     let fila = 0;
     let conteo = 0;
     for(let i=0;i<data.length;i++){
-        if(conteo%4==0 && conteo!=0){
+        if(conteo==4 && conteo!=0){
             des_lat=5;
             fila=1;
+        }else if(conteo==8 && conteo!=0){
+            des_lat=5;
+            fila=2;
+        }else if(conteo==12 && conteo!=0){
+            des_lat=5;
+            fila=3;
         }
         if(fila == 0){
             code += `
@@ -80,6 +86,28 @@ function paintCC(data){
         }else if(fila==1) {
             code += `
                 <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top}%;">
+                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
+                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
+                    </a>
+                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
+                </div>`;
+            conteo++;
+            des_lat += 23;
+        }
+        else if(fila==2) {
+            code += `
+                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top+55}%;">
+                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
+                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
+                    </a>
+                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
+                </div>`;
+            conteo++;
+            des_lat += 23;
+        }
+        else if(fila==3) {
+            code += `
+                <div class="sec_btn_cc" style="left:${des_lat}%;top:${165}%;">
                     <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
                         <p class='txt_btn_cc'> ${data[i].nombre} </p>
                     </a>

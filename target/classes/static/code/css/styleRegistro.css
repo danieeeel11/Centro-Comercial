@@ -1,5 +1,13 @@
-body{
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
     margin: 20px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)100%, rgba(0,0,0.5)100%), url('https://w0.peakpx.com/wallpaper/993/792/HD-wallpaper-people-inside-mall.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 .sec_sup {
     /*border-width: 1px;
