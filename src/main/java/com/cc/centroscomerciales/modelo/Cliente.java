@@ -1,21 +1,19 @@
 package com.cc.centroscomerciales.modelo;
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 @Table(name= "clientes")
-@Data
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_Cliente;
     private String nombre;
     private String email;
     private String usuario;
     private String contrasenia;
 
-    public Cliente(int id, String nombre, String email, String usuario, String contrasenia) {
-        this.id = id;
+    public Cliente(int id_Cliente, String nombre, String email, String usuario, String contrasenia) {
+        this.id_Cliente = id_Cliente;
         this.nombre = nombre;
         this.email = email;
         this.usuario = usuario;
@@ -26,12 +24,12 @@ public class Cliente {
 
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getId_Cliente() {
+        return id_Cliente;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_Cliente(int id_Cliente) {
+        this.id_Cliente = id_Cliente;
     }
 
     public String getNombre() {

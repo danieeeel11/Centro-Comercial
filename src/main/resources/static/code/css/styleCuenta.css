@@ -1,5 +1,12 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
 body {
-    margin: 20px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)100%, rgba(0,0,0.5)100%), url('https://w0.peakpx.com/wallpaper/993/792/HD-wallpaper-people-inside-mall.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 .sec_sup {
     position: relative;
@@ -69,17 +76,19 @@ body {
     top: 15px;
     font-size: 26px !important;
     left: 42%;
-    color: black !important;
+    color: white !important;
 }
 .txt_campo_info{
     position: relative;
     left: 10%;
+    color: white !important;
+
 }
 .txt_campo{
     position: absolute;
     top: -12px;
     left: 35%;
-    color: white;
+    color: black;
 }
 .txt_campo.email{
     left: 25%;
@@ -122,8 +131,8 @@ body {
     left: 40%;
     height: 80%;
     width: 20%;
-    color:white;
-    background-color:#48ffcf;
+    color:black;
+    background-color:#005265;
     border-radius:10px;
     font-size:20px;
     vertical-align: middle;
@@ -133,8 +142,8 @@ body {
      left: 70%;
      height: 80%;
      width: 20%;
-     color:white;
-     background-color:#48ffcf;
+     color:black;
+     background-color:#005265;
      border-radius:10px;
      font-size:20px;
      vertical-align: middle;
@@ -145,8 +154,8 @@ body {
     left: 70%;
     height: 80%;
     width: 20%;
-    color:white;
-    background-color:#48ffcf;
+    color:black;
+    background-color:#005265;
     border-radius:10px;
     font-size:20px;
     vertical-align: middle;
@@ -154,5 +163,5 @@ body {
     border-radius:10px;
 }
 .btn.edit:hover{
-    background-color:#37b795;
+    background-color:#005265;
 }

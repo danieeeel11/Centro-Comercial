@@ -67,11 +67,11 @@ body {
     width:20%;
     vertical-align: middle;
     text-align: center;
-    background-color: #49f5aa;
+    background-color: #2c3e50;
     border-radius:20px;
 }
 .btn.registro:hover{
-    background-color: #39b981;
+    background-color: #2c3e50;
 }
 .btn.login{
     top:10%;
@@ -219,8 +219,6 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-
-
 .sec_tend {
     position: relative;
     top: 30px;
@@ -262,7 +260,7 @@ body {
     font-weight: bold;
     left: 6%;
     top: -10%;
-    color: black;
+    color: white;
 }
 .tend_tit{
     position: absolute;
@@ -301,16 +299,38 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    color: black;
+    color: white;
 }
 .img_{
     position: absolute;
     top:12%;
     left:65%;
-    height: 75%;
-    width: 30%;
-    /*object-fit:fill;*/
+    height: 100%;
+    width: 100%;
+    object-fit:fill;
     border-radius: 10px;
+}
+.store{
+    position: relative;
+    top:8%;
+    left:65%;
+    border-radius:50px;
+    color:white;
+    font-size: 95px;
+    height:30px;
+    width:30px;
+    /*object-fit:fill;*/
+}
+.parking{
+    top:-70px;
+    position: relative;
+    left:65%;
+    border-radius:50px;
+    color:white;
+    font-size: 100px;
+    height:30px;
+    width:30px;
+    /*object-fit:fill;*/
 }
 .txt_btn_cc{
     position: absolute;
@@ -318,7 +338,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    color: black;
+    color: white;
 }
 .txt_btn_tit_cc{
     top:-40%;
@@ -349,29 +369,6 @@ body {
     background-color: #2c3e50;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-.modal2 {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 70%;
-    top: 10%;
-    width: 25%;
-    overflow: auto;
-    height: 20px;
-    border-radius: 10px;
-    background-color: #2c3e50;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-
-}
-.modal-contenido {
-    margin: -5% auto;
-    padding: 5px;
-    width: 95%;
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
-
-}
 .modal-contenido2 {
     margin: -2% auto;
     padding: 10px;
@@ -381,14 +378,14 @@ body {
     height: 20px;
     font-weight: bold;
     font-size: 20px;
-    color: black;
+    color: white;
 
 }
 .modal-label {
     background-color: white;
     border-bottom: 1px solid black;
-    padding: 10px;
-    height: 100%;
+    padding: 2px;
+    height: 50%;
     font-weight: bold;
     font-size: 20px;
     color: black;
@@ -399,7 +396,7 @@ body {
 }
 
 .cerrar {
-    color: #aaaaaa;
+    color: white;
     float: right;
     font-size: 35px;
     font-weight: bold;
@@ -416,7 +413,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .botones a {
@@ -496,28 +493,28 @@ div.item {
 
 div.item:nth-of-type(1) {
     --offset: 1;
-    background-image: url('https://puntocomercial.org/wp-content/uploads/2022/03/Tamano-Banner-Revista-Punto-Comercial-45.jpg');
-
+    background-image: url('http://4.bp.blogspot.com/-lm_SKduB5cU/U_-CIroziKI/AAAAAAAAGKA/RZr7xNipvGQ/s1600/Gran-Estaci%C3%B3n-Bogot%C3%A1.jpg');
+    
 }
 
 div.item:nth-of-type(2) {
     --offset: 2;
-    background-image: url('https://www.bbva.com/wp-content/uploads/2016/12/Hombre-comprando-con-tarjeta-de-cr%C3%A9dito-en-l%C3%ADnea-e1522052307593.jpg');
+    background-image: url('https://parquearauco.modyocdn.com/uploads/d8144ca8-7809-4de8-ac0f-9829645f9cc6/original/parque_la_colina.png');
 }
 
 div.item:nth-of-type(3) {
     --offset: 3;
-    background-image: url('https://i0.wp.com/centroandino.com.co/wp-content/uploads/2021/06/Banner-web-pet.jpg?w=1024&ssl=1');
+    background-color: #ff9770;
 }
 
 div.item:nth-of-type(4) {
     --offset: 4;
-    background-image: url('https://atlantiscc.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/03/anima.jpg.webp');
+    background-color: #ffd670;
 }
 
 div.item:nth-of-type(5) {
     --offset: 5;
-    background-image: url('https://files.lafm.com.co/assets/public/styles/i_a_750x375/public/2020-01/foto_de_kartz_publicacion.jpg.webp?AYIUZ0DiodFebwuGdILyxlArExw.5.93&itok=yhLUYg4v');
+    background-color: #e9ff70;
 }
 
 input:nth-of-type(1) {

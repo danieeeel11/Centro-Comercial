@@ -1,5 +1,12 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
 body {
-    margin: 20px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)100%, rgba(0,0,0.5)100%), url('https://w0.peakpx.com/wallpaper/993/792/HD-wallpaper-people-inside-mall.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 .sec_sup {
     position: relative;
@@ -13,12 +20,12 @@ body {
 }
 .sec_tit {
     position: relative;
-    left: 26%;
-    width: 45%;
+    left: 5%;
+    width: 90%;
     /*400px;*/
     /*top: -18px;*/
     height: 100%;
-    background-color: #ce7e00;
+    background-color: #34495e;
     /*border-width: 1px;
     border-style: solid;
     border-color: black;*/
@@ -107,12 +114,11 @@ body {
     cursor: pointer;
 }
 .btn.menu{
-    top:2px;
-    height:45px;
-    background-size: 50px 45px;
-    background-image:url('https://cdn-icons-png.flaticon.com/512/56/56763.png');
-    border-radius:10px;
-    transition: all 0.6s ease-in-out;
+    left: 95%;
+    border-radius:50px;
+    color:white;
+    font-size: 35px;
+    top:10px;
 }
 .btn.menu:hover{
     transform: rotate(90deg);
@@ -154,16 +160,18 @@ body {
     width:15%;*/
     height: 80%;
     width: 100%;
-    background-color: #bcbcbc;
+    background-color: transparent;
     /*padding-left: 40px;*/
     border-radius:30px;
-    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .btn.cc:hover{
-    background-color: #999999;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
     border-width: 1px;
     border-style: solid;
-    border-color: black;
     border-radius: 20px;
 }
 .custom {
@@ -190,10 +198,10 @@ body {
     position: absolute;
     top: 95%;
     width: 80%;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color: white;
 }
 .img_{
     position: absolute;
@@ -204,36 +212,12 @@ body {
     /*object-fit:fill;*/
     border-radius: 10px;
 }
-
-/*--------------- Aspectos de 'Cerca de mi' ----------------*/
-.sec_distancia_cc{
+.img_{
     position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 45%;
-    height: 15%;
-    background-color: white;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
+    top:12%;
+    left:65%;
+    height: 75%;
+    width: 30%;
+    /*object-fit:fill;*/
     border-radius: 10px;
-}
-.sec_logo_ubi{
-    position: relative;
-    top: -2%;
-    width: 25%;
-    height: 95%;
-    background-image: url("https://images.vexels.com/media/users/3/131261/isolated/preview/b2e48580147ca0ed3f970f30bf8bb009-marcador-de-ubicacion-del-mapa.png");
-    background-size: cover;
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;*/
-}
-.txt_distancia_cc{
-    position: absolute;
-    top: -37%;
-    left: 25%;
-    font-size: 14px;
-    color: black;
 }

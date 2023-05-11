@@ -16,11 +16,7 @@ function registrar(){
         success: function(data) {
             // Aquí procesamos los datos obtenidos
             console.log(data);
-<<<<<<< HEAD
             alert("Los datos han sido registrados en el sistema");
-=======
-
->>>>>>> origin/LauraST4
             $("#idClient").val("");
             $("#name").val("");
             $("#email").val("");
@@ -28,8 +24,6 @@ function registrar(){
             $("#password").val("");
             localStorage.setItem("id_Cliente", respuesta.id_Cliente);
             localStorage.setItem("contrasenia", respuesta.contrasenia);
-            localStorage.setItem("id_Cliente", data.id_Cliente);
-            localStorage.setItem("name_Cliente", data.nombre);
 
             window.open("/code/principal/principalLog.html", "_self");
         },

@@ -1,253 +1,204 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-
 <head>
   <!-- Required meta tags -->
-
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
   <link rel="stylesheet" href="../css/stylePrincipal.css">
-  <script src="../js/semantic.min.js"></script>
-  <script src="../js/funcionesPrincipal.js"></script>
-  <script src="../js/funcionesCuenta.js"></script>
+    <script src="../js/semantic.min.js"></script>
+    <script src="../js/funcionesPrincipal.js"></script>
+    <script src="../js/funcionesCuenta.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <title>MallForYou</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>MallForYou</title>
 </head>
-
 <body>
 
-  </div>
-  <div class='sec_sup'>
-    <a class='btn menu' href="../principal/Menu.html"></a>
-    <button class='btn perfil' onclick="mostrarVentana()"></button>
-    <div id="miVentana" class="modal">
-      <div class="modal-contenido">
-        <span class="cerrar" onclick="ocultarVentana()">&times;</span>
-        <div style="text-align: center;">
-          <div class="modal-label2">
-            <div id="name" className="ui cards"></div>
-          </div>
-          <div class="botones">
-            <a class='cuenta-btn' href="../cuenta/cuenta.html">Cuenta</a>
-            <a class='config-btn' href="../cuenta/configuracion.html">Configuracion</a>
-            <a onclick="removeCliente()" class='config-btn' href="../../index.html">Cerrar Sesion</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="btn campana" onclick="mostrarVentana2()"></button>
-    <div id="miVentana2" class="modal2">
-      <div class="modal-contenido2">
-        <span class="cerrar" onclick="ocultarVentana2()">&times;</span>
-        <div style="text-align: center;">
-          <p>Notificaciones</p>
-          <div class="modal-label">
-            <div id="info" className="ui cards"></div>
-          </div>
-        </div>
-      </div>
-
-      <h1 class='txt_user'>Bienvenido Usuario</h1>
-    </div>
-    <p class='txt_user' id="saludo"> </p>
-  </div>
-
-
   
-  <script src="code/js/funcionesPrincipal.js"></script>
-  <input class="desp" type="radio" style="left:43%;top:63%;" name="position" checked />
-  <input class="desp" type="radio" style="left:46%;top:63%;" name="position" />
-  <input class="desp" type="radio" style="left:49%;top:63%;" name="position" />
-  <input class="desp" type="radio" style="left:52%;top:63%;" name="position" />
-  <input class="desp" type="radio" style="left:55%;top:63%;" name="position" />
-  <!--<div id="carousel" class="carousel"></div>-->
+</div>
+<div class='sec_sup'>
+    <header>
+        <div class="navbar">
+            <button class='btn perfil' onclick="mostrarVentana()">
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <div id="miVentana" class="modal">
+                    <span class="cerrar" onclick="ocultarVentana()">&times;</span>
+                    <div style="text-align: center;">
+                        <div class="botones">
+                            <a class='cuenta-btn' href="../cuenta/cuenta.html">Cuenta</a>
+                            <a class='config-btn' href="../cuenta/configuracion.html">Configuracion</a>
+                            <a class='config-btn' href="../../index.html">Cerrar Sesion</a>
+                        </div>
+                    </div>
+            </div>
+            <button class="btn campana" onclick="mostrarVentana2()">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+            <div id="miVentana2" class="modal2">
+                <div class="modal-contenido2">
+                    <span class="cerrar" onclick="ocultarVentana2()">&times;</span>
+                    <div style="text-align: center;">
+                        <p>Notificaciones</p>
+                        <div class="modal-label">
+                            <div id="info" className="ui cards"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo"><a href="#">Bienvenido Usuario</a></div>
+
+            <div class="btn menu" onclick="mostrarVentana3()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="miVentana3" class="modal3">
+                <span class="cerrar" onclick="ocultarVentana3()">&times;</span>
+                <div class="botones">
+                        <a class='inicio-btn' href="../principal/principalLog.html">Inicio</a>
+                        <a class='novedades-btn' href="../principal/novedades.html">Novedades</a>
+                        <a class='centroscomerciales-btn' href="../lista/ListaCC.html">Centros Comerciales</a>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function() {
+            // Cambiar el estado del menú desplegable
+            dropDownMenu.classList.toggle('open');
+        }
+    </script>
+    <!--<div class='sec_tend'>-->
+
+    <!--<a class='btn menu' href="../principal/Menu.html"></a>-->
+</div>
+<input type="radio" name="position" checked />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+<!--<div class='sec_tend'>-->
   <div class="carousel">
     <div class='item'>
-      <div class='sec_tend_inicio'>
-        <div class='cc_tit'>
-          <button class='btn tit_cc'>
-            <p class='txt_btn_tit_cc'>Eventos para las mujeres</p>
-          </button>
-          <script>
-            var estado = 0;
-            const star = document.querySelector(".btn.star_cc");
-            function addFav() {
-              if (estado == 0) {
-                star.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
-                estado = 1;
-              } else {
-                star.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
-                estado = 0;
-              }
-            }
-          </script>
-          <button class='btn star_cc' onclick="addFav()"></button>
+        <div class='sec_tend_inicio'>
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>GRAN ESTACIÓN</p>
+                </button>
+                <script>
+                    var estado = 0;
+                    const star = document.querySelector(".btn.star_cc");
+                    function addFav() {
+                        if (estado == 0) {
+                            star.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
+                            estado = 1;
+                        } else {
+                            star.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
+                            estado = 0;
+                        }
+                    }
+                </script>
+                <button class='btn star_cc' onclick="addFav()"></button>
+            </div>
+            <div class='tend_tit'>
+                <section>
+                    <img src="" alt="">
+                </section>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN EL EXITO, CINECOLOMBIA,
+                    Y UN ENTRENAMIENTO GRATIS EN BODYTECH.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+            </div>
         </div>
-        <div class='tend_tit'>
-          <section>
-            <img src="" alt="">
-          </section>
-          <button class='btn tend'>Bogotá D.C, 6 de marzo de 2023. El centro comercial Titán Plaza se ha
-            destacado por la\r\ninclusión de todo su público en sus campañas comerciales. Para el mes de
-            marzo preparó su\r\ncampaña “Mujeres con pasión, mujeres Titán” en donde exaltará los diferentes
-            roles que\r\nocupa una mujer en la sociedad y cómo hacen juego con sus pasiones. La campaña
-            del\r\ncentro comercial en el 2023 es “Pasión por ti” y buscan en este mes que sean las mujeres
-            las\r\nprotagonistas de los eventos y actividades.<br>Hace un mes y 5 días</button>
-        </div>
-      </div>
     </div>
 
     <div class="item">
-      <div class='sec_tend_inicio'>
-        <div class='cc_tit'>
-          <button class='btn tit_cc'>
-            <p class='txt_btn_tit_cc'>Nueva tarjeta <br>Banco Popular en Gran Estación</p>
-          </button>
-          <button class='btn star_cc' onclick="addFav()"></button>
+        <div class='sec_tend_inicio'>
+            <div class='cc_tit'>
+                <button class='btn tit_cc'>
+                    <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
+                </button>
+                <button class='btn star_cc' onclick="addFav()"></button>
+            </div>
+            <div class='tend_tit'>
+                <section>
+                    <img src="" alt="">
+                </section>
+                <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
+            </div>
         </div>
-        <div class='tend_tit'>
-          <section>
-            <img src="" alt="">
-          </section>
-          <button class='btn tend'>Queremos contarte lo que sucede en tu centro comercial favorito. Ahora
-            podrás tener eso que tanto te gusta a un solo paso, solicita ya mismo tu tarjeta de crédito
-            Banco Popular Gran Estación y recibe impresionantes beneficios. te esperamos en el local 2-88.
-            <br>Hace 2 semanas</button>
-        </div>
-      </div>
     </div>
-    <div class="item">
-      <div class='sec_tend_inicio'>
-        <div class='cc_tit'>
-          <button class='btn tit_cc'>
-            <p class='txt_btn_tit_cc'>Ahora el Andino te presta un coche para tu mascota!</p>
-          </button>
-          <button class='btn star_cc' onclick="addFav()"></button>
-        </div>
-        <div class='tend_tit'>
-          <section>
-            <img src="" alt="">
-          </section>
-          <button class='btn tend'>Ahora en el centro comercial Andino, se realizan alquileres de coches para
-            que puedas transportar a tus mascotas por el lugar durante 2 horas por un valor de $ 5.000
-            <br>Hace 1 semana</button>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <div class='sec_tend_inicio'>
-        <div class='cc_tit'>
-          <button class='btn tit_cc'>
-            <p class='txt_btn_tit_cc'>Vive la experiencia de cocina en vivo en Atlantis!</p>
-          </button>
-          <button class='btn star_cc' onclick="addFav()"></button>
-        </div>
-        <div class='tend_tit'>
-          <section>
-            <img src="" alt="">
-          </section>
-          <button class='btn tend'>Si buscábamos un termómetro para medir la evolución del mercado
-            gastronómico en Bogotá, la apertura del restaurante Ánima es un claro indicador de que vamos con
-            paso seguro a convertirnos realmente en un destino de primera categoría. Paulo Airaudo es un
-            chef argentino de ascendencia italiana, poco mediático, pero sí muy premiado en Europa donde
-            sorprende con su creatividad, su capacidad para poner en marcha exitosos restaurantes y ganar
-            rápidamente Estrellas Michelin con sus propuestas.
-            <br>Hace 6 días</button>
-        </div>
-        <!--\r\nEn Colombia ha estado varias veces desde
-                        el inicio de su sociedad con el grupo colombiano Seratta, que vuelve a marcar tendencia con la
-                        apertura de su nuevo complejo gastronómico de lujo en el cuarto piso del centro comercial
-                        Atlantis Plaza, y donde está ubicado el restaurante Ánima, abierto hace un par de meses.\r\n\r\n-->
-      </div>
-    </div>
-    <div class="item">
-      <div class='sec_tend_inicio'>
-        <div class='cc_tit'>
-          <button class='btn tit_cc'>
-            <p class='txt_btn_tit_cc'>Pista de karts eléctricos llega al norte de Bogotá!</p>
-          </button>
-          <button class='btn star_cc' onclick="addFav()"></button>
-        </div>
-        <div class='tend_tit'>
-          <section>
-            <img src="" alt="">
-          </section>
-          <button class='btn tend'>260 metros lineales de aventura y velocidad, curvas técnicas y la zona
-            neón, hacen que esta sea la mejor experiencia.Karts totalmente eléctricos que evitan cualquier
-            rastro de combustible, humo y olor en la ropa. La posibilidad de activar un turbo en las rectas
-            y tener, como en las más grandes válidas de automovilismo, los tiempos y el desempeño del
-            piloto. Todo esto se vivirá en Súperkarts que se inaugura este viernes 17 de enero en el sótano
-            1 de plaza Ecuador en el Centro Comercial Santafé.
-            <br>Hace 1 mes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!--<div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>-->
+</div>
+<!--</div>-->
 
-  <div class='sec_bot'>
-    <button class='btn parq'>
+<div class='sec_bot'>
+  <button class='btn parq'>
       <a href="../principal/parqueadero.html">
         <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
-        <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
+          <div class="parking">
+              <i class="fa-solid fa-square-parking"></i>
+          </div>
+        <!--<img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>-->
       </a>
-    </button>
-    <a href="../lista/ListaCC.html" class='btn cc'>
-      <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
-      <img class='img_' src='https://cdn1.iconfinder.com/data/icons/shopping-online-37/64/shop-store-online-shopping-shopping_mall-512.png'></img>
-    </a>
-  </div>
-
-  <script>
-    const btnCampana = document.querySelector('.btn.campana');
-
-    btnCampana.addEventListener('click', () => {
-      mostrarVentana2();
-    });
-
-  </script>
-  <script>function mostrarVentana() {
-      document.getElementById("miVentana").style.display = "block";
-      ocultarVentana2(); getNombre()
-    }
-
-    function ocultarVentana() {
-      document.getElementById("miVentana").style.display = "none";
-    }
-  </script>
-  <script>function mostrarVentana2() {
-      document.getElementById("miVentana2").style.display = "block";
-      ocultarVentana(); getNovedad()
-    }
-
-    function ocultarVentana2() {
-      document.getElementById("miVentana2").style.display = "none";
-    }
-  </script>
-  <footer class="pie-pagina">
-    <div class="grupo-1">
-      <div class="box">
-        <figure>
-          <a href="#">
-            <img src="../imgs/lobo.png" alt="Logo de SLee Dw">
-          </a>
-        </figure>
+  </button>
+  <a href="../lista/ListaCC.html" class='btn cc'>
+    <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
+      <div class="store">
+          <i class="fa-solid fa-store"></i>
       </div>
-      <div class="box">
-        <h2>Participantes</h2>
-        <p>Laura Ojeda<br>Daniel Velasquez<br>Esteban Rodriguez<br>Santiago Niño<br>David Arbeláez</p>
-      </div>
-      <div class="box">
-        <h2>SIGUENOS</h2>
-        <div class="red-social">
-          <a href="https://www.instagram.com/digital_softwareusa/" class="fa fa-instagram"></a>
-        </div>
-      </div>
-    </div>
-    <div class="grupo-2">
-      <small>&copy; 2023 <b>MallForYou</b> - Todos los Derechos Reservados.</small>
-    </div>
-  </footer>
+    <!--<img class='img_' style='' src='https://cdn1.iconfinder.com/data/icons/shopping-online-37/64/shop-store-online-shopping-shopping_mall-512.png'></img>-->
+  </a>
+</div>
+
+<script>
+  const btnCampana = document.querySelector('.btn.campana');
+
+  btnCampana.addEventListener('click', () => {
+    mostrarVentana2();
+  });
+
+</script>
+<script>function mostrarVentana() {
+  document.getElementById("miVentana").style.display = "block";
+  ocultarVentana2();
+    ocultarVentana3()
+  getNombre()
+}
+
+function ocultarVentana() {
+  document.getElementById("miVentana").style.display = "none";
+}
+</script>
+<script>function mostrarVentana2() {
+  document.getElementById("miVentana2").style.display = "block";
+  ocultarVentana();
+  ocultarVentana3()
+  getNovedad()
+}
+
+function ocultarVentana2() {
+  document.getElementById("miVentana2").style.display = "none";
+}
+</script>
+<script>function mostrarVentana3() {
+    document.getElementById("miVentana3").style.display = "block";
+    ocultarVentana();
+    ocultarVentana2();
+}
+
+function ocultarVentana3() {
+    document.getElementById("miVentana3").style.display = "none";
+}
+</script>
 </body>
-
 </html>

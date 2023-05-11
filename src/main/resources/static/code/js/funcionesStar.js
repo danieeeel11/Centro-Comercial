@@ -1,67 +1,24 @@
+var estado = 0;
 function addFav(id){
+    console.log(id);
     let sec = document.getElementById(id);
-    estadoFav(id, sec);
-}
-
-function estadoFav(id, sec){
-    console.log("---" + id);
-    let id_user = localStorage.getItem('id_Cliente');
-    if(id_user != null){
-        let fav={
-            id_Cliente : id_user,
-            id_CC : id,
-        }
-        //let dataToSend=JSON.stringify(fav);
-        $.ajax({
-            url: '/api/Favoritos/estadoFav',
-            type:'GET',
-            data: fav,
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            success: function(data) {
-                console.log(data);
-                let dataToSend=JSON.stringify(fav);
-                if(data == 1){
-                    deleteFav(dataToSend,sec);
-                }else{
-                    saveFav(dataToSend,sec)
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                // Aquí manejamos cualquier error que pueda haber ocurrido
-                console.log(textStatus + ': ' + errorThrown);
-            }
-        });
+    //console.log(sec);
+    //const star = sec.querySelector("btn.star_cc");
+    if(estado==0){
+        sec.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
+        estado = 1;
+        saveFav(id);
     }else{
-        window.location.href = "../principal/Error.html";
+        sec.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
+        estado = 0;
     }
 }
 
-function deleteFav(dataToSend,sec) {
-    //console.log(dataToSend);
-    $.ajax({
-        url: '/api/Favoritos/delete',
-        type:'DELETE',
-        data: dataToSend,
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function() {
-            console.log("Deleted");
-            Swal.fire(
-                'Eliminado de favoritos',
-                '',
-                'success'
-            )
-            sec.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Aquí manejamos cualquier error que pueda haber ocurrido
-            console.log(textStatus + ': ' + errorThrown);
-        }
-    });
-}
-
-function saveFav(dataToSend,sec) {
+function saveFav(id){
+    let fav={
+        id_CC : id,
+    }
+    let dataToSend=JSON.stringify(fav);
     $.ajax({
         url: '/api/Favoritos/save',
         type:'POST',
@@ -69,13 +26,8 @@ function saveFav(dataToSend,sec) {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function(data) {
-            console.log("Saved");
-            Swal.fire(
-                'Agregado a favoritos',
-                '',
-                'success'
-            )
-            sec.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
+            // Aquí procesamos los datos obtenidos
+            console.log(data);
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Aquí manejamos cualquier error que pueda haber ocurrido

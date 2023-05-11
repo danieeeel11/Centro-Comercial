@@ -35,28 +35,8 @@ function getCC(dataFavs){
             console.log(textStatus + ': ' + errorThrown);
         }
     });
+
 }
-
-/*function getFav(){
-    let id_user = 8;
-    let id_CC = 3;
-    $.ajax({
-        url: '/api/Favoritos/fav',
-        type:'GET',
-        data: {id_Cliente: id_user, id_CC: id_CC},
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function(dataFavs) {
-            // Aquí procesamos los datos obtenidos
-            console.log(dataFavs);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Aquí manejamos cualquier error que pueda haber ocurrido
-            console.log(textStatus + ': ' + errorThrown);
-        }
-    });
-}*/
-
 function getId(dato){
     $.ajax({
         url: "/api/CC/"+dato,
@@ -127,21 +107,3 @@ function paintCCfav(data, dataFavs){
 function setId(id){
     window.localStorage.setItem('id',id);
 }
-
-/*function getId(dato){
-    $.ajax({
-        url: "/api/CC/"+dato,
-        type:'GET',
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function(data) {
-            // Aquí procesamos los datos obtenidos
-            console.log(data);
-            window.localStorage.setItem('datoCC',data);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Aquí manejamos cualquier error que pueda haber ocurrido
-            console.log(textStatus + ': ' + dato + ' ' + errorThrown);
-        }
-    });
-}*/
