@@ -1,5 +1,6 @@
 let id_Cliente = localStorage.getItem("id_Cliente");
 let key = localStorage.getItem("contrasenia");
+let token = Cookies.get('token');
 $('document').ready(function (){
     getCuenta();
 });

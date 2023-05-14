@@ -29,7 +29,11 @@ public class ClienteRepository {
 
     public Cliente
     getUser(String user, String password){
-        return clientCrudRepository.getUser(user, password);
+        return clientCrudRepository.getUserr(user, password);
+    }
+
+    public Optional<Cliente> getUser(String user){
+        return clientCrudRepository.getUser(user);
     }
 }
 
