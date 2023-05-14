@@ -1,4 +1,7 @@
-* {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
 body {
@@ -212,6 +215,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+
 }
 .btn.mapIn:hover{
     background-color: #5b5b5b;

@@ -19,8 +19,6 @@
     <title>MallForYou</title>
 </head>
 <body>
-
-
 </div>
 <div class='sec_sup'>
     <header>
@@ -148,18 +146,9 @@
     </a>
 </div>
 
-<script>
-    const btnCampana = document.querySelector('.btn.campana');
-
-    btnCampana.addEventListener('click', () => {
-        mostrarVentana2();
-    });
-
-</script>
 <script>function mostrarVentana() {
     document.getElementById("miVentana").style.display = "block";
-    ocultarVentana2();
-    ocultarVentana3()
+    ocultarVentana3();
     getNombre()
 }
 
@@ -176,6 +165,12 @@ function ocultarVentana() {
 
 function ocultarVentana2() {
     document.getElementById("miVentana2").style.display = "none";
+}
+
+function cerrarSesion(){
+    // Eliminar la cookie "miCookie"
+    Cookies.remove('token');
+    window.location.replace("../../index.html")
 }
 </script>
 <script>function mostrarVentana3() {

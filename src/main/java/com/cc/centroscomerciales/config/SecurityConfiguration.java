@@ -32,7 +32,8 @@ public class SecurityConfiguration {
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 //.requestMatchers(HttpMethod.GET, "/").permitAll()
                 .requestMatchers("/api/auth/**", "/code/css/**", "/code/js/**", "/code/lista/**",
-                            "/index.html", "/code/principal/**", "/api/Cliente/**", "/api/CC/**").permitAll()
+                            "/index.html", "/code/principal/**", "/api/Cliente/**", "/api/CC/**","/api/Novedades/**",
+                            "/api/Tiendas/**","/api/Favoritos/**","/","/api/auth/authenticate","/").permitAll()
 
 
                 //.requestMatchers("/api/auth/**")
