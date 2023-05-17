@@ -129,18 +129,7 @@ body {
     vertical-align: middle;
     text-align: center;
     border-radius:10px;
-}.btn.edit2{
-     left: 70%;
-     height: 80%;
-     width: 20%;
-     color:white;
-     background-color:#48ffcf;
-     border-radius:10px;
-     font-size:20px;
-     vertical-align: middle;
-     text-align: center;
-     border-radius:10px;
- }
+}
 .btn.datos{
     left: 70%;
     height: 80%;

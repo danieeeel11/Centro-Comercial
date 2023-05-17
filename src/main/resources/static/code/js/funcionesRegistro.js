@@ -9,6 +9,7 @@ function registrar(){
     let dataToSend=JSON.stringify(person);
     $.ajax({
         url: '/api/Cliente/save',
+        //url: '/api/auth/register',  //nuevo
         type:'POST',
         data: dataToSend,
         dataType: 'json',
@@ -16,21 +17,19 @@ function registrar(){
         success: function(data) {
             // Aquí procesamos los datos obtenidos
             console.log(data);
-<<<<<<< HEAD
-            alert("Los datos han sido registrados en el sistema");
-=======
-
->>>>>>> origin/LauraST4
+	    alert("Los datos han sido registrados en el sistema");
             $("#idClient").val("");
             $("#name").val("");
             $("#email").val("");
             $("#user").val("");
             $("#password").val("");
-            localStorage.setItem("id_Cliente", respuesta.id_Cliente);
-            localStorage.setItem("contrasenia", respuesta.contrasenia);
             localStorage.setItem("id_Cliente", data.id_Cliente);
             localStorage.setItem("name_Cliente", data.nombre);
-
+            
+            /*Cookies.set('token', data.token);
+            alert(data.token);
+            window.location.replace("/code/principal/principalLog.html");*/ //nuevo
+            
             window.open("/code/principal/principalLog.html", "_self");
         },
         error: function(jqXHR, textStatus, errorThrown) {

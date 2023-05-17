@@ -3,9 +3,16 @@ $('document').ready(function (){
 });
 
 function getCCfavs(){
+    /*let id_user= {
+        id_Cliente : parseInt(localStorage.getItem('id_Cliente'))
+    }
+    let dataToSend = JSON.stringify(id_user);*/
+    let id_user = localStorage.getItem('id_Cliente');
+    //console.log(dataToSend);
     $.ajax({
-        url: '/api/Favoritos/all',
+        url: '/api/Favoritos/user',
         type:'GET',
+        data: {id_Cliente: id_user},
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function(dataFavs) {
@@ -56,24 +63,6 @@ function getCC(dataFavs){
         }
     });
 }*/
-
-function getId(dato){
-    $.ajax({
-        url: "/api/CC/"+dato,
-        type:'GET',
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function(data) {
-            // Aquí procesamos los datos obtenidos
-            console.log(data);
-            window.localStorage.setItem('datoCC',data);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            // Aquí manejamos cualquier error que pueda haber ocurrido
-            console.log(textStatus + ': ' + dato + ' ' + errorThrown);
-        }
-    });
-}
 
 function paintCCfav(data, dataFavs){
     let code= "";

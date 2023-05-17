@@ -1,5 +1,15 @@
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     margin: 20px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)100%, rgba(0,0,0.5)100%), url('https://w0.peakpx.com/wallpaper/993/792/HD-wallpaper-people-inside-mall.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 .sec_sup {
     position: relative;
@@ -20,7 +30,7 @@ body {
     /*400px;*/
     /*top: -18px;*/
     height: 100%;
-    background-color: #AB2C11;
+    background-color: #34495e;
     /*border-width: 1px;
     border-style: solid;
     border-color: black;*/
@@ -92,9 +102,6 @@ body {
     left: 160px;
     width: 80%;
     height: 600px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
     border-radius: 10px;
     margin-top: 100px;
 }
@@ -200,38 +207,90 @@ body {
     text-align: center;
     color: black;
 }
-.img_{
-    position: absolute;
-    top:12%;
-    left:65%;
-    height: 75%;
-    width: 20%;
-    /*object-fit:fill;*/
-    border-radius: 10px;
+.img_ {
+    left:15%;
+    position: relative;
+    height: 400px; /* Establece la altura deseada */
+    width: 600px; /* Establece el ancho deseado */
+    border-radius: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .noticia {
-    background-color: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #888888;
     margin-bottom: 20px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
 }
+
+.noticia h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.noticia p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.noticia a {
+    color:white;
+    text-decoration: none;
+}
+
+.noticia a:hover {
+    text-decoration: underline;
+}
+
 
 .titular {
     font-size: 24px;
     margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
 }
 
+
 .container {
-    left:15%;
     position: relative;
-    width: 75%;
-    height: 80%;
+    left: 15%;
+    height: 400px;
+    width: 600px;
+    border-radius: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
+
+.container img {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 150%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+
+}
+
 
 .contenido {
     margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
 }
+
 
 .cuerpo {
     font-size: 18px;
@@ -241,6 +300,6 @@ body {
 
 .fecha {
     font-size: 14px;
-    color: #888888;
+    color: white;
 }
 

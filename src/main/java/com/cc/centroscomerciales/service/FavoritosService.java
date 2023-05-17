@@ -34,10 +34,6 @@ public class FavoritosService {
      */
     public Favoritos getFav(int id_Cliente, int id_CC){ return favoritosRepository.getFav(id_Cliente, id_CC); }
 
-    public Optional<Favoritos> getFavorito(int favoritoId) {
-        return favoritosRepository.getFavorito(favoritoId);
-    }
-
     /**
      * Guardar favorito
      * @param favorito
@@ -63,13 +59,5 @@ public class FavoritosService {
         }else{
             return 0;
         }
-    }
-
-    public boolean deleteFavorito(int id) {
-        Boolean aBoolean = getFavorito(id).map(favorito -> {
-            favoritosRepository.delete(favorito);
-            return true;
-        }).orElse(false);
-        return aBoolean;
     }
 }

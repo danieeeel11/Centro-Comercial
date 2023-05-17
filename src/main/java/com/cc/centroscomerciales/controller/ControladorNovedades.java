@@ -1,7 +1,9 @@
 package com.cc.centroscomerciales.controller;
+
 import com.cc.centroscomerciales.modelo.Novedades;
 import com.cc.centroscomerciales.service.NovedadesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +24,4 @@ public class ControladorNovedades {
     public Optional<Novedades> getNovedades(@PathVariable("id") int novID) {
         return novedadesService.getNovedad(novID);
     }
-
-    
 }

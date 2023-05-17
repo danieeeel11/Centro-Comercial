@@ -90,14 +90,9 @@ body {
     border-color: black;*/
     border-radius: 20px;
 }
-.txt_info {
-    font-weight: bold;
+.txt_info{
     text-align: center;
-    font-size: 25px;
-    font-family: Arial, sans-serif;
-    color: black;
 }
-
 .sec_mid2{
     position: absolute;
     left:51%;
@@ -134,7 +129,6 @@ body {
     top:2%;
     width:49%;
     height:98%;
-    font-size: 15px;
     /*border-width: 1px;
     border-style: solid;
     border-color: black;*/
@@ -179,10 +173,7 @@ body {
     color:white;
     text-align: center;
     padding: 10px;
-    border-radius:25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius:20px;
 }
 .btn.tiendas:hover{
     background-color: #5b5b5b;
@@ -196,10 +187,7 @@ body {
     color:white;
     padding: 10px;
     text-align: center;
-    border-radius:25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius:20px;
 }
 .btn.mapIn:hover{
     background-color: #5b5b5b;

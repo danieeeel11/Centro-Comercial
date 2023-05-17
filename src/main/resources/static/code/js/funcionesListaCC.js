@@ -1,4 +1,4 @@
-$('document').ready(function () {
+$('document').ready(function (){
     getDatos();
 });
 
@@ -7,25 +7,26 @@ let dataCCFavs = [];
 let btnCercaActive = 0;
 let btnFavActive = 0;
 let distancias = []
+let secciones = []; //nuevo
+let nombresCC = []; //nuevo
+let atributosPos = []; //nuevo
 
 function getDatos() {
     getCC();
 }
-function getCC() {
+function getCC(){
     $.ajax({
         url: '/api/CC/all',
-        type: 'GET',
+        type:'GET',
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
-        success: function (data) {
+        success: function(data) {
             // Aquí procesamos los datos obtenidos
             dataAllCC = data;
             //console.log(dataAllCC);
-            //console.log(data);
-            paintCC(data);
             getStar();
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
             // Aquí manejamos cualquier error que pueda haber ocurrido
             console.log(textStatus + ': ' + errorThrown);
         }
@@ -36,35 +37,35 @@ function getStar() {
     let id_user = localStorage.getItem('id_Cliente');
     $.ajax({
         url: '/api/Favoritos/user',
-        type: 'GET',
-        data: { id_Cliente: id_user },
+        type:'GET',
+        data: {id_Cliente: id_user},
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
-        success: function (dataFavs) {
+        success: function(dataFavs) {
             //console.log(dataFavs);
             dataCCFavs = dataFavs;
-            paintCC(dataCCFavs);
+            paintCC();
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus + ': ' + errorThrown);
         }
     });
 }
 
 function cercaDeMi() {
-    if (btnCercaActive == 0) {
+    if(btnCercaActive == 0){
         btnCercaActive = 1;
         obtenerUbicacion();
-    } else {
+    }else{
         btnCercaActive = 0;
         getDatos();
     }
 }
 
 function favoritosBtn() {
-    if (btnFavActive == 0) {
+    if(btnFavActive == 0){
         btnFavActive = 1;
-    } else {
+    }else{
         btnFavActive = 0;
     }
     getDatos();
@@ -78,7 +79,7 @@ function obtenerUbicacion() {
         longitude = position.coords.longitude;
         //console.log("Mi ubicacion: " + latitude + " , " + longitude);
         //console.log("Mi ubicacion (precisa): " + (latitude + 0.0137693) + " , " + (longitude+ 0.0139309));
-        distancias = calcularDistancia(dataAllCC, [(latitude + 0.0137693), (longitude + 0.0139309)]);
+        distancias = calcularDistancia(dataAllCC, [(latitude + 0.0137693), (longitude+ 0.0139309)]);
         getDatos();
     }
 
@@ -101,12 +102,12 @@ function calcularDistancia(data, ubicacion) {
     let distancias = [];
     for (let i = 0; i < data.length; i++) {
         let coor = [];
-        if (data[i].coordenadas.includes(", ")) {
+        if (data[i].coordenadas.includes(", ")){
             coor = data[i].coordenadas.split(", ");
-        } else {
+        }else{
             coor = data[i].coordenadas.split(" ");
         }
-        distancias.push({ id: data[i].id, dist: getDistanceBetweenPoints(coor[0], coor[1], ubicacion[0], ubicacion[1]) });
+        distancias.push({id:data[i].id, dist:getDistanceBetweenPoints(coor[0], coor[1], ubicacion[0], ubicacion[1])});
     }
     distancias.sort((x, y) => x.dist - y.dist);
     return distancias;
@@ -298,115 +299,215 @@ function paramCode(des_lat, des_top, id, nombre, logo, distancia, tipo) {
     let parte3 = `
         </div>
     `;
-    if (tipo == "Cerca y Favorito") {
+    if(tipo == "Cerca y Favorito"){
         code +=
             parte1 +
             parteDist +
             parte2 +
             parteStarFav +
             parte3;
-    } else if (tipo == "Cerca") {
+    }else if(tipo == "Cerca"){
         code +=
             parte1 +
             parteDist +
             parte2 +
             parteStarNoFav +
             parte3;
-    } else if (tipo == "Favorito") {
+    }else if(tipo == "Favorito"){
         code +=
             parte1 +
             parte2 +
             parteStarFav +
             parte3;
-    } else if (tipo == "Sec_Favoritos") {
+    }else if(tipo == "Sec_Favoritos"){
         code +=
             parte1 +
             parte2 +
             parte3;
-    } else if (tipo == "Sec_Favoritos y Cerca") {
+    }else if(tipo == "Sec_Favoritos y Cerca"){
         code +=
             parte1 +
             parteDist +
             parte2 +
             parte3;
-    }
-    else {
+    }else{
         code +=
             parte1 +
             parte2 +
             parteStarNoFav +
             parte3;
     }
+    atributosPos.push([des_lat+"%",des_top+"%"]); //nuevo
     return code;
 }
-function paintCC(data) {
+function paintCC(){
     //console.log("Nuevo metodo");
-    //let data = dataAllCC;
+    let data = dataAllCC;
     let dataFavs = dataCCFavs;
-    let code = "";
+    let code= "";
     let des_lat = 5;
-    let des_top = 55;
+    let des_top= 0;
     let fila = 0;
     let conteo = 0;
-    let ids = [];
-    for(let i=0;i<data.length;i++){
-        if(conteo==4 && conteo!=0){
-            des_lat=5;
-            fila=1;
-        }else if(conteo==8 && conteo!=0){
-            des_lat=5;
-            fila=2;
-        }else if(conteo==12 && conteo!=0){
-            des_lat=5;
-            fila=3;
+    let ids =  [];
+    for (let i = 0; i < dataFavs.length; i++) {
+        ids.push(dataFavs[i].id_CC);
+    }
+
+    //Si esta seleccionada la opcion de "Favoritos"
+    if(btnFavActive == 1){
+        let sec = document.getElementById("sec_opc_tipo");
+        sec.style.width = "20%";
+        sec.style.left = "10%";
+        sec = document.getElementById("btn_fav");
+        sec.style.backgroundColor = "#3ebdbb";
+        //Si esta seleccionada la opcion de "Cerca de mi"
+        if(btnCercaActive == 1){
+            let sec = document.getElementById("sec_opc_loc");
+            sec.style.width = "20%";
+            sec.style.left = "40%";
+            sec = document.getElementById("btn_loc");
+            sec.style.backgroundColor = "#3ebdbb";
+            //for (let i = 0; i < ids.length; i++) {
+            for (let i = 0; i < distancias.length; i++) {
+                for (let j = 0; j < data.length; j++) {
+                    if (distancias[i].id == data[j].id) {
+                        if (conteo % 4 == 0 && conteo != 0) {
+                            des_lat = 5;
+                            fila += 1;
+                            des_top += 55;
+                        }
+                        if (ids.includes(data[j].id)) {
+                            code += paramCode(des_lat, des_top, data[j].id, data[j].nombre, data[j].logo, distancias[i].dist, "Sec_Favoritos y Cerca");
+                            conteo++;
+                            des_lat += 23;
+                        }
+                        /*conteo++;
+                        des_lat += 23;*/
+                    }
+                }
+            }
+            //}
         }
-        if(fila == 0){
-            code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-            conteo++;
-            des_lat += 23;
-        }else if(fila==1) {
-            code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top}%;">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-            conteo++;
-            des_lat += 23;
-        }
-        else if(fila==2) {
-            code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top+55}%;">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-            conteo++;
-            des_lat += 23;
-        }
-        else if(fila==3) {
-            code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%;top:${165}%;">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-            conteo++;
-            des_lat += 23;
+        //Si no esta seleccionada la opcion de "Cerca de mi"
+        else {
+            let sec = document.getElementById("sec_opc_loc");
+            sec.style.width = "10%";
+            sec.style.left = "45%";
+            sec = document.getElementById("btn_loc");
+            sec.style.backgroundColor = "#bcbcbc";
+            //for (let i = 0; i < ids.length; i++) {
+            for (let i = 0; i < data.length; i++) {
+                if (conteo % 4 == 0 && conteo != 0) {
+                    des_lat = 5;
+                    fila += 1;
+                    des_top += 55;
+                }
+                if (ids.includes(data[i].id)) {
+                    code += paramCode(des_lat, des_top, data[i].id, data[i].nombre, data[i].logo, 0, "Sec_Favoritos");
+                    conteo++;
+                    des_lat += 23;
+                }
+                /*conteo++;
+                des_lat += 23;*/
+            }
+            //}
         }
     }
+    //Si no esta seleccionada la opcion de "Favoritos"
+    else {
+        let sec = document.getElementById("sec_opc_tipo");
+        sec.style.width = "10%";
+        sec.style.left = "15%";
+        sec = document.getElementById("btn_fav");
+        sec.style.backgroundColor = "#bcbcbc";
+
+        //Si esta seleccionada la opcion de "Cerca de mi"
+        if (btnCercaActive == 1) {
+            let sec = document.getElementById("sec_opc_loc");
+            sec.style.width = "20%";
+            sec.style.left = "40%";
+            sec = document.getElementById("btn_loc");
+            sec.style.backgroundColor = "#3ebdbb";
+            //Recorrer distancias
+            for (let i = 0; i < distancias.length; i++) {
+                //Recorrer la data de centros comerciales
+                for (let j = 0; j < data.length; j++) {
+                    //Si el id en lista de distancias es igual al id en lista data (ordenar de mas cercano a mas lejano)
+                    if (distancias[i].id == data[j].id) {
+                        //Hacer salto de linea
+                        if (conteo % 4 == 0 && conteo != 0) {
+                            des_lat = 5;
+                            fila += 1;
+                            des_top += 55;
+                        }
+                        //CC cerca y favorito
+                        if (ids.includes(data[j].id)) {
+                            code += paramCode(des_lat, des_top, data[j].id, data[j].nombre, data[j].logo, distancias[i].dist, "Cerca y Favorito");
+                        }
+                        //CC cerca
+                        else {
+                            code += paramCode(des_lat, des_top, data[j].id, data[j].nombre, data[j].logo, distancias[i].dist, "Cerca");
+                        }
+                        conteo++;
+                        des_lat += 23;
+                    }
+                }
+            }
+        }
+        //Si no esta seleccionada la opcion de "Cerca de mi"
+        else {
+            let sec = document.getElementById("sec_opc_loc");
+            sec.style.width = "10%";
+            sec.style.left = "45%";
+            sec = document.getElementById("btn_loc");
+            sec.style.backgroundColor = "#bcbcbc";
+            //Recorrer la data de centros comerciales
+            for (let i = 0; i < data.length; i++) {
+                if (conteo % 4 == 0 && conteo != 0) {
+                    des_lat = 5;
+                    fila += 1;
+                    des_top += 55;
+                }
+                //CC favorito
+                if (ids.includes(data[i].id)) {
+                    code += paramCode(des_lat, des_top, data[i].id, data[i].nombre, data[i].logo, 0, "Favorito");
+                }
+                //CC
+                else {
+                    code += paramCode(des_lat, des_top, data[i].id, data[i].nombre, data[i].logo, 0, "CC");
+                }
+                conteo++;
+                des_lat += 23;
+            }
+        }
+    }
+    secciones = document.getElementsByClassName('sec_btn_cc'); //nuevo
+    nombresCC = document.getElementsByClassName('txt_btn_cc'); //nuevo
+    //Anexar el codigo en la seccion dada en HTML
     $("#grid").html(code);
 }
 
-function setId(id) {
-    window.localStorage.setItem('id', id);
+function busqueda(){ //nuevo
+    let input = document.getElementById('name').value;
+    input = input.toLowerCase();
+    let data = secciones;
+    let index = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (!nombresCC[i].innerHTML.toLowerCase().includes(input)) {
+            data[i].style.display = "none";
+        }
+        else {
+            //x[i].style.display="list-item";
+            data[i].style.display = "initial";
+            console.log(index);
+            data[i].style.left = atributosPos[index][0];
+            data[i].style.top = atributosPos[index][1];
+            index++;
+        }
+    }
+}
+
+function setId(id){
+    window.localStorage.setItem('id',id);
 }

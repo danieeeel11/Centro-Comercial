@@ -7,21 +7,34 @@
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+  />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
   <script src="../js/semantic.min.js"></script>
   <script src="../js/funcionesRegistro.js"></script>
   <link rel="stylesheet" href="../css/styleRegistro.css">
-  <title>Iniciar Sesion</title>
+  <title>Registrarse</title>
 </head>
 <body>
 <div class='sec_sup'>
-  <button class='btn salir' onclick="history.back()"></button>
+  <button class='btn salir' onclick="history.back()">
+  	<i class="fa-solid fa-xmark"></i>
+  </button>
 </div>
 <div class='sec_imagen'>
-  <div class='circulo'>
+    <div class='icono'>
+    	<i class="fa-solid fa-store"></i>  
+    </div>
+  <!--<div class='circulo'>
     <img class='logo' src='https://cdn.pixabay.com/photo/2020/02/10/14/21/shop-4836627_1280.png'></img>
-  </div>
+  </div>-->
+  
 </div>
 
 <div class='sec_btn'>
@@ -45,7 +58,10 @@
   <div class='espacio' style='top:67%;'>
     <input class='custom' style='top:40%;' type="password" id="password" name="password" placeholder='Contraseña' size="10">
   </div>
-  <a class='btn siguiente' onclick="registrar()" ></a>
+  <!--<a class='btn siguiente' onclick="registrar()" ></a>-->
+  <button class='btn siguiente' onclick="registrar()">
+    <i class="fa-solid fa-right-to-bracket"></i>
+  </button>
 </div>
 </body>
 </html>

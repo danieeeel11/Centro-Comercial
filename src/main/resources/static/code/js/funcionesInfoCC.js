@@ -77,7 +77,7 @@ function paintInfo(data){
             loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>`
     );
     code.push(
-        `<p class="txt_info" style="font-size:18px;"> ${data.horario} </p>`
+        `<p class="txt_info" style="font-size:12px;"> ${data.horario} </p>`
     );
 
     $("#insert1").html(code[0]);
@@ -85,7 +85,6 @@ function paintInfo(data){
     $("#insertImage2").html(htmlFotos[1]);
     $("#insertImage3").html(htmlFotos[2]);
     $("#insertImage4").html(htmlFotos[3]);
-    $("#insertImage5").html(htmlFotos[4]);
     $("#insert2").html(code[1]);
     $("#insert3").html(code[2]);
     $("#insert4").html(code[3]);

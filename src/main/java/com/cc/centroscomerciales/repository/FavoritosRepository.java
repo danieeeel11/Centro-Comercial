@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+
 @Repository
 public class FavoritosRepository {
     @Autowired
@@ -18,10 +19,6 @@ public class FavoritosRepository {
      */
     public List<Favoritos> getAll(){
         return (List<Favoritos>) favoritosCrudRepository.findAll();
-    }
-
-    public Optional<Favoritos> getFavorito(int id){
-        return favoritosCrudRepository.findById(id);
     }
 
     /**

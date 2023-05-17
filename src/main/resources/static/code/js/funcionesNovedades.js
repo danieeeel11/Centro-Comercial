@@ -25,7 +25,7 @@ function paintNovedad(r){
                 <div class="noticia">
                     <h2 class="titular">${r[i].titular}</h2>
                          <div class="container">
-                            <iframe src="${r[i].imagen}" width="100%" height="400" style="border-radius:20px"; allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                            <img src="${r[i].imagen}">
                         </div>
                     <div class="contenido">
                         <p class="cuerpo">${r[i].noticia}</p>

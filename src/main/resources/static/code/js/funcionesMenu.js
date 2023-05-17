@@ -4,7 +4,6 @@ $('document').ready(function (){
 function setCliente(){
     let idCliente = localStorage.getItem("name_Cliente");
     let code= "";
-    console.log(idCliente);
     if (idCliente == ""){
         code = `
             <a href="../../index.html" class='btn opc'>INICIO</a>

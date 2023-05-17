@@ -30,7 +30,7 @@ public class CentroComericalService{
     }
 
     public List<CentrosComerciales> saveAll(List<CentrosComerciales> cc){
-        return ccRepository.saveAll(cc);
+        return (List<CentrosComerciales>) ccRepository.saveAll(cc);
     }
 
     public CentrosComerciales update(CentrosComerciales cc){

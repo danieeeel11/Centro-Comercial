@@ -27,7 +27,8 @@ public class ClienteRepository {
         clientCrudRepository.delete(client);
     }
 
-    public Cliente getUser(String user, String password){
+    public Cliente
+    getUser(String user, String password){
         return clientCrudRepository.getUser(user, password);
     }
 }
