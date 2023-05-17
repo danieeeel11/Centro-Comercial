@@ -7,6 +7,9 @@ let dataCCFavs = [];
 let btnCercaActive = 0;
 let btnFavActive = 0;
 let distancias = []
+let secciones = []; //nuevo
+let nombresCC = []; //nuevo
+let atributosPos = []; //nuevo
 
 function getDatos() {
     getCC();
@@ -327,14 +330,14 @@ function paramCode(des_lat, des_top, id, nombre, logo, distancia, tipo) {
             parteDist +
             parte2 +
             parte3;
-    }
-    else{
+    }else{
         code +=
             parte1 +
             parte2 +
             parteStarNoFav +
             parte3;
     }
+    atributosPos.push([des_lat+"%",des_top+"%"]); //nuevo
     return code;
 }
 function paintCC(){
@@ -479,8 +482,30 @@ function paintCC(){
             }
         }
     }
+    secciones = document.getElementsByClassName('sec_btn_cc'); //nuevo
+    nombresCC = document.getElementsByClassName('txt_btn_cc'); //nuevo
     //Anexar el codigo en la seccion dada en HTML
     $("#grid").html(code);
+}
+
+function busqueda(){ //nuevo
+    let input = document.getElementById('name').value;
+    input = input.toLowerCase();
+    let data = secciones;
+    let index = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (!nombresCC[i].innerHTML.toLowerCase().includes(input)) {
+            data[i].style.display = "none";
+        }
+        else {
+            //x[i].style.display="list-item";
+            data[i].style.display = "initial";
+            console.log(index);
+            data[i].style.left = atributosPos[index][0];
+            data[i].style.top = atributosPos[index][1];
+            index++;
+        }
+    }
 }
 
 function setId(id){

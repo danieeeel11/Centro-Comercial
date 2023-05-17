@@ -7,7 +7,7 @@
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
-  <link rel="stylesheet" href="../css/styleListaCC_noLog.css">
+  <link rel="stylesheet" href="../css/styleListaCC.css">
   <title>Centros Comerciales</title>
 </head>
 
@@ -23,11 +23,11 @@
   </div>
 </div>
 <div class='sec_opc'>
-  <div class='sec_opc_loc'>
-    <a class='btn loc'>Cerca de mi</a>
+  <div class='sec_opc_tipo' id="sec_opc_loc">
+    <a class='btn fav' id="btn_loc" onclick="cercaDeMi()">Cerca de mi</a>
   </div>
   <div class='sec_opc_bus'>
-    <input class='custom' type="text" id="name" name="name" size="10">
+    <input class='custom' onkeyup="busqueda()" type="text" id="name" name="name" size="10">
   </div>
 </div>
 <div class='sec_cc' id='grid'>
