@@ -109,7 +109,11 @@ function calcularDistancia(data, ubicacion) {
         }
         distancias.push({id:data[i].id, dist:getDistanceBetweenPoints(coor[0], coor[1], ubicacion[0], ubicacion[1])});
     }
+    //console.log("---");
+    //console.log(distancias);
     distancias.sort((x, y) => x.dist - y.dist);
+    //console.log(distancias);
+    //console.log("---");
     return distancias;
 }
 function getDistanceBetweenPoints(lat1, lon1, lat2, lon2) {
@@ -129,150 +133,6 @@ function getDistanceBetweenPoints(lat1, lon1, lat2, lon2) {
 function degToRad(deg) {
     return deg * (Math.PI / 180);
 }
-
-/*function paintCC2(){
-    let data = dataAllCC;
-    let dataFavs = dataCCFavs;
-    let code= "";
-    let des_lat = 5;
-    let des_top= 55;
-    let fila = 0;
-    let conteo = 0;
-    let ids =  [];
-    for (let i = 0; i < dataFavs.length; i++) {
-        ids.push(dataFavs[i].id_CC);
-    }
-    if(btnCercaActive == 1){
-        let sec = document.getElementById("sec_opc_loc");
-        sec.style.width = "20%";
-        sec.style.left = "40%";
-        sec = document.getElementById("btn_loc");
-        sec.style.backgroundColor = "#3ebdbb";
-
-        for (let i = 0; i < distancias.length; i++) {
-            for(let j=0;j<data.length;j++){
-                if(distancias[i].id == data[j].id){
-                    if(conteo%4==0 && conteo!=0){
-                        des_lat=5;
-                        fila=1;
-                    }
-                    if(fila == 0){
-                        if(ids.includes(data[j].id)){
-                            code += `
-                                <div class="sec_btn_cc" style="left:${des_lat}%">
-                                    <a href="../lista/infoCC.html" onclick="setId(${data[j].id})" class="btn cc" style="background-image:url('${data[j].logo}')">
-                                        <div class='sec_distancia_cc'>
-                                            <div class="sec_logo_ubi"></div>
-                                            <p class='txt_distancia_cc'> A ${distancias[i].dist} km </p>
-                                        </div>
-                                        <p class='txt_btn_cc'> ${data[j].nombre} </p>
-                                    </a>
-                                    <button id="${data[j].id}" class="btn star_cc" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')" onclick="addFav('${data[j].id}')"></button>
-                                </div>`;
-                        }else{
-                            code += `
-                                <div class="sec_btn_cc" style="left:${des_lat}%">
-                                    <a href="../lista/infoCC.html" onclick="setId(${data[j].id})" class="btn cc" style="background-image:url('${data[j].logo}')">
-                                        <div class='sec_distancia_cc'>
-                                            <div class="sec_logo_ubi"></div>
-                                            <p class='txt_distancia_cc'> A ${distancias[i].dist} km </p>
-                                        </div>
-                                        <p class='txt_btn_cc'> ${data[j].nombre} </p>
-                                    </a>
-                                    <button id="${data[j].id}" class="btn star_cc" onclick="addFav('${data[j].id}')"></button>
-                                </div>`;
-                        }
-                        conteo++;
-                        des_lat += 23;
-                    }else if(fila == 1) {
-                        if(ids.includes(data[j].id)){
-                            code += `
-                                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top}%;">
-                                    <a href="../lista/infoCC.html" onclick="setId(${data[j].id})" class="btn cc" style="background-image:url('${data[j].logo}')">
-                                        <div class='sec_distancia_cc'>
-                                            <div class="sec_logo_ubi"></div>
-                                            <p class='txt_distancia_cc'> A ${distancias[i].dist} km </p>
-                                        </div>
-                                        <p class='txt_btn_cc'> ${data[j].nombre} </p>
-                                    </a>
-                                    <button id="${data[j].id}" class="btn star_cc" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')"></button>
-                                </div>`;
-                        }else{
-                            code += `
-                                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top}%;">
-                                    <a href="../lista/infoCC.html" onclick="setId(${data[j].id})" class="btn cc" style="background-image:url('${data[j].logo}')">
-                                        <div class='sec_distancia_cc'>
-                                            <div class="sec_logo_ubi"></div>
-                                            <p class='txt_distancia_cc'> A ${distancias[i].dist} km </p>
-                                        </div>
-                                        <p class='txt_btn_cc'> ${data[j].nombre} </p>
-                                    </a>
-                                    <button id="${data[j].id}" class="btn star_cc" onclick="addFav('${data[j].id}')"></button>
-                                </div>`;
-                        }
-                        conteo++;
-                        des_lat += 23;
-                    }
-                }
-            }
-        }
-    }else{
-        let sec = document.getElementById("sec_opc_loc");
-        sec.style.width = "10%";
-        sec.style.left = "45%";
-        sec = document.getElementById("btn_loc");
-        sec.style.backgroundColor = "#bcbcbc";
-        for(let i=0;i<data.length;i++){
-            if(conteo%4==0 && conteo!=0){
-                des_lat=5;
-                fila=1;
-            }
-            if(fila == 0){
-                if(ids.includes(data[i].id)){
-                    code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-                }else{
-                    code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-                }
-                conteo++;
-                des_lat += 23;
-            }else if(fila == 1) {
-                if(ids.includes(data[i].id)){
-                    code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top}%;">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')"></button>
-                </div>`;
-                }else{
-                    code += `
-                <div class="sec_btn_cc" style="left:${des_lat}%;top:${des_top}%;">
-                    <a href="../lista/infoCC.html" onclick="setId(${data[i].id})" class="btn cc" style="background-image:url('${data[i].logo}')">
-                        <p class='txt_btn_cc'> ${data[i].nombre} </p>
-                    </a>
-                    <button id="${data[i].id}" class="btn star_cc" onclick="addFav('${data[i].id}')"></button>
-                </div>`;
-                }
-                conteo++;
-                des_lat += 23;
-            }
-        }
-    }
-    $("#grid").html(code);
-}
-*/
 
 function paramCode(des_lat, des_top, id, nombre, logo, distancia, tipo) {
     let code = ``;
@@ -353,6 +213,7 @@ function paintCC(){
     for (let i = 0; i < dataFavs.length; i++) {
         ids.push(dataFavs[i].id_CC);
     }
+    console.log(ids);
 
     //Si esta seleccionada la opcion de "Favoritos"
     if(btnFavActive == 1){
@@ -372,12 +233,12 @@ function paintCC(){
             for (let i = 0; i < distancias.length; i++) {
                 for (let j = 0; j < data.length; j++) {
                     if (distancias[i].id == data[j].id) {
-                        if (conteo % 4 == 0 && conteo != 0) {
-                            des_lat = 5;
-                            fila += 1;
-                            des_top += 55;
-                        }
                         if (ids.includes(data[j].id)) {
+                            if (conteo % 4 == 0 && conteo != 0) {
+                                des_lat = 5;
+                                fila += 1;
+                                des_top += 55;
+                            }
                             code += paramCode(des_lat, des_top, data[j].id, data[j].nombre, data[j].logo, distancias[i].dist, "Sec_Favoritos y Cerca");
                             conteo++;
                             des_lat += 23;
@@ -398,12 +259,12 @@ function paintCC(){
             sec.style.backgroundColor = "#bcbcbc";
             //for (let i = 0; i < ids.length; i++) {
             for (let i = 0; i < data.length; i++) {
-                if (conteo % 4 == 0 && conteo != 0) {
-                    des_lat = 5;
-                    fila += 1;
-                    des_top += 55;
-                }
                 if (ids.includes(data[i].id)) {
+                    if (conteo % 4 == 0 && conteo != 0) {
+                        des_lat = 5;
+                        fila += 1;
+                        des_top += 55;
+                    }
                     code += paramCode(des_lat, des_top, data[i].id, data[i].nombre, data[i].logo, 0, "Sec_Favoritos");
                     conteo++;
                     des_lat += 23;

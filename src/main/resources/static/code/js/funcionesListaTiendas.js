@@ -118,12 +118,12 @@ function paintCC(){
         sec = document.getElementById("btn_fav");
         sec.style.backgroundColor = "#3ebdbb";
         for (let i = 0; i < data.length; i++) {
-            if (conteo % 4 == 0 && conteo != 0) {
-                des_lat = 5;
-                fila += 1;
-                des_top += 55;
-            }
             if (ids.includes(data[i].id)) {
+                if (conteo % 4 == 0 && conteo != 0) {
+                    des_lat = 5;
+                    fila += 1;
+                    des_top += 55;
+                }
                 code += paramCode(des_lat, des_top, data[i].id, data[i].nombre, data[i].logo, "Sec_Favoritos");
                 conteo++;
                 des_lat += 23;
