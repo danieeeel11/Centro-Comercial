@@ -14,27 +14,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="../js/semantic.min.js"></script>
 <script src="../js/funcionesListaTiendas.js"></script>
+
+<script src="../js/funcionesMenu.js"></script>
+
 <body>
+<div class="wrapper">
+    <div class="sidebar" id="sidebar">
+    </div>
 
-<div class='sec_sup'>
-    <a class='btn menu' href="../principal/Menu.html"></a>
-    <div class='sec_tit'>
-        <h1 class='txt_user1'>TIENDAS</h1>
-    </div>
-</div>
+    <div id="content">
+        <div class='sec_sup'>
+            <a class='btn menu' onclick="menu_active()"></a>
+            <!--<a class='btn menu' href="../principal/Menu.html"></a>-->
+            <div class='sec_tit'>
+                <h1 class='txt_user1'>TIENDAS</h1>
+            </div>
+        </div>
 
-<div class='sec_opc'>
-    <div class='sec_opc_tipo' id="sec_opc_tipo">
-        <a class='btn fav' id="btn_fav" onclick="favoritosBtn()">Favoritos</a>
+        <div class='sec_opc'>
+            <div class='sec_opc_tipo' id="sec_opc_tipo">
+                <a class='btn fav' id="btn_fav" onclick="favoritosBtn()">Favoritos</a>
+            </div>
+            <div class='sec_opc_loc' id="sec_opc_loc">
+                <a class='btn loc' id="btn_loc">Categorias</a>
+            </div>
+            <div class='sec_opc_bus'>
+                <input class='custom' type="text" id="name" name="name" size="10">
+            </div>
+        </div>
+        <div class= 'sec_baja' id="grid">
+        </div>
     </div>
-    <div class='sec_opc_loc' id="sec_opc_loc">
-        <a class='btn loc' id="btn_loc">Categorias</a>
-    </div>
-    <div class='sec_opc_bus'>
-        <input class='custom' type="text" id="name" name="name" size="10">
-    </div>
-</div>
-<div class= 'sec_baja' id="grid">
 </div>
 
 <script src="../js/funcionesStarTienda.js"></script>

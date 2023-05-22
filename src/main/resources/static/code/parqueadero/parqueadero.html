@@ -14,30 +14,40 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="../js/semantic.min.js"></script>
 <script src="../js/funcionesInfoCC.js"></script>
+
+<script src="../js/funcionesMenu.js"></script>
+
 <body>
-
-<div class="sec_sup">
-  <button class="btn back" onclick="history.back()"></button>
-  <div class='sec_tit'>
-    <h1 class='txt_user'>Pago Parqueadero</h1>
-  </div>
-  <div class='sec_placa'>
-    <p class="txt_info4">Ingrese su placa </p>
-    <a class="btn mediop" href="mediopago.html">Medio de pago</a>
+<div class="wrapper">
+  <div class="sidebar" id="sidebar">
   </div>
 
-</div>
+  <div id="content">
+    <div class="sec_sup">
+      <!--<button class="btn back" onclick="history.back()"></button>-->
+      <a class='btn menu' onclick="menu_active()"></a>
+      <div class='sec_tit'>
+        <h1 class='txt_user'>Pago Parqueadero</h1>
+      </div>
+      <div class='sec_placa'>
+        <p class="txt_info4">Ingrese su placa </p>
+        <a class="btn mediop" href="mediopago.html">Medio de pago</a>
+      </div>
 
-
-<div class="sec_info">
-  <div class="sec_info_mid">
-    <div class="sec_mid1">
-      <p class="txt_info1">Usted está ubicado en el sótano1, parqueadero D9 </p>
-      <p class="txt_info2">Tiempo: 1h 20 min </p>
-      <p class="txt_info3">Total a pagar: $10.000</p>
     </div>
-    <div class="sec_mid2">
-      <div class="sec_maps" id="insert3">
+
+
+    <div class="sec_info">
+      <div class="sec_info_mid">
+        <div class="sec_mid1">
+          <p class="txt_info1">Usted está ubicado en el sótano1, parqueadero D9 </p>
+          <p class="txt_info2">Tiempo: 1h 20 min </p>
+          <p class="txt_info3">Total a pagar: $10.000</p>
+        </div>
+        <div class="sec_mid2">
+          <div class="sec_maps" id="insert3">
+          </div>
+        </div>
       </div>
     </div>
   </div>
