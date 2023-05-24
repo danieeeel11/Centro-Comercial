@@ -1,6 +1,8 @@
 $('document').ready(function (){
     getTiendas();
 });
+let dataAllTiendas = [];
+let btnCategoriaActive = 0;
 let secciones = [];
 let nombresTiendas = [];
 let atributosPos = []
@@ -13,6 +15,7 @@ function getTiendas(){
         success: function(data) {
             // Aquí procesamos los datos obtenidos
             console.log(data);
+            dataAllTiendas = data;
             paintCC(data);
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -73,4 +76,67 @@ function busqueda(){ //nuevo
 
 function setId(id){
     window.localStorage.setItem('id',id);
+}
+//let background_color_init = "";
+function ventana_categorias(){
+    //para que se bloquee el contenido
+    let sec_contenido = document.getElementById("content");
+    sec_contenido.style.pointerEvents = "none";
+    background_color_init = document.body.style.backgroundColor + "";
+    document.body.style.backgroundColor = "#808080";
+    sec_contenido.style.filter = "opacity(5%)";
+    //para que aparezca la ventana de categorias
+    let sec_categorias = document.getElementById("sec_categorias");
+    sec_categorias.style.display = "block";
+
+    let categorias = [];
+    for (let i = 0; i < dataAllTiendas.length; i++) {
+        if(!categorias.includes(dataAllTiendas[i].tipo_productos)){
+            categorias.push(dataAllTiendas[i].tipo_productos);
+        }
+    }
+
+    let code = "";
+    for (let i = 0; i < categorias.length; i++) {
+        let tipo = categorias[i];
+        code +=  `
+            <div class = "sec_btn_categoria">
+                <a onclick="filtro_categoria('${tipo}')" class = "btn_categoria">
+                    <p class = "txt_btn_categoria">${categorias[i]}</p>
+                </a>
+            </div>
+        `;
+    }
+    $("#sec_btn_grid").html(code);
+}
+function ventana_categorias_close(){
+    //Es para que el contenido de la pantalla vuelva a ser accesible
+    let sec_contenido = document.getElementById("content");
+    sec_contenido.style.pointerEvents = "initial";
+    document.body.style.backgroundColor = background_color_init;
+    sec_contenido.style.filter = "opacity(100%)";
+    //para que desaparezca la ventana categorias
+    let sec_categorias = document.getElementById("sec_categorias");
+    sec_categorias.style.display = "none";
+}
+
+//---------------------------------------------------------------------------------------------------------
+
+function filtro_categoria(tipo) {
+    let data = secciones;
+    let index = 0;
+    console.log("holaaa jiji");
+    console.log(data);
+    console.log(tipo);
+    //for (let i = 0; i < data.length; i++) {
+        /*if (!nombresTiendas[i].innerHTML.toLowerCase().includes(input)) {
+            data[i].style.display = "none";
+        } else {
+            data[i].style.display = "initial";
+            console.log(index);
+            data[i].style.left = atributosPos[index][0];
+            data[i].style.top = atributosPos[index][1];
+            index++;
+        }*/
+    //}
 }

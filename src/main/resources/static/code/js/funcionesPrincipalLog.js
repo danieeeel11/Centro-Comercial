@@ -134,6 +134,7 @@ function ventana_notificaciones() {
         for (let i = 0; i < dataNovedad.length; i++) {
             for (let j = 0; j < dataCCFavs.length; j++) {
                 if (dataNovedad[i].id_cc == dataCCFavs[j].id_CC) {
+
                     code += `
                     <div class="sec_noti_indi">
                         <div class="sec_tit_novedad">
@@ -164,16 +165,18 @@ function ventana_notificaciones() {
 }
 
 function calcular_tiempo(publicacion) {
+
     //1000*60*60*24 ->milisegundos->segundos->minutos->horas->dias
     let tiempoTranscurrido = Date.now();
     let hoy = new Date(tiempoTranscurrido);
 
     var fechaInicio = new Date(publicacion).getTime();
     var fechaFin    = hoy.getTime();
-
+    console.log(fechaInicio);
+    console.log(fechaFin);
     var lapso_aux = fechaFin - fechaInicio;
     var lapso = Math.round(lapso_aux/(1000*60*60*24)); //dias
-
+    console.log(lapso);
     //Si es el mismo dia
     if(lapso == 0){
         lapso = Math.round(lapso_aux/(1000*60*60)); //horas

@@ -8,6 +8,7 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
   <link rel="stylesheet" href="../css/styleListaTiendas.css">
+  <link rel="stylesheet" href="../css/stylePopUpCategoria.css">
   <link rel="stylesheet" href="../css/styleMenu.css">
   <link rel="stylesheet" href="../css/styleGeneral.css">
 
@@ -25,6 +26,16 @@
   <div class="sidebar" id="sidebar">
   </div>
 
+  <div class = "sec_categorias" id="sec_categorias">
+    <div class = "sec_tit_categorias">
+      <p class = "titulo"></p>
+      <a onclick="ventana_categorias_close()" class = "cerrar_menu" style="top: -5px;"></a>
+    </div>
+    <!--git de botones-->
+    <div class="sec_btn_grid" id="sec_btn_grid">
+    </div>
+  </div>
+
   <div id="content">
     <div class='sec_sup'>
       <a class='btn menu' onclick="menu_active()"></a>
@@ -35,7 +46,7 @@
     </div>
     <div class='sec_opc'>
       <div class='sec_opc_tipo'>
-        <a class='btn fav'>Categorias</a>
+        <a onclick="ventana_categorias()" class='btn fav'>Categorias</a>
       </div>
       <div class='sec_opc_bus'>
         <input class='custom' onkeyup="busqueda()" type="text" id="name" name="name" size="10">
