@@ -6,6 +6,9 @@ let dataAllTiendas = [];
 let dataTiendasFavs = [];
 let btnCategoriaActive = 0;
 let btnFavActive = 0;
+let secciones = [];
+let nombresTiendas = [];
+let atributosPos = [];
 
 function getDatos() {
     getTiendas();
@@ -94,6 +97,7 @@ function paramCode(des_lat, des_top, id, nombre, logo, tipo) {
             parteStarNoFav +
             parte3;
     }
+    atributosPos.push([des_lat + '%', des_top + '%']);
     return code;
 }
 function paintCC(){
@@ -156,8 +160,30 @@ function paintCC(){
             des_lat += 23;
         }
     }
+    secciones = document.getElementsByClassName('sec_btn_cc');
+    nombresTiendas = document.getElementsByClassName('txt_btn_cc');
     //Anexar el codigo en la seccion dada en HTML
     $("#grid").html(code);
+}
+
+function busqueda(){ //nuevo
+    let input = document.getElementById('name').value;
+    input = input.toLowerCase();
+    let data = secciones;
+    let index = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (!nombresTiendas[i].innerHTML.toLowerCase().includes(input)) {
+            data[i].style.display = "none";
+        }
+        else {
+            //x[i].style.display="list-item";
+            data[i].style.display = "initial";
+            console.log(index);
+            data[i].style.left = atributosPos[index][0];
+            data[i].style.top = atributosPos[index][1];
+            index++;
+        }
+    }
 }
 
 function setId(id) {
