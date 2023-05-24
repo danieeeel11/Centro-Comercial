@@ -1,7 +1,9 @@
 $('document').ready(function (){
     getTiendas();
 });
-
+let secciones = [];
+let nombresTiendas = [];
+let atributosPos = [];
 function getTiendas(){
     $.ajax({
         url: '/api/Tiendas/all',
@@ -18,7 +20,6 @@ function getTiendas(){
             console.log(textStatus + ': ' + errorThrown);
         }
     });
-
 }
 
 function paintCC(data){
@@ -40,12 +41,33 @@ function paintCC(data){
                 </a>
             </div>
         `;
+        atributosPos.push([des_lat + '%', des_top + '%']);
         conteo++;
         des_lat += 23;
     }
+    secciones = document.getElementsByClassName('sec_btn_cc');
+    nombresTiendas = document.getElementsByClassName('txt_btn_cc');
     $("#grid").html(code);
 }
-
+function busqueda(){ //nuevo
+    let input = document.getElementById('name').value;
+    input = input.toLowerCase();
+    let data = secciones;
+    let index = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (!nombresTiendas[i].innerHTML.toLowerCase().includes(input)) {
+            data[i].style.display = "none";
+        }
+        else {
+            //x[i].style.display="list-item";
+            data[i].style.display = "initial";
+            console.log(index);
+            data[i].style.left = atributosPos[index][0];
+            data[i].style.top = atributosPos[index][1];
+            index++;
+        }
+    }
+}
 function setId(id){
     window.localStorage.setItem('id',id);
 }
