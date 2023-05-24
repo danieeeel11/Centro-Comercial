@@ -1,0 +1,17 @@
+body {
+    margin: 20px;
+    background-color: #ffffff;
+    /*fondo modo oscuro -> #444444*/
+    /*e0d8d8 ffffff 4d1717*/
+    /*------Fuente de texto de apple-----*/
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/*-------------Quitar subrayado y color a texto en botones------------*/
+a:link, a:visited,  a:hover, a:active
+{
+    color: #000000;
+    text-decoration: none;
+}
+/*a {text-decoration: none;}*/
+/*--------------------------------------------------------------------*/

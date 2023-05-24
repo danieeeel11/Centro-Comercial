@@ -2,7 +2,18 @@
 <html lang="en">
 <head>
   <!-- Required meta tags -->
-  <link rel="stylesheet" href="../css/stylePrincipal.css">
+
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="../css/stylePrincipal.css">
+    <link rel="stylesheet" href="../css/styleMenu.css">
+    <link rel="stylesheet" href="../css/stylePopUpPrincipal.css">
+    <link rel="stylesheet" href="../css/styleGeneral.css">
+
   <script src="../js/funcionesPrincipal.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -42,7 +53,7 @@
                     <p class="txt_btn_perfil">Configuracion</p>
                 </a>
             </div>
-            <div class="sec_btn_perfil">
+            <div class="sec_btn_perfil" style="border-bottom-width: 0px; border-bottom-color: transparent;">
                 <a onclick="removeCliente()" href="../../index.html" class="btn_perfil">
                     <p class="txt_btn_perfil">Cerrar Sesion</p>
                 </a>
@@ -54,29 +65,14 @@
 
         <!--Seccion superior-->
         <div class='sec_sup'>
+            <!--Boton menu-->
             <a class='btn menu' onclick="menu_active()"></a>
-
             <!--Boton perfil-->
-          <button class='btn perfil' onclick="ventana_perfil()"></button>
-            <!--Ventana emergente perfil-->
-          <!--<div id="miVentana" class="modal">
-            <div class="modal-contenido">
-              <span class="cerrar" onclick="ocultarVentana()">&times;</span>
-              <div style="text-align: center;">
-                <div class="botones">
-                  <a class='cuenta-btn' href="../cuenta/cuenta.html">Cuenta</a>
-                  <a class='config-btn' href="../cuenta/configuracion.html">Configuracion</a>
-                  <a onclick="removeCliente()" class='config-btn' href="../../index.html">Cerrar Sesion</a>
-                </div>
-              </div>
-            </div>
-          </div>-->
-
-
+            <button class='btn perfil' onclick="ventana_perfil()"></button>
             <!--Boton notificaciones-->
-            <button class="btn campana" onclick="ventana_notificaciones()" id="campana"></button>
-              <!--Bienvenida usuario-->
-          <p class='txt_user' id="saludo"> </p>
+            <button class="btn campana" id="btn_campana" onclick="ventana_notificaciones()"></button>
+            <!--Bienvenida usuario-->
+            <p class='txt_user' id="saludo"></p>
         </div>
 
 
@@ -142,11 +138,11 @@
         <!--</div>-->
 
         <div class='sec_bot'>
-          <a href="../parqueadero/parqueadero.html" class='btn parq'>
+          <a href="../parqueadero/parqueadero.html" class='btn parq' id="btn_parq">
             <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
             <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
           </a>
-          <a href="../lista/ListaCC.html" class='btn cc'>
+          <a href="../lista/ListaCC.html" class='btn cc' id="btn_cc">
             <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
             <img class='img_' style='' src='https://cdn1.iconfinder.com/data/icons/shopping-online-37/64/shop-store-online-shopping-shopping_mall-512.png'></img>
           </a>

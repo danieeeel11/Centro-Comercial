@@ -85,7 +85,9 @@ function paintNovedad(){
             sec.style.width = "20%";
             sec.style.left = "10%";
             sec = document.getElementById("btn_fav");
-            sec.style.backgroundColor = "#3ebdbb";
+            sec.style.backgroundColor = "#ccbd13";
+            //sec.onmouseover = function () {sec.style.backgroundColor = "#1a4949";};
+            //sec.onmouseout = function () {sec.style.backgroundColor = "#3ebdbb";};
             for (let j = 0; j < dataCCFavs.length; j++) {
                 if(r[i].id_cc == dataCCFavs[j].id_CC){
                     d += `
@@ -93,8 +95,8 @@ function paintNovedad(){
                             <div class="contenido">
                                 <h2>${r[i].titular}</h2>
                                 <p class="name_cc">${searchIdCC(r[i].id_cc)}</p>
-                                <p>${r[i].noticia}</p>
-                                <p>${r[i].tiempo_pub}</p>
+                                <p class="descripcion_noti">${r[i].noticia}</p>
+                                <p>${calcular_tiempo(r[i].tiempo_pub)}</p>
                             </div>
                             <!--<div class="container">-->
                                 <img class="container" src="${r[i].imagen}">
@@ -116,8 +118,8 @@ function paintNovedad(){
                     <div class="contenido">
                         <h2>${r[i].titular}</h2>
                         <p class="name_cc">${searchIdCC(r[i].id_cc)}</p>
-                        <p>${r[i].noticia}</p>
-                        <p>${r[i].tiempo_pub}</p>
+                        <p class="descripcion_noti">${r[i].noticia}</p>
+                        <p class="fecha_publi">${calcular_tiempo(r[i].tiempo_pub)}</p>
                     </div>
                     <!--<div class="container">-->
                         <img class="container" src="${r[i].imagen}">
@@ -132,6 +134,30 @@ function paintNovedad(){
     nombresCC = document.getElementsByClassName('name_cc'); //nuevo
     console.log(nombresCC);
     $("#grid").html(d);
+}
+
+function calcular_tiempo(publicacion) {
+    //1000*60*60*24 ->milisegundos->segundos->minutos->horas->dias
+    let tiempoTranscurrido = Date.now();
+    let hoy = new Date(tiempoTranscurrido);
+
+    var fechaInicio = new Date(publicacion).getTime();
+    var fechaFin    = hoy.getTime();
+
+    var lapso_aux = fechaFin - fechaInicio;
+    var lapso = Math.round(lapso_aux/(1000*60*60*24)); //dias
+
+    //Si es el mismo dia
+    if(lapso == 0){
+        lapso = Math.round(lapso_aux/(1000*60*60)); //horas
+        //Si es la misma hora
+        if(lapso == 0){
+            lapso = Math.round(lapso_aux/(1000*60)); //minutos
+            return "Hace " + lapso + " minutos";
+        }
+        return "Hace " + lapso + " horas";
+    }
+    return "Hace " + lapso + " dias";
 }
 
 function searchIdCC(id) {

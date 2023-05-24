@@ -100,13 +100,13 @@ function getCliente(){
     }
 
     if (conteo_noti>0){
-        let num_noti = "";
         code = `
             <div class="circulo_noti">
                 <p class="num_noti">${conteo_noti}</p>
             </div>
         `;
-        $("#campana").html(code);
+        console.log(conteo_noti);
+        $("#btn_campana").html(code);
     }
 }
 
@@ -115,11 +115,16 @@ function removeCliente() {
     window.localStorage.setItem('id_Cliente',null);
 }
 
+//let background_color_init = "";
+
 function ventana_notificaciones() {
     let sec_contenido = document.getElementById('content');
     //sec_contenido.style.display = "block";
     sec_contenido.style.pointerEvents = "none";
-    sec_contenido.style.filter = "blur(4px)";
+    //sec_contenido.style.filter = "blur(4px)";
+    background_color_init = document.body.style.backgroundColor + "";
+    document.body.style.backgroundColor = "#808080";
+    sec_contenido.style.filter = "opacity(5%)";
 
     let sec_notificaciones = document.getElementById("sec_noti");
     sec_notificaciones.style.display = "block";
@@ -136,7 +141,7 @@ function ventana_notificaciones() {
                         </div>
                         <div class="sec_fecha_novedad">
                             <p class="cc_novedad">${searchIdCC(dataNovedad[i].id_cc)}</p>
-                            <p class="fecha_novedad">${dataNovedad[i].tiempo_pub}</p>
+                            <p class="fecha_novedad">${calcular_tiempo(dataNovedad[i].tiempo_pub)}</p>
                         </div>
                     </div>
                 `;
@@ -158,6 +163,30 @@ function ventana_notificaciones() {
     }
 }
 
+function calcular_tiempo(publicacion) {
+    //1000*60*60*24 ->milisegundos->segundos->minutos->horas->dias
+    let tiempoTranscurrido = Date.now();
+    let hoy = new Date(tiempoTranscurrido);
+
+    var fechaInicio = new Date(publicacion).getTime();
+    var fechaFin    = hoy.getTime();
+
+    var lapso_aux = fechaFin - fechaInicio;
+    var lapso = Math.round(lapso_aux/(1000*60*60*24)); //dias
+
+    //Si es el mismo dia
+    if(lapso == 0){
+        lapso = Math.round(lapso_aux/(1000*60*60)); //horas
+        //Si es la misma hora
+        if(lapso == 0){
+            lapso = Math.round(lapso_aux/(1000*60)); //minutos
+            return "Hace " + lapso + " minutos";
+        }
+        return "Hace " + lapso + " horas";
+    }
+    return "Hace " + lapso + " dias";
+}
+
 function ventana_notificaciones_close(){
     let sec_notificaciones = document.getElementById("sec_noti");
     sec_notificaciones.style.display = "none";
@@ -165,7 +194,11 @@ function ventana_notificaciones_close(){
     let sec_contenido = document.getElementById('content');
     //sec_contenido.style.display = "block";
     sec_contenido.style.pointerEvents = "initial";
-    sec_contenido.style.filter = "blur(0px)";
+    //sec_contenido.style.filter = "blur(0px)";
+
+    //document.body.style.backgroundColor = "transparent";
+    document.body.style.backgroundColor = background_color_init;
+    sec_contenido.style.filter = "opacity(100%)";
 }
 
 function searchIdCC(id) {
@@ -182,7 +215,10 @@ function ventana_perfil() {
     let sec_contenido = document.getElementById('content');
     //sec_contenido.style.display = "block";
     sec_contenido.style.pointerEvents = "none";
-    sec_contenido.style.filter = "blur(4px)";
+    //sec_contenido.style.filter = "blur(4px)";
+    background_color_init = document.body.style.backgroundColor + "";
+    document.body.style.backgroundColor = "#808080";
+    sec_contenido.style.filter = "opacity(5%)";
 
     let sec_perfil = document.getElementById("sec_perfil");
     sec_perfil.style.display = "block";
@@ -196,7 +232,11 @@ function ventana_perfil() {
 function ventana_perfil_close() {
     let sec_contenido = document.getElementById('content');
     sec_contenido.style.pointerEvents = "initial";
-    sec_contenido.style.filter = "blur(0px)";
+    //sec_contenido.style.filter = "blur(0px)";
+
+    //document.body.style.backgroundColor = "transparent";
+    document.body.style.backgroundColor = background_color_init;
+    sec_contenido.style.filter = "opacity(100%)";
 
     let sec_perfil = document.getElementById("sec_perfil");
     sec_perfil.style.display = "none";

@@ -116,7 +116,7 @@ function paintCC(){
         sec.style.width = "20%";
         sec.style.left = "10%";
         sec = document.getElementById("btn_fav");
-        sec.style.backgroundColor = "#3ebdbb";
+        sec.style.backgroundColor = "#ccbd13";
         for (let i = 0; i < data.length; i++) {
             if (ids.includes(data[i].id)) {
                 if (conteo % 4 == 0 && conteo != 0) {
@@ -136,7 +136,7 @@ function paintCC(){
         sec.style.width = "10%";
         sec.style.left = "15%";
         sec = document.getElementById("btn_fav");
-        sec.style.backgroundColor = "#bcbcbc";
+        sec.style.backgroundColor = "#ffffff";
         //Recorrer la data de centros comerciales
         for (let i = 0; i < data.length; i++) {
             if (conteo % 4 == 0 && conteo != 0) {

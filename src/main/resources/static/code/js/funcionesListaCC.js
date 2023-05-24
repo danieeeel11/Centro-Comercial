@@ -221,14 +221,14 @@ function paintCC(){
         sec.style.width = "20%";
         sec.style.left = "10%";
         sec = document.getElementById("btn_fav");
-        sec.style.backgroundColor = "#3ebdbb";
+        sec.style.backgroundColor = "#ccbd13";
         //Si esta seleccionada la opcion de "Cerca de mi"
         if(btnCercaActive == 1){
             let sec = document.getElementById("sec_opc_loc");
             sec.style.width = "20%";
             sec.style.left = "40%";
             sec = document.getElementById("btn_loc");
-            sec.style.backgroundColor = "#3ebdbb";
+            sec.style.backgroundColor = "#ccbd13";
             //for (let i = 0; i < ids.length; i++) {
             for (let i = 0; i < distancias.length; i++) {
                 for (let j = 0; j < data.length; j++) {
@@ -256,7 +256,7 @@ function paintCC(){
             sec.style.width = "10%";
             sec.style.left = "45%";
             sec = document.getElementById("btn_loc");
-            sec.style.backgroundColor = "#bcbcbc";
+            sec.style.backgroundColor = "#ffffff";
             //for (let i = 0; i < ids.length; i++) {
             for (let i = 0; i < data.length; i++) {
                 if (ids.includes(data[i].id)) {
@@ -281,7 +281,7 @@ function paintCC(){
         sec.style.width = "10%";
         sec.style.left = "15%";
         sec = document.getElementById("btn_fav");
-        sec.style.backgroundColor = "#bcbcbc";
+        sec.style.backgroundColor = "#ffffff";
 
         //Si esta seleccionada la opcion de "Cerca de mi"
         if (btnCercaActive == 1) {
@@ -289,7 +289,7 @@ function paintCC(){
             sec.style.width = "20%";
             sec.style.left = "40%";
             sec = document.getElementById("btn_loc");
-            sec.style.backgroundColor = "#3ebdbb";
+            sec.style.backgroundColor = "#ccbd13";
             //Recorrer distancias
             for (let i = 0; i < distancias.length; i++) {
                 //Recorrer la data de centros comerciales
@@ -322,7 +322,7 @@ function paintCC(){
             sec.style.width = "10%";
             sec.style.left = "45%";
             sec = document.getElementById("btn_loc");
-            sec.style.backgroundColor = "#bcbcbc";
+            sec.style.backgroundColor = "#ffffff";
             //Recorrer la data de centros comerciales
             for (let i = 0; i < data.length; i++) {
                 if (conteo % 4 == 0 && conteo != 0) {
