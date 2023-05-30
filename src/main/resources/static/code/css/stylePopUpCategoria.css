@@ -1,6 +1,6 @@
 /*-----------------------------------------------*/
 
-/*-------------Ventana perfil------------*/
+/*-------------Ventana categorias------------*/
 .sec_categorias{
     position: absolute;
     display: none;
@@ -54,5 +54,23 @@
     background-color: #8c8c8c;
 }
 .txt_btn_categoria{
+    text-align: center;
+}
+.general{
+    position: absolute;
+    top: -5px;
+    width: 75px;
+    height: 30px;
+    left: 20px;
+    border-radius: 20px;
+    background-color: #bcbcbc;
+}
+.general:hover{
+    background-color: #999999;
+}
+.txt_general{
+    position: absolute;
+    top: -10px;
+    left: 10px;
     text-align: center;
 }

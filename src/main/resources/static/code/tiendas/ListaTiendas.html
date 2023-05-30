@@ -8,6 +8,7 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="stylesheet" href="../css/styleListaTiendas.css">
+    <link rel="stylesheet" href="../css/stylePopUpCategoria.css">
     <link rel="stylesheet" href="../css/styleMenu.css">
     <link rel="stylesheet" href="../css/styleGeneral.css">
 
@@ -25,6 +26,32 @@
     <div class="sidebar" id="sidebar">
     </div>
 
+    <div class = "sec_categorias" id="sec_categorias">
+        <div class = "sec_tit_categorias">
+            <p class = "titulo"></p>
+            <a onclick="filtro_categoria('general')" class = "general">
+                <p class = "txt_general">General</p>
+            </a>
+            <a onclick="ventana_categorias_close()" class = "cerrar_menu" style="top: -5px;"></a>
+        </div>
+        <!--grid de botones-->
+        <div class="sec_btn_grid" id="sec_btn_grid">
+        </div>
+    </div>
+
+    <div class = "sec_categorias" style = "left: 40%;" id="sec_cc">
+        <div class = "sec_tit_categorias">
+            <p class = "titulo"></p>
+            <a onclick="filtro_cc('general')" class = "general">
+                <p class = "txt_general">General</p>
+            </a>
+            <a onclick="ventana_cc_close()" class = "cerrar_menu" style="top: -5px;"></a>
+        </div>
+        <!--grid de botones-->
+        <div class="sec_btn_grid" id="sec_btn_grid2">
+        </div>
+    </div>
+
     <div id="content">
         <div class='sec_sup'>
             <a class='btn menu' onclick="menu_active()"></a>
@@ -38,8 +65,9 @@
             <div class='sec_opc_tipo' id="sec_opc_tipo">
                 <a class='btn fav' id="btn_fav" onclick="favoritosBtn()">Favoritos</a>
             </div>
-            <div class='sec_opc_loc' id="sec_opc_loc">
-                <a class='btn loc' id="btn_categorias">Categorias</a>
+            <div class='sec_opc_loc' style="left: 35%; width: 30%;">
+                <a onclick="ventana_categorias()" class='btn loc' style = "width: 50%;">Categorias</a>
+                <a onclick="ventana_cc()" class = "btn loc" style = "left: 50%; width: 50%;">Centros Comerciales</a>
             </div>
             <div class='sec_opc_bus'>
                 <input class='custom' onkeyup="busqueda()" type="text" id="name" name="name" size="10">

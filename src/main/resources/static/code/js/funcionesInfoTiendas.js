@@ -24,7 +24,7 @@ function getCC(){
 }
 
 function getId(){
-    let dato = window.localStorage.getItem('id');
+    let dato = window.localStorage.getItem('id_cc');
     console.log(dato);
     $.ajax({
         url: "/api/Tiendas/"+dato,

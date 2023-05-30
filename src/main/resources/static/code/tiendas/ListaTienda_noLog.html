@@ -29,10 +29,26 @@
   <div class = "sec_categorias" id="sec_categorias">
     <div class = "sec_tit_categorias">
       <p class = "titulo"></p>
+      <a onclick="filtro_categoria('general')" class = "general">
+        <p class = "txt_general">General</p>
+      </a>
       <a onclick="ventana_categorias_close()" class = "cerrar_menu" style="top: -5px;"></a>
     </div>
-    <!--git de botones-->
+    <!--grid de botones-->
     <div class="sec_btn_grid" id="sec_btn_grid">
+    </div>
+  </div>
+
+  <div class = "sec_categorias" style = "left: 40%;" id="sec_cc">
+    <div class = "sec_tit_categorias">
+      <p class = "titulo"></p>
+      <a onclick="filtro_cc('general')" class = "general">
+        <p class = "txt_general">General</p>
+      </a>
+      <a onclick="ventana_cc_close()" class = "cerrar_menu" style="top: -5px;"></a>
+    </div>
+    <!--grid de botones-->
+    <div class="sec_btn_grid" id="sec_btn_grid2">
     </div>
   </div>
 
@@ -47,6 +63,9 @@
     <div class='sec_opc'>
       <div class='sec_opc_tipo'>
         <a onclick="ventana_categorias()" class='btn fav'>Categorias</a>
+      </div>
+      <div class = "sec_opc_loc" style="left: 44%; width: 15%;">
+          <a onclick="ventana_cc()" class = "btn loc">Centros Comerciales</a>
       </div>
       <div class='sec_opc_bus'>
         <input class='custom' onkeyup="busqueda()" type="text" id="name" name="name" size="10">
