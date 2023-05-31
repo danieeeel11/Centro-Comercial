@@ -69,7 +69,7 @@ function validarEntrada() {
             var ubicacion = letra + numero;
             
             // Mostrar la ubicación en la página
-            document.getElementById("ubicacion").textContent = "La ubicación de su carro es: " + ubicacion;
+            document.getElementById("ubicacion").textContent = "Usted está ubicado en el sótano, parqueadero " + ubicacion; 
         }
 
         function generarUbicacionYTiempo() {
@@ -90,7 +90,7 @@ function validarEntrada() {
             var minutos = tiempoEnMinutos % 60;
             
             // Mostrar la ubicación y el tiempo en la página
-            document.getElementById("ubicacion").textContent = "Usted está ubicado en el sótano1, parqueadero " + ubicacion;
+            
             document.getElementById("tiempo").textContent = "Tiempo de estacionamiento: " + horas + " h y " + minutos + " min";
             // Calcular el monto a pagar
             var monto = tiempoEnMinutos * 500;
