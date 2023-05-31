@@ -72,5 +72,5 @@ function busqueda(){ //nuevo
 }
 
 function setId(id){
-    window.localStorage.setItem('id',id);
+    window.localStorage.setItem('id_cc',id);
 }

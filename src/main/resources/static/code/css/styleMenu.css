@@ -1,10 +1,36 @@
 /*-------------Nuevo-----------*/
+/*------Boton menu------*/
+.btn{
+    position: absolute;
+    background-repeat:no-repeat;
+    height:50px;
+    width:50px;
+    background-size: 50px 50px;
+    background-position: center;
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn.menu{
+    position: absolute;
+    top:2px;
+    height:45px;
+    background-size: 50px 45px;
+    background-image:url('https://cdn-icons-png.flaticon.com/512/56/56763.png');
+    border-radius:10px;
+    transition: all 0.6s ease-in-out;
+}
+.btn.menu:hover{
+    background-color:#c1beb6;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
 /*-------------Menu------------*/
 .wrapper {
     display: block;
 }
 .sidebar {
-    position: absolute;
+    /*position: absolute;*/
+    position: fixed;
     top: 0;
     left: -300px;
     width: 300px;

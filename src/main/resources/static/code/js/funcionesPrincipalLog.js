@@ -2,6 +2,7 @@ $('document').ready(function (){
     //getCliente();
     getNovedad();
 });
+
 let nameCliente = window.localStorage.getItem('name_Cliente');
 
 let dataAllCC = [];
@@ -76,6 +77,7 @@ function getCuenta(){
             console.log(data);
             dataCuenta = data;
             getCliente();
+            paintSlider();
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Aquí manejamos cualquier error que pueda haber ocurrido

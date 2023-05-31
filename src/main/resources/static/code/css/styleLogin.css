@@ -1,3 +1,4 @@
+/*Seccion superior*/
 .sec_sup {
     /*border-width: 1px;
     border-style: solid;
@@ -7,33 +8,93 @@
     width: 100%;
     height: 50px;
 }
-.sec_imagen{
+/*Secion de la informacion*/
+.sec_middle{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 550px;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;*/
+}
+/*Mitad izquierda*/
+.sec_middle1{
+    position: absolute;
+    width: 50%;
+    height: 100%;
     /*border-width: 1px;
     border-style: solid;
     border-color: black;*/
-    border-radius: 10px;
-    position: relative;
-    width: 100%;
-    height: 150px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
-.sec_btn{
+.play_video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+/*Mitad derecha*/
+.sec_middle2{
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100%;
     /*border-width: 1px;
-    border-style: solid;*/
-    border-color: black;
-    border-radius: 10px;
-    position: relative;
-    width: 100%;
-    height: 75px;
+    border-style: solid;
+    border-color: black;*/
+    background-color: #e7e7e7;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 }
+/*Logo user*/
+.sec_imagen{
+    position: relative;
+    left: 38%;
+    width: 150px;
+    height: 150px;
+    background-image: url("https://raw.githubusercontent.com/danieeeel11/Datasets/main/user.png");
+    background-size: cover;
+}
+/*Texto*/
+.txt_tit{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+    color: #4d4d4d;
+    /**/
+    transition: all 0.6s ease-in-out;
+}
+.txt_registerNow{
+    font-size: 15px;
+    padding-top: 60px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+    color: #4d4d4d;
+    /**/
+    transition: all 0.6s ease-in-out;
+}
+/*Seccion formulario*/
 .sec_btn2{
     /*border-width: 1px;
     border-style: solid;
-    border-color: black;*/
-    border-radius: 10px;
+    border-color: black;
+    border-radius: 10px;*/
+    top: 40px;
     position: relative;
     width: 100%;
-    height: 270px;
+    height: 170px;
 }
+/*Boton*/
 .btn{
     position: absolute;
     background-repeat:no-repeat;
@@ -43,85 +104,49 @@
     background-color: transparent;
     border-color: transparent;
 }
+/*Boton salir*/
 .btn.salir{
     top:2px;
     height:45px;
-    background-size: 50px 45px;
-    background-image:url('https://static.vecteezy.com/system/resources/thumbnails/009/344/496/small/x-transparent-free-png.png');
+    background-size: cover;
+    background-image:url('https://raw.githubusercontent.com/danieeeel11/Datasets/main/back.png');
     border-radius:40px;
     transition: all 0.6s ease-in-out;
-    transform: rotate(90deg);
 }
-.circulo{
-    position: absolute;
-    /*bottom:10%;*/
-    left: 40%;
-    width: 160px;
-    height: 100%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: #bcbcbc;
-}
-.logo{
-    left: 40%;
-    width: 160px;
-    height: 100%;
-}
-.btn.sign_in{
-    position: absolute;
-    font-size: 28px;
-    top: 20%;
-    left: 30%;
-    width: 160px;
-    height: 60%;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    vertical-align: middle;
-    text-align: center;
-}
-.btn.sign_up{
-    position: absolute;
-    font-size: 28px;
-    top: 20%;
-    left: 50%;
-    width: 160px;
-    height: 60%;
-    border-radius: 20px;
-    background-color: transparent;
-    color: black;
-    vertical-align: middle;
-    text-align: center;
-}
+/*Boton siguiente*/
 .btn.siguiente{
     position: absolute;
-    left: 45%;
-    bottom: 10%;
+    left: 80%;
+    top: 30%;
     width: 50px;
-    height: 20%;
+    height: 50px;
     border-radius: 80px;
     background-size: cover;
-    background-color: #48ffcf;
-    background-image:url('https://assets.stickpng.com/thumbs/585e47accb11b227491c338a.png');
-    transform:rotate(180deg);
+    /*background-color: #58d3b4;*/
+    background-color: #a140a2;
+    /*background-image:url('https://assets.stickpng.com/thumbs/585e47accb11b227491c338a.png');*/
+    background-image:url('https://raw.githubusercontent.com/danieeeel11/Datasets/main/next.png');
 }
+.btn:hover{
+    background-color:#c1beb6;
+    cursor: pointer;
+}
+/*Boton registrate*/
+.registrate{
+    color: #abdfe7;
+}
+/*Formulario*/
 .custom{
     width:100%;
     height: 100%;
     border-radius:10px;
 }
 .espacio{
-    position: absolute;
+    position: relative;
     font-size: 28px;
     top: 15%;
     left: 22%;
     width: 50%;
-    height: 10%;
+    height: 20%;
     border-radius: 20px;
-    background-color:#c1beb6;
-}
-.btn:hover{
-    background-color:#c1beb6;
-    cursor: pointer;
 }

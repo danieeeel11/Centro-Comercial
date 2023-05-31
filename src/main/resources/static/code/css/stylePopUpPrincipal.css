@@ -1,7 +1,8 @@
 /*-------------Nuevo-----------*/
 /*-------------Ventana notificaciones------------*/
 .sec_noti{
-    position: absolute;
+    /*position: absolute;*/
+    position: fixed;
     display: none;
     left: 62%;
     top: 50px;
@@ -87,7 +88,8 @@
 
 /*-------------Ventana perfil------------*/
 .sec_perfil{
-    position: absolute;
+    /*position: absolute;*/
+    position: fixed;
     display: none;
     left: 76%;
     top: 50px;
@@ -136,7 +138,7 @@
 }
 .btn_perfil:hover{
     cursor: pointer;
-    background-color: #8c8c8c;
+    background-color: #dadada;
 }
 .txt_btn_perfil{
     text-align: center;

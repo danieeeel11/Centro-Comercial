@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <!-- Required meta tags -->
-
     <meta charset="utf-8" />
     <meta
             name="viewport"
@@ -14,10 +13,12 @@
     <link rel="stylesheet" href="../css/stylePopUpPrincipal.css">
     <link rel="stylesheet" href="../css/styleGeneral.css">
 
-  <script src="../js/funcionesPrincipal.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <title>MallForYou</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="../js/funcionesPrincipal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>MallForYou</title>
 </head>
 
 <script src="../js/funcionesMenu.js"></script>
@@ -28,6 +29,7 @@
     <div class="sidebar" id="sidebar">
     </div>
 
+    <!--Ventana emergente de notificaciones-->
     <div class="sec_noti" id="sec_noti">
         <div class="sec_tit_noti">
             <p class="tit_noti">Notificaciones</p>
@@ -36,7 +38,7 @@
         <div class="sec_noti_grid" id="sec_noti_grid">
         </div>
     </div>
-
+    <!--Ventana emergente de perfil-->
     <div class="sec_perfil" id="sec_perfil">
         <div class="sec_user_perfil">
             <p class="user_perfil" id="user_perfil"></p>
@@ -75,109 +77,55 @@
             <p class='txt_user' id="saludo"></p>
         </div>
 
-
-
-        <input type="radio" name="position" checked />
-            <input type="radio" name="position" />
-            <input type="radio" name="position" />
-            <input type="radio" name="position" />
-            <input type="radio" name="position" />
-        <!--<div class='sec_tend'>-->
-          <div class="carousel">
-            <div class='item'>
-                <div class='sec_tend_inicio'>
-                    <div class='cc_tit'>
-                        <button class='btn tit_cc'>
-                            <p class='txt_btn_tit_cc'>GRAN ESTACIÓN</p>
-                        </button>
-                        <script>
-                            var estado = 0;
-                            const star = document.querySelector(".btn.star_cc");
-                            function addFav() {
-                                if (estado == 0) {
-                                    star.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png')";
-                                    estado = 1;
-                                } else {
-                                    star.style.backgroundImage = "url('https://cdn-icons-png.flaticon.com/512/16/16666.png')";
-                                    estado = 0;
-                                }
-                            }
-                        </script>
-                        <button class='btn star_cc' onclick="addFav()"></button>
-                    </div>
-                    <div class='tend_tit'>
-                        <section>
-                            <img src="" alt="">
-                        </section>
-                        <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN EL EXITO, CINECOLOMBIA,
-                            Y UN ENTRENAMIENTO GRATIS EN BODYTECH.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
-                    </div>
+        <div class="sec_middle">
+            <div class="container">
+                <div class="slider">
+                    <div class="slider_content" id="insertImage1"></div>
+                    <div class="slider_content" id="insertImage2"></div>
+                    <div class="slider_content" id="insertImage3"></div>
+                    <div class="slider_content" id="insertImage4"></div>
+                    <div class="slider_content" id="insertImage5"></div>
+                    <div class="slider_content" id="insertImage6"></div>
+                    <div class="slider_content" id="insertImage7"></div>
+                    <div class="slider_content" id="insertImage8"></div>
+                    <div class="slider_content" id="insertImage9"></div>
+                    <div class="slider_content" id="insertImage10"></div>
+                    <div class="slider_content" id="insertImage11"></div>
+                    <div class="slider_content" id="insertImage12"></div>
+                </div>
+                <div class="controls">
+                    <div class="control prev" style='left:0;' ><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="control next" style='right:0;' ><i class="fa-solid fa-angle-right"></i></div>
                 </div>
             </div>
-
-            <div class="item">
-                <div class='sec_tend_inicio'>
-                    <div class='cc_tit'>
-                        <button class='btn tit_cc'>
-                            <p class='txt_btn_tit_cc'>PARQUE LA COLINA</p>
-                        </button>
-                        <button class='btn star_cc' onclick="addFav()"></button>
-                    </div>
-                    <div class='tend_tit'>
-                        <section>
-                            <img src="" alt="">
-                        </section>
-                        <button class='btn tend'>REBAJAS DE VERANO, EL PRÓXIMO VIERNES EN H&M, FALABELLA, CHEVIGNON.<br>¡DESCRUBRE MÁS OFERTAS AQUÍ!</button>
-                    </div>
-                </div>
-            </div>
-            <!--<div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>-->
         </div>
-        <!--</div>-->
 
-        <div class='sec_bot'>
-          <a href="../parqueadero/parqueadero.html" class='btn parq' id="btn_parq">
-            <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
-            <img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>
-          </a>
-          <a href="../lista/ListaCC.html" class='btn cc' id="btn_cc">
-            <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>
-            <img class='img_' style='' src='https://cdn1.iconfinder.com/data/icons/shopping-online-37/64/shop-store-online-shopping-shopping_mall-512.png'></img>
-          </a>
+        <div class = 'sec_newBoton'>
+            <video class="play_video" src="https://github.com/danieeeel11/Datasets/raw/main/pexels-tom-fisk-3848792-1280x720-30fps.mp4" autoplay="true" muted="true" loop="true"></video>
+            <a href="../parqueadero/parqueadero.html" class='btn newBoton'>
+                <p class='txt_newBoton' id="txt_newBotonLogin">PARQUEADERO</p>
+            </a>
+        </div>
+        <br>
+        <div class = 'sec_newBoton'>
+            <video class="play_video" src="https://raw.githubusercontent.com/danieeeel11/Datasets/main/pexels-george-morina-3243946-1280x720-30fps.mp4" autoplay="true" muted="true" loop="true"></video>
+            <a href="../lista/ListaCC.html" class='btn newBoton'>
+                <p class='txt_newBoton' id="txt_newBotonCC">CENTROS COMERCIALES</p>
+            </a>
+        </div>
+        <br>
+        <div class = 'sec_newBoton'>
+            <video class="play_video" src="https://raw.githubusercontent.com/danieeeel11/Datasets/main/import_60cc3145946a68.81672487.mp4" autoplay="true" muted="true" loop="true"></video>
+            <a href="../tiendas/ListaTiendas.html" class='btn newBoton'>
+                <p class='txt_newBoton' id="txt_newBotonTiendas">TIENDAS</p>
+            </a>
         </div>
     </div>
 </div>
 
 <script src="../js/funcionesPrincipalLog.js"></script>
+<script src="../js/funcionesSliderPrincipalLog.js"></script>
+<script src="../js/funcionesSliderInfoCC.js"></script>
 
-<!--
-<script>
-  const btnCampana = document.querySelector('.btn.campana');
-
-  btnCampana.addEventListener('click', () => {
-    mostrarVentana2();
-  });
-
-</script>
-<script>function mostrarVentana() {
-  document.getElementById("miVentana").style.display = "block";
-  ocultarVentana2();
-}
-
-function ocultarVentana() {
-  document.getElementById("miVentana").style.display = "none";
-}
-</script>
-<script>function mostrarVentana2() {
-  document.getElementById("miVentana2").style.display = "block";
-  ocultarVentana();
-}
-
-function ocultarVentana2() {
-  document.getElementById("miVentana2").style.display = "none";
-}-->
-</script>
 </body>
 </html>
