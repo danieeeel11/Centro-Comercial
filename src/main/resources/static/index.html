@@ -3,7 +3,7 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="UTF-8">  
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -66,11 +66,11 @@
 
         <!--<a class='btn menu' href="../principal/Menu.html"></a>-->
     </div>
-    <input class="desp" type="radio" style="left:43%;top:60%;" name="position" checked />
-    <input class="desp" type="radio" style="left:46%;top:60%;" name="position" />
-    <input class="desp" type="radio" style="left:49%;top:60%;" name="position" />
-    <input class="desp" type="radio" style="left:52%;top:60%;" name="position" />
-    <input class="desp" type="radio" style="left:55%;top:60%;" name="position" />
+    <input class="desp" type="radio" style="left:43%;top:50%;" name="position" checked />
+    <input class="desp" type="radio" style="left:46%;top:50%;" name="position" />
+    <input class="desp" type="radio" style="left:49%;top:50%;" name="position" />
+    <input class="desp" type="radio" style="left:52%;top:50%;" name="position" />
+    <input class="desp" type="radio" style="left:55%;top:50%;" name="position" />
     <!--<div class='sec_tend'>-->
     <div class="carousel">
         <div class='item'>
@@ -196,15 +196,33 @@
     </div>
     <!--</div>-->
 
+    <script>
+        function verificarRegistro() {
+            // Aquí puedes colocar la lógica para verificar si el usuario está registrado o no
+            var usuarioRegistrado = false; // Cambia esto según tu lógica de verificación
+
+            if (usuarioRegistrado) {
+                window.location.href = "code/principal/parqueadero.html"; // Redirige al usuario a la referencia
+            } else {
+                alert("¡Debes estar registrado para acceder!"); // Muestra una alerta al usuario
+            }
+        }  
+    </script>
+
     <div class='sec_bot'>
-        <button class='btn parq'>
-            <a href="code/principal/parqueadero.html">
+        <button class='btn parq' onclick=verificarRegistro()>
+            <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
+            <div class="parking">
+                <i class="fa-solid fa-square-parking"></i>
+            </div>
+
+            <!--<a href="code/principal/parqueadero.html">
                 <p class='txt_btn_parq'>PAGO DE<br>PARQUEADERO<br>ONLINE</p>
                 <div class="parking">
                     <i class="fa-solid fa-square-parking"></i>
                 </div>
-                <!--<img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>-->
-            </a>
+                <!-<img class='img_' src='https://cdn-icons-png.flaticon.com/512/1167/1167984.png'></img>-->
+            <!--</a>-->
         </button>
         <a href="code/lista/ListaCC.html" class='btn cc'>
             <p class='txt_btn_cc'>CENTROS<br>COMERCIALES</p>

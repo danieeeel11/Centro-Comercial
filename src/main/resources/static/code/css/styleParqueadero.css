@@ -133,7 +133,7 @@ body {
     position:absolute;
     left:0%;
     height:75%;
-    width:55%;
+    width:45%;
     background-color: gray;
     color:white;
     padding: 10px;
@@ -210,6 +210,23 @@ body {
     height:75%;
     width:25%;
     background-color: #336000;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    border-radius:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.carga{
+    font-size:25px;
+    font-weight: bold;
+    position:absolute;
+    left:50%;
+    height:75%;
+    width:20%;
+    background-color: cadetblue;
     color:white;
     padding: 10px;
     text-align: center;
