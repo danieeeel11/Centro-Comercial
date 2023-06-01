@@ -2,7 +2,7 @@
 
 /*-------------Ventana categorias------------*/
 .sec_categorias{
-    position: absolute;
+    position: fixed;
     display: none;
     left: 7%;
     top: 50px;
@@ -72,6 +72,6 @@
 .txt_general{
     position: absolute;
     top: -10px;
-    left: 10px;
+    left: 5px;
     text-align: center;
 }

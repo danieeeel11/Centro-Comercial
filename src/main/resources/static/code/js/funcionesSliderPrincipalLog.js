@@ -3,9 +3,11 @@ function paintSlider(){
     for (let i = 0; i < dataNovedad.length; i++) {
         let nombreCC = searchIdCC(dataNovedad[i].id_cc);
         htmlFotos.push(
-            `<p style="bottom: 80%; width: 20%; height: 10%; font-size: 20px; left: 2%;">${nombreCC}</p>
+            `<p style="bottom: 80%; padding-top: 8px; width: 20%; height: 10%; font-size: 20px; left: 2%;">${nombreCC}</p>
              <img src="${dataNovedad[i].imagen}" alt="">
-             <p><br>${dataNovedad[i].titular.toUpperCase()}</p>
+             <a onclick="setNovedad(${dataNovedad[i].id}, '${nombreCC}')" href="../novedades/novedad.html">
+                <p><br>${dataNovedad[i].titular.toUpperCase()}</p>
+             </a>
         `);
     }
     $("#insertImage1").html(htmlFotos[3]);
@@ -30,4 +32,14 @@ function searchIdCC(id) {
         }
     }
     return nameCC;
+}
+
+function setNovedad(id_novedad, cc){
+    let novedad = [];
+    for (let i = 0; i < dataNovedad.length; i++) {
+        if (dataNovedad[i].id == id_novedad){
+            novedad.push([dataNovedad[i], cc]);
+        }
+    }
+    window.localStorage.setItem('novedad', JSON.stringify(novedad));
 }

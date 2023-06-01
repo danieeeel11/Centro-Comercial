@@ -55,11 +55,6 @@ function menu_opc(){
                 </a>
             </div>
             <div class="sec_btn_tipo">
-                <a href="/code/novedades/novedades_noLog.html" class="btn_tipo_menu">
-                    <p class="txt_btn_menu">Novedades</p>
-                </a>
-            </div>
-            <div class="sec_btn_tipo">
                 <a href="/code/lista/ListaCC_noLog.html" class="btn_tipo_menu">
                     <p class="txt_btn_menu">Centros Comerciales</p>
                 </a>
@@ -81,11 +76,6 @@ function menu_opc(){
             <div class="sec_btn_tipo">
                 <a href="/code/principal/principalLog.html" class="btn_tipo_menu">
                     <p class="txt_btn_menu">Inicio</p>
-                </a>
-            </div>
-            <div class="sec_btn_tipo">
-                <a href="/code/novedades/novedades.html" class="btn_tipo_menu">
-                    <p class="txt_btn_menu">Novedades</p>
                 </a>
             </div>
             <div class="sec_btn_tipo">

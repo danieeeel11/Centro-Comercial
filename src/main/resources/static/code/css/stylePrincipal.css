@@ -41,32 +41,22 @@
 /*---------Boton perfil------*/
 .btn.perfil{
     left: 93%;
-    background-image:url('https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png');
+    background-image:url('https://raw.githubusercontent.com/danieeeel11/Datasets/main/user2.png');
     border-radius:50px;
 }
 
-.btn.registro{
-    top:10%;
-    left: 10%;
-    height:50%;
-    width:20%;
-    vertical-align: middle;
-    text-align: center;
-    background-color: #49f5aa;
-    border-radius:20px;
-}
-.btn.registro:hover{
-    background-color: #39b981;
-}
 .btn.login{
+    position: absolute;
     top:10%;
-    left: 32%;
-    height:50%;
-    width:20%;
+    padding-top: 6px;
+    right: 0;
+    height:55%;
+    width:10%;
     vertical-align: middle;
     text-align: center;
-    background-color: black;
+    background-color: #333333;
     color: white;
+    font-weight: bold;
     border-radius:20px;
 }
 .btn.login:hover{

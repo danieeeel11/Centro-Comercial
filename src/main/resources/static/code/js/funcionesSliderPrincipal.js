@@ -42,14 +42,15 @@ function getCC(){
 }
 
 function paintSlider(){
-    let code= "";
     let htmlFotos = [];
     for (let i = 0; i < dataNovedades.length; i++) {
         let nombreCC = searchIdCC(dataNovedades[i].id_cc);
         htmlFotos.push(
-            `<p style="bottom: 80%; width: 20%; height: 10%; font-size: 20px; left: 2%;">${nombreCC}</p>
+            `<p style="bottom: 80%; padding-top: 8px; width: 20%; height: 10%; font-size: 20px; left: 2%;">${nombreCC}</p>
              <img src="${dataNovedades[i].imagen}" alt="">
-             <p><br>${dataNovedades[i].titular.toUpperCase()}</p>
+             <a onclick="setNovedad(${dataNovedades[i].id}, '${nombreCC}')" href="code/novedades/novedad.html">
+                <p><br>${dataNovedades[i].titular.toUpperCase()}</p>
+             </a>
         `);
     }
     $("#insertImage1").html(htmlFotos[3]);
@@ -74,4 +75,16 @@ function searchIdCC(id) {
         }
     }
     return nameCC;
+}
+
+function setNovedad(id_novedad, cc){
+    let novedad = [];
+    for (let i = 0; i < dataNovedades.length; i++) {
+        if (dataNovedades[i].id == id_novedad){
+            novedad.push([dataNovedades[i], cc]);
+        }
+    }
+    //console.log(novedad);
+    window.localStorage.setItem('novedad', JSON.stringify(novedad));
+    //console.log(JSON.parse(window.localStorage.getItem('novedad')));
 }
