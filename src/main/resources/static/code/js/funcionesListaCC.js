@@ -216,11 +216,13 @@ function paintCC(){
     //Si esta seleccionada la opcion de "Favoritos"
     if(btnFavActive == 1){
         let sec = document.getElementById("btn_fav");
-        sec.style.backgroundColor = "#c4c4c4";
+        sec.style.backgroundColor = "#505050";
+        sec.style.color = "#ffffff";
         //Si esta seleccionada la opcion de "Cerca de mi"
         if(btnCercaActive == 1){
             let sec = document.getElementById("btn_loc");
-            sec.style.backgroundColor = "#c4c4c4";
+            sec.style.backgroundColor = "#505050";
+            sec.style.color = "#ffffff";
             //for (let i = 0; i < ids.length; i++) {
             for (let i = 0; i < distancias.length; i++) {
                 for (let j = 0; j < data.length; j++) {
@@ -238,6 +240,7 @@ function paintCC(){
         else {
             let sec = document.getElementById("btn_loc");
             sec.style.backgroundColor = "#ffffff";
+            sec.style.color = "#000000";
             for (let i = 0; i < data.length; i++) {
                 if (ids.includes(data[i].id)) {
                     let linksFotos = data[i].foto.split(", ");
@@ -250,11 +253,13 @@ function paintCC(){
     else {
         let sec = document.getElementById("btn_fav");
         sec.style.backgroundColor = "#ffffff";
+        sec.style.color = "#000000";
 
         //Si esta seleccionada la opcion de "Cerca de mi"
         if (btnCercaActive == 1) {
             let sec = document.getElementById("btn_loc");
-            sec.style.backgroundColor = "#c4c4c4";
+            sec.style.backgroundColor = "#505050";
+            sec.style.color = "#ffffff";
             //Recorrer distancias
             for (let i = 0; i < distancias.length; i++) {
                 //Recorrer la data de centros comerciales
@@ -278,6 +283,7 @@ function paintCC(){
         else {
             let sec = document.getElementById("btn_loc");
             sec.style.backgroundColor = "#ffffff";
+            sec.style.color = "#000000";
             //Recorrer la data de centros comerciales
             for (let i = 0; i < data.length; i++) {
                 let linksFotos = data[i].foto.split(", ");

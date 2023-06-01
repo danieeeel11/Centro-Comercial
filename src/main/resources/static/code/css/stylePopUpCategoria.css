@@ -1,0 +1,77 @@
+/*-----------------------------------------------*/
+
+/*-------------Ventana categorias------------*/
+.sec_categorias{
+    position: absolute;
+    display: none;
+    left: 7%;
+    top: 50px;
+    width: 30%;
+    height: 330px;
+    overflow: auto;
+    border-radius: 20px;
+    background-color: #eeeeee;
+    z-index: 9999;
+    /**/
+    transition: all 0.6s ease-in-out;
+}
+.sec_tit_categorias{
+    position: relative;
+    width: 100%;
+    height: 35px;
+    /*border-bottom-width: 0.5px;
+    border-bottom-style: solid;
+    border-bottom-color: #808080;*/
+}
+.titulo{
+    position: relative;
+    top: 20%;
+    text-align: center;
+    font-size: 20px;
+    color: #000000;
+}
+.sec_btn_grid{
+    top: 10%;
+    width: 100%;
+    height: 85%;
+    background-color: #ffffff;
+}
+.sec_btn_categoria{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    border-bottom-width: 0.5px;
+    border-bottom-style: solid;
+    border-bottom-color: #808080;
+}
+.btn_categoria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.btn_categoria:hover{
+    cursor: pointer;
+    background-color: #8c8c8c;
+}
+.txt_btn_categoria{
+    text-align: center;
+}
+.general{
+    position: absolute;
+    top: -5px;
+    width: 75px;
+    height: 30px;
+    left: 20px;
+    border-radius: 20px;
+    background-color: #bcbcbc;
+}
+.general:hover{
+    background-color: #999999;
+    cursor: pointer;
+}
+.txt_general{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    text-align: center;
+}

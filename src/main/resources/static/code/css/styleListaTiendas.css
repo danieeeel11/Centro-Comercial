@@ -1,79 +1,46 @@
+/*Seccion superior*/
 .sec_sup {
     position: relative;
     /*left: 60px;*/
     width:100% !important;
     height: 50px;
 }
-.btn{
-    position: absolute;
-    background-repeat:no-repeat;
-    height:50px;
-    width:50px;
-    /*background-size: 50px 50px;*/
-    background-color: transparent;
-    border-color: transparent;
-}
-.btn:hover{
-    background-color:#c1beb6;
-    cursor: pointer;
-}
-.btn.menu{
-    top:2px;
-    height:45px;
-    background-size: 50px 45px;
-    background-image:url('https://cdn-icons-png.flaticon.com/512/56/56763.png');
-    border-radius:10px;
-    transition: all 0.6s ease-in-out;
-}
-.btn.menu:hover{
-    transform: rotate(90deg);
-}
+/*Seccion titulo de la pagina*/
 .sec_tit {
     position: relative;
-    left: 26%;
-    width: 45%;
+    left: 8%;
+    width: 88%;
     /*400px;*/
     /*top: -18px;*/
     height: 100%;
-    background-color: #2d5418;
+    background-color: #000000;
+    /*background-color: #523e1a;*/
     /*border-width: 1px;
     border-style: solid;
     border-color: black;*/
     border-radius: 10px;
 }
-.txt_user1 {
+.txt_user {
     position: relative;
     top: 10px;
     font-size: 26px !important;
-    left: 8%;
-    color: white !important;
-}
-.btn.fav{
-    height:100%;
-    width:100%;
-    background-color:transparent;
-    /*padding-left: 30px;*/
+    /*left: 8%;*/
     text-align: center;
-    border-radius:10px;
+    color: #ffffff !important;
 }
-.btn.fav:hover{
-    background-color: #999999;
+/*Seccion opciones*/
+.sec_opc {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    /*400px;*/
+    height: 25px;
+    /*border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;*/
 }
-.btn.loc{
-    height:100%;
-    width:100%;
-    background-color: #ffffff;
-    /*padding-left: 30px;*/
-    text-align: center;
-    border-radius:10px;
-}
-.btn.loc:hover{
-    background-color: #999999;
-}
-.custom {
-    width:100%;
-    border-radius:10px;
-}
+/*Seccion boton izquierda*/
 .sec_opc_loc {
     position: relative;
     top: 10px;
@@ -87,6 +54,7 @@
     border-color: #676767;
     border-radius: 10px;
 }
+/*Seccion boton mitad*/
 .sec_opc_tipo {
     position: absolute;
     top: 10px;
@@ -100,17 +68,7 @@
     border-color: #676767;
     border-radius: 10px;
 }
-.sec_opc {
-    position: relative;
-    top: 10px;
-    width: 100%;
-    /*400px;*/
-    height: 25px;
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;*/
-}
+/*Seccion barra de busqueda*/
 .sec_opc_bus {
     position: absolute;
     top: 10px;
@@ -120,6 +78,7 @@
     /*400px;*/
     height: 25px;
 }
+/*Grid de tiendas*/
 .sec_baja{
     position: relative;
     top: 20px;
@@ -127,23 +86,129 @@
     /*400px;*/
     height: 500px;
 }
+/*Boton*/
+.btn{
+    position: absolute;
+    background-repeat:no-repeat;
+    height:50px;
+    width:50px;
+    /*background-size: 50px 50px;*/
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn:hover{
+    background-color:#c1beb6;
+    cursor: pointer;
+}
+/*Boton favoritos*/
+.btn.fav{
+    height:100%;
+    width:100%;
+    background-color:transparent;
+    /*padding-left: 30px;*/
+    text-align: center;
+    border-radius:10px;
+}
+.btn.fav:hover{
+    background-color: #999999;
+}
+/*Boton ubicacion*/
+.btn.loc{
+    height:100%;
+    width:100%;
+    background-color: #ffffff;
+    /*padding-left: 30px;*/
+    text-align: center;
+    border-radius:10px;
+}
+.btn.loc:hover{
+    background-color: #999999;
+}
+
+/*Formulario*/
+.custom {
+    width:100%;
+    border-radius:10px;
+}
+
+/*---------Nuevo Grid Botones--------*/
+.sec_container{
+    position: relative;
+    top: 10px;
+    left: 5%;
+    width: 90%;
+    height: 220px;
+    border-radius: 15px;
+}
+.sec_newBoton{
+    position: relative;
+    top: 5px;
+    width: 100%;
+    height: 95%;
+    border-radius: 15px;
+}
+.btn.newBoton{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #d9d9d9;
+    /*background-image: url("https://i.pinimg.com/originals/41/6c/bf/416cbf333d13baa2ac6dfa5a36d13951.jpg");*/
+    background-size: cover;
+    border-radius: 15px;
+}
+.sec_logo_cc{
+    position: absolute;
+    top: 5px;
+    left: 5%;
+    height: 190px;
+    width: 190px;
+    border-radius: 15px;
+    /*background-image: url("data:image/png;base64,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");*/
+    background-size: cover;
+}
+.txt_newBoton{
+    position: relative;
+    font-size: 45px;
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+    vertical-align: middle;
+    /*backdrop-filter: blur(10px);*/
+    -webkit-text-stroke: 1.5px #5b5b5b;
+    border-radius: 15px;
+    color: #ffffff;
+    /**/
+    transition: all 0.6s ease-in-out;
+}
+
+/*------Boton estrella-------------*/
+.btn.star{
+    background-image:url('https://cdn-icons-png.flaticon.com/512/16/16666.png');
+    top:10px;
+    left: 6%;
+    height:35px;
+    width:35px;
+    background-color: #ffffff;
+    background-size: cover;
+    border-radius: 40px;
+}
+.btn.star:hover{
+    background-color: #e5e5e5;
+    cursor: pointer;
+    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png');
+}
+
+/*
 .sec_btn_cc{
     position: absolute;
     top:2%;
     height:45%;
     width:20%;
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10px;*/
 }
 .btn.cc{
-    /*height:35%;
-    width:15%;*/
     height: 80%;
     width: 100%;
     background-color: #bcbcbc;
-    /*padding-left: 40px;*/
     border-radius:30px;
     background-size: cover;
 }
@@ -176,4 +241,4 @@
     background-color: transparent;
     cursor: pointer;
     background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estrella_amarilla.png/2048px-Estrella_amarilla.png');
-}
+}*/

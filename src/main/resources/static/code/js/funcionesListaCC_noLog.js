@@ -141,7 +141,9 @@ function paintCC(){
 
     if (btnCercaActive == 1) {
         let sec = document.getElementById("btn_loc");
-        sec.style.backgroundColor = "#c4c4c4";
+        sec.style.backgroundColor = "#505050";
+        sec.style.color = "#ffffff";
+
         //Recorrer distancias
         for (let i = 0; i < distancias.length; i++) {
             //Recorrer la data de centros comerciales
@@ -159,6 +161,8 @@ function paintCC(){
     else {
         let sec = document.getElementById("btn_loc");
         sec.style.backgroundColor = "#ffffff";
+        sec.style.color = "#000000";
+
         //Recorrer la data de centros comerciales
         for (let i = 0; i < data.length; i++) {
             let linksFotos = data[i].foto.split(", ");
