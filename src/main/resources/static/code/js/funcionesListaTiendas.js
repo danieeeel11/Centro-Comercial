@@ -91,7 +91,7 @@ function paramCode(id, nombre, logo, tipo, fondo) {
     //${fondo}
     let parte2 = `
             <div class="sec_logo_cc" style="background-image:url('${logo}')"></div>
-            <p class='txt_newBoton'> ${nombre} </p>
+            <p class='txt_newBoton'> ${nombre.toUpperCase()} </p>
         </a>
     `;
     let parteStarFav = `

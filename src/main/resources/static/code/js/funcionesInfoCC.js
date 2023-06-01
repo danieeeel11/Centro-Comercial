@@ -34,7 +34,7 @@ function paintInfo(data){
             loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>`
     );
     code.push(
-        `${data.nombre}`
+        `${data.nombre.toUpperCase()}`
     );
     code.push(
         `<div class="imagen" style="background-image: url('${data.logo}')"></div>

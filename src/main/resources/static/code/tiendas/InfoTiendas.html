@@ -13,48 +13,55 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Tienda</title>
 </head>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="../js/semantic.min.js"></script>
 <script src="../js/funcionesInfoTiendas.js"></script>
+
 <body>
 
-<div class="sec_sup">
-  <button class="btn back" onclick="history.back()"></button>
-</div>
-<div class="sec_info">
-  <div class="sec_info_sup" id="insert1">
+  <div class="sec_sup">
+    <button class="btn back" onclick="history.back()"></button>
   </div>
-  <div class="sec_info_mid">
-    <div class="sec_mid1">
-      <!--Cambiar posicion top jiji-->
-      <p class="txt_info"> ¿Donde mas lo encuentras?</p>
-      <!--Recuadro Blanco-->
-      <div class="sec_cc" id="grid-cc">
-        <!--<div class="cuadroCC">
-          <p class="txtBajo">Andino</p>
+
+  <div class="sec_middle">
+    <div class="sec_middle1" id="fondo">
+    <!--<div class="sec_middle1" id="fondo" style="background-image: url('https://ethic.es/wp-content/uploads/2023/03/imagen.jpg')">-->
+      <!--<div class="sec_fondo" >
+        <div class="fondo" style="background-image: url('https://ethic.es/wp-content/uploads/2023/03/imagen.jpg')"></div>
+      </div>-->
+      <p class="txt_info1">¿Dónde más lo encuentras?</p>
+      <div class="sec_cc" id="insertGridCC"></div>
+
+    </div>
+    <div class="sec_middle2">
+
+      <!--<p class="txt_tit" id="insertNombre">Adidas</p>-->
+      <div class='sec_imagen' id="insertLogo">
+        <!--<div class="imagen" style="background-image: url('https://ethic.es/wp-content/uploads/2023/03/imagen.jpg')">
+          <p class="txt_tit" id="insertNombre">Cine Colombiaaaaa</p>
+          <p class="txt_tipoProducto" id="insertTipoProducto">Ropa</p>
         </div>-->
       </div>
 
-
-    </div>
-    <div class="sec_mid2">
-      <!--Cambiarle el top Este es Nuevo y debo ponerlo justo encima de Mapa-->
-      <p class="txt_info" id="insert_tipo_producto"></p>
-
-      <!--Cambiarle el top ,este es Mapa-->
-      <p class="txt_info" style="font-size: 20px; top:-15%;">¿Que articulos puedes encontrar?</p>
-      <!--Cambiarle el nombre, aca deben estar las secciones de cada articulo, este
-      es el divisor que es blanco y debe ser invisible, es el que contendra los 4
-       recuardro-->
-      <div class="sec_productos" id="grid-productos">
-        <!--<div class="cuadroCC" >
-          <p class="txtBajo2">Camisetas</p>
-        </div>-->
+      <div class="sec_productos">
+        <div class="container">
+          <div class="slider">
+            <div class="slider_content" id="insertImage1"></div>
+            <div class="slider_content" id="insertImage2"></div>
+            <div class="slider_content" id="insertImage3"></div>
+            <div class="slider_content" id="insertImage4"></div>
+          </div>
+          <div class="controls">
+            <div class="control prev" style='left:0;' ><i class="fa-solid fa-angle-left"></i></div>
+            <div class="control next" style='right:0;' ><i class="fa-solid fa-angle-right"></i></div>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
-</div>
 
+  <script src="../js/funcionesSliderInfoCC.js"></script>
 </body>
 </html>

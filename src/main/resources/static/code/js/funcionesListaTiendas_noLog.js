@@ -56,7 +56,7 @@ function paintCC(){
                 <div class="sec_newBoton">
                     <a href="../tiendas/InfoTiendas.html" onclick="setId(${data[i].id})" class="btn newBoton" style="background-image:url('https://dbdzm869oupei.cloudfront.net/img/sticker/preview/38676.png')">
                         <div class="sec_logo_cc" style="background-image:url('${data[i].logo}')"></div>
-                        <p class='txt_newBoton'> ${data[i].nombre} </p>
+                        <p class='txt_newBoton'> ${data[i].nombre.toUpperCase()} </p>
                     </a>
                 </div>
             </div>
