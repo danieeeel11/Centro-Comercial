@@ -90,6 +90,7 @@ function getCliente(){
     /*${window.localStorage.getItem('name_Cliente')}*/
     let code = `Bienvenido ${nameCliente}`;
     console.log(localStorage.getItem('id_Cliente'));
+    window.localStorage.setItem('user_cliente', dataCuenta.usuario);
     $("#saludo").html(code);
 
     //let conteo_noti = 0;

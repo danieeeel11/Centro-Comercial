@@ -1,9 +1,12 @@
 let id_Cliente = localStorage.getItem("id_Cliente");
 let key = localStorage.getItem("contrasenia");
-let token = Cookies.get('token');
+//let token = Cookies.get('token');
 $('document').ready(function (){
     getCuenta();
 });
+
+let dataCuenta = [];
+
 function getCuenta(){
 
     $.ajax({
@@ -14,7 +17,8 @@ function getCuenta(){
         success: function(data) {
             // Aquí procesamos los datos obtenidos
             console.log(data);
-            paintCuenta(data);
+            dataCuenta = data;
+            paintCuenta();
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Aquí manejamos cualquier error que pueda haber ocurrido
@@ -22,79 +26,68 @@ function getCuenta(){
         }
     });
 }
-function paintCuenta(r){
-    let d="";
-    d+=`
-                <div class="ui card">
-                <br><br>
-                <p class='txt_campo_info'>Nombre</p>
-                <div class='sec_campo_info'>
-                  <p class='txt_campo'>${r.nombre}</p>
-                </div>
-                <p class='txt_campo_info'>Correo</p>
-                <div class='sec_campo_info'>
-                  <!--<input class='custom' type="text" id="email" name="email" size="10">-->
-                  <p class='txt_campo email'>${r.email}</p>
-                </div>
-                <p class='txt_campo_info'>Usuario</p>
-                <div class='sec_campo_info'>
-                  <!--<input class='custom' type="text" id="user" name="user" size="10">-->
-                  <p class='txt_campo user'>${r.usuario}</p>
-                </div>
-                <p class='txt_campo_info'>Contraseña</p>
-                <div class='sec_campo_info'>
-                  <p class='txt_campo pasword'>${r.contrasenia}</p>
-                </div>
-                
-    `;
-
-    $('#parrilla').html(d);
+function paintCuenta(){
+    $('#user_name').html(`
+        @${window.localStorage.getItem('user_cliente')}
+        `
+    );
+    let sec = document.getElementById("name");
+    sec.value = dataCuenta.nombre;
+    sec.style.pointerEvents = "none";
+    sec = document.getElementById("email");
+    sec.value = dataCuenta.email;
+    sec.style.pointerEvents = "none";
+    sec = document.getElementById("user");
+    sec.value = dataCuenta.usuario;
+    sec.style.pointerEvents = "none";
+    sec = document.getElementById("password");
+    sec.value = dataCuenta.contrasenia;
+    sec.style.pointerEvents = "none";
 }
 
 function actualizarInfo(){
+    let sec = document.getElementById("name");
+    sec.style.pointerEvents = "initial";
+    sec = document.getElementById("email");
+    sec.style.pointerEvents = "initial";
+    sec = document.getElementById("user");
+    sec.style.pointerEvents = "initial";
+    sec = document.getElementById("password");
+    sec.style.pointerEvents = "initial";
 
-    console.log("entro input")
-    $('.sec_data').empty();
-    $('#parrilla').empty();
-
-    let content ="";
-    content +=`
-        <div class="ui card">
-                <br><br>
-                <p class='txt_campo_info'>Nombre</p>
-                <div>
-                  <input class='custom' type="text" id="nameN" name="name" size="10">
-                </div>
-                <p class='txt_campo_info'>Correo</p>
-                <div>
-                  <input class='custom' type="text" id="emailN" name="email" size="10">
-                </div>
-                <p class='txt_campo_info'>Usuario</p>
-                <div> <!--class='sec_campo_info'-->
-                  <input class='custom' type="text" id="userN" name="user" size="10">
-                </div>
-                 <p class='txt_campo_info'>Contraseña</p>
-                <div class='sec_campo_info'>
-                  <input class='custom' type="text" id="userN" name="user" size="10">
-                </div>
-        </div>
-
-    <div class='sec_bottom'>
-        <a class='btn edit' onclick="guardarActualizado()" ">Actualizar</a>
-        <a class='btn edit2' href="../cuenta/cuenta.html"" ">Aceptar</a>
-    </div>`
-    $('.sec_data').append(content);
+    let btn = document.getElementById("btn_editar");
+    btn.style.display = "none";
+    btn = document.getElementById("btn_actualizar");
+    btn.style.display = "block";
+    btn = document.getElementById("btn_aceptar");
+    btn.style.display = "block";
 }
 
 function guardarActualizado(){
+    let sec = document.getElementById("name");
+    sec.style.pointerEvents = "none";
+    sec = document.getElementById("email");
+    sec.style.pointerEvents = "none";
+    sec = document.getElementById("user");
+    sec.style.pointerEvents = "none";
+    sec = document.getElementById("password");
+    sec.style.pointerEvents = "none";
+
+    let btn = document.getElementById("btn_editar");
+    btn.style.display = "block";
+    btn = document.getElementById("btn_actualizar");
+    btn.style.display = "none";
+    btn = document.getElementById("btn_aceptar");
+    btn.style.display = "none";
+
     let cliente={
-        id_Cliente: localStorage.getItem("id_Cliente"),
-        nombre : $("#nameN").val(),
-        email : $("#emailN").val(),
-        usuario : $("#userN").val(),
-        contrasenia : localStorage.getItem("contrasenia"),
+        id_Cliente: parseInt(localStorage.getItem("id_Cliente")),
+        nombre : $("#name").val(),
+        email : $("#email").val(),
+        usuario : $("#user").val(),
+        contrasenia : $("#password").val()
     }
-    console.log(cliente.id);
+    console.log(cliente);
 
     //let dataToSend=JSON.stringify(cliente);
     $.ajax({
@@ -107,11 +100,12 @@ function guardarActualizado(){
             // Aquí procesamos los datos obtenidos
             alert("Los datos han sido actualizados");
             console.log('Cliente actualizado:', data);
+            //window.open("../cuenta/cuenta.html");
+            //window.location.reload();
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Aquí manejamos cualquier error que pueda haber ocurrido
             console.log(textStatus + ': ' + errorThrown);
         }
     });
-
 }

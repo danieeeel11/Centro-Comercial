@@ -22,29 +22,41 @@
 
 <body>
 
-<div class="wrapper">
-  <div class="sidebar" id="sidebar">
+  <div class='sec_sup'>
+      <button class='btn salir' onclick="history.back()"></button>
   </div>
-  <div id="content">
-      <div class='sec_sup'>
-        <a class='btn menu' onclick="menu_active()"></a>
-        <p class='txt_tit'>TU CUENTA</p>
-      </div>
-      <div class='sec_info'>
-        <div class='sec_foto'>
-          <img class='foto_perfil' src='https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png'></img>
-        </div>
-        <div class='sec_data'>
-            <div id="parrilla" className="ui cards"></div>
-        </div>
-      </div>
-      <div class='sec_bottom'>
-        <a class='btn edit' onclick="actualizarInfo()">Editar</a>
-      </div>
-  </div>
-</div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <div class="sec_middle">
+      <div class="sec_middle1">
+          <p class='txt_tit' id="user_name"></p>
+
+          <div class='sec_btn2'>
+              <p class="txt_info">Nombre:</p>
+              <div class='espacio'>
+                  <input class='custom' type="text" id="name" name="name" placeholder='Nombre' size="10">
+              </div>
+              <p class="txt_info">Email:</p>
+              <div class='espacio' >
+                  <input class='custom' style='top:40%;' type="text" id="email" name="email" placeholder='Correo' size="10">
+              </div>
+              <p class="txt_info">Usuario:</p>
+              <div class='espacio' >
+                  <input class='custom' style='top:40%;' type="text" id="user" name="user" placeholder='Usuario' size="10">
+              </div>
+              <p class="txt_info">Contraseña:</p>
+              <div class='espacio' >
+                  <input class='custom' style='top:40%;' type="password" id="password" name="password" placeholder='Contraseña' size="10">
+              </div>
+          </div>
+      </div>
+
+      <div class="sec_middle2">
+          <div class='sec_imagen'></div>
+          <a class='btn editInfo' id="btn_editar" onclick="actualizarInfo()">Editar</a>
+          <a class='btn editInfo' id="btn_actualizar" style="top: 350px; display: none;" onclick="guardarActualizado()">Actualizar</a>
+          <a class='btn editInfo' id="btn_aceptar" style="top: 400px; display: none;" href="../cuenta/cuenta.html">Cancelar</a>
+      </div>
+  </div>
+
 </body>
 </html>
