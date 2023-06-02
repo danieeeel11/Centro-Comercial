@@ -86,7 +86,7 @@ function paramCode(id, nombre, logo, tipo, fondo) {
     let parte1 = `
         <div class="sec_container">
             <div class="sec_newBoton">
-                <a href="../tiendas/InfoTiendas.html" onclick="setId(${id})" class="btn newBoton" style="background-image:url('https://dbdzm869oupei.cloudfront.net/img/sticker/preview/38676.png')">
+                <a href="../tiendas/InfoTiendas.html" onclick="setId(${id})" class="btn newBoton" style="background-image:url('${fondo}')">
     `;
     //${fondo}
     let parte2 = `
@@ -142,7 +142,8 @@ function paintCC(){
 
         for (let i = 0; i < data.length; i++) {
             if (ids.includes(data[i].id)) {
-                code += paramCode(data[i].id, data[i].nombre, data[i].logo, "Sec_Favoritos", data[i].logo);
+                let linksFotos = data[i].imagenes_productos.split(", ");
+                code += paramCode(data[i].id, data[i].nombre, data[i].logo, "Sec_Favoritos", linksFotos[4]);
             }
         }
     }
@@ -156,18 +157,27 @@ function paintCC(){
         for (let i = 0; i < data.length; i++) {
             //CC favorito
             if (ids.includes(data[i].id)) {
-                code += paramCode(data[i].id, data[i].nombre, data[i].logo, "Favorito", data[i].logo);
+                let linksFotos = data[i].imagenes_productos.split(", ");
+                code += paramCode(data[i].id, data[i].nombre, data[i].logo, "Favorito", linksFotos[4]);
             }
             //CC
             else {
-                code += paramCode(data[i].id, data[i].nombre, data[i].logo, "Tienda", data[i].logo);
+                let linksFotos = data[i].imagenes_productos.split(", ");
+                code += paramCode(data[i].id, data[i].nombre, data[i].logo, "Tienda", linksFotos[4]);
             }
         }
     }
     secciones = document.getElementsByClassName('sec_container'); //nuevo
     nombresTiendas = document.getElementsByClassName('txt_newBoton'); //nuevo
+
     //Anexar el codigo en la seccion dada en HTML
     $("#grid").html(code);
+
+    if(localStorage.getItem('tiendaFilter') !== null){
+        alert(`Tiendas de ${localStorage.getItem('tiendaFilter')}`);
+        filtro_cc(localStorage.getItem('tiendaFilter'));
+        localStorage.removeItem('tiendaFilter');
+    }
 }
 
 function busqueda(){ //nuevo
@@ -246,10 +256,15 @@ function filtro_categoria(tipo) {
         }
     }
     if(tipo == "general"){
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "none";
         for (let i = 0; i < data.length; i++) {
             data[i].style.display = "block";
         }
     }else{
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "block";
+        $("#txt_filtro").html(`${tipo}`);
         for (let i = 0; i < data.length; i++) {
             if (tipos[i] != tipo) {
                 data[i].style.display = "none";
@@ -310,6 +325,7 @@ function filtro_cc(tipo) {
     let index = 0;
     console.log(tipo);
     let cc = [];
+
     //recorre el nombre de las tiendas que se estan mostrando por pantalla
     for (let i = 0; i < nombresTiendas.length; i++) {
         //recorre las tiendas que estan en la base de datos
@@ -331,12 +347,17 @@ function filtro_cc(tipo) {
     }
     //general - volver a mostrar todos los datos de la pantalla
     if(tipo == "general"){
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "none";
         for (let i = 0; i < data.length; i++) {
             data[i].style.display = "block";
         }
     }
     // se encarga de ocultar las tiendas
     else{
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "block";
+        $("#txt_filtro").html(`${tipo}`);
         for (let i = 0; i < data.length; i++) {
             if (!cc[i].includes(id_cc)) {
                 data[i].style.display = "none";

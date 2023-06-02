@@ -23,7 +23,7 @@
   </div>
   <div id="content">
     <div class='sec_sup'>
-      <a class='btn menu' onclick="menu_active()"></a>
+      <button class='btn salir' onclick="history.back()"></button>
       <p class='txt_tit'>CONFIGURACIÓN</p>
     </div>
     <div class='sec_info'>
@@ -32,58 +32,44 @@
         <div class='sec_mid1'>
           <div class='sec_mid1_c'>
             <p class='txt_data'>Idioma</p>
-            <p class='txt_data' style='top:30%;'>Apariencia</p>
-            <p class='txt_data' style='top:60%;'>Notificaciones</p>
+            <p class='txt_data' style='top:50%;'>Apariencia</p>
+            <!--<p class='txt_data' style='top:60%;'>Notificaciones</p>-->
           </div>
           <div class='sec_mid1_c' style='left:50%;'>
             <p class='txt_data' style='left:20%;'>
-              <select name="genero">
+              <select name="genero" style="width: 150px; height: 30px;">
                 <option>Español</option>
                 <option>Inglés</option>
               </select>
             </p>
-            <div class='h-line'></div>
-            <p class='txt_data' style='left:20%;top:30%;'>
-              <select name="genero">
+            <!--<div class='h-line'></div>-->
+            <p class='txt_data' style='left:20%;top:50%;'>
+              <select name="genero" style="width: 150px; height: 30px;">
                 <option>Claro</option>
                 <option>Oscuro</option>
               </select>
             </p>
-            <div class='h-line' style='top:65%;'></div>
+
+            <!--<div class='h-line' style='top:65%;'></div>
             <div class='sec_switch'>
               <label class="switch">
                 <input type="checkbox">
                 <span class="slider round"></span>
               </label>
-            </div>
+            </div>-->
+
           </div>
         </div>
       </div>
-      <div class='sec_info_general'>
+      <!--<div class='sec_info_general'>
         <p class='txt_encabezado'>General</p>
         <div class='sec_mid1' style='height:30%;'>
           <a class='btn acerca'>Acerca</a>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"
-></script>
-<script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"
-></script>
+
 </body>
 </html>

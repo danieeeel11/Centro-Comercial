@@ -72,12 +72,17 @@
     transition: all 0.6s ease-in-out;
 }
 .txt_info1{
-    font-size: 18px;
+    font-size: 23px;
     font-weight: bold;
-    padding-top: 30px;
+    padding-top: 10px;
+    position: relative;
+    left: 10%;
+    width: 450px;
     text-align: center;
     vertical-align: middle;
-    border-radius: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    /*-webkit-text-stroke: 1.5px #4d4d4d;*/
     color: #4d4d4d;
     /**/
     transition: all 0.6s ease-in-out;

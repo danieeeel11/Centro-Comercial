@@ -28,6 +28,21 @@
     text-align: center;
     color: #ffffff !important;
 }
+.txt_filtro{
+    position: absolute;
+    top: -10px;
+    /*width: 150px;*/
+    font-size: 20px;
+    font-weight: bold;
+    /*left: 8%;*/
+    right: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    background-color: #8c8c8c;
+    border-radius: 15px;
+    color: #ffffff ;
+}
 /*Seccion opciones*/
 .sec_opc {
     position: relative;

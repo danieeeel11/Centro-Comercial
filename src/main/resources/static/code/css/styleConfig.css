@@ -89,17 +89,14 @@
     background-color:#c1beb6;
     cursor: pointer;
 }
-.btn.menu{
+/*Boton salir*/
+.btn.salir{
     top:2px;
     height:45px;
-    background-size: 50px 45px;
-    background-image:url('https://cdn-icons-png.flaticon.com/512/56/56763.png');
-    border-radius:10px;
+    background-size: cover;
+    background-image:url('https://raw.githubusercontent.com/danieeeel11/Datasets/main/back.png');
+    border-radius:40px;
     transition: all 0.6s ease-in-out;
-    transform: rotate(0deg);
-}
-.btn.menu:hover{
-    transform: rotate(90deg);
 }
 .btn.acerca{
     top: 20%;

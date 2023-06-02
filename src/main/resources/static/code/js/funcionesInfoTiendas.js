@@ -60,7 +60,7 @@ function paintInfo(){
 
     let sec = document.getElementById('fondo');
     /*sec.style.backgroundImage = `url("${dataTienda.logo}")`;*/
-    sec.style.backgroundImage = `url("https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?fit=960%2C720")`;
+    sec.style.backgroundImage = `url("${linksFotos[4]}")`;
 
     let code_cc = "";
     for (let i = 0; i < lista_cc.length; i++) {

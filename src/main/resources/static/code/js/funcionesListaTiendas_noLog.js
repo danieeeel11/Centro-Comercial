@@ -51,10 +51,11 @@ function paintCC(){
     let data = dataAllTiendas;
     let code= "";
     for(let i=0;i<data.length;i++){
+        let linksFotos = data[i].imagenes_productos.split(", ");
         code += `
             <div class="sec_container">
                 <div class="sec_newBoton">
-                    <a href="../tiendas/InfoTiendas.html" onclick="setId(${data[i].id})" class="btn newBoton" style="background-image:url('https://dbdzm869oupei.cloudfront.net/img/sticker/preview/38676.png')">
+                    <a href="../tiendas/InfoTiendas.html" onclick="setId(${data[i].id})" class="btn newBoton" style="background-image:url('${linksFotos[4]}')">
                         <div class="sec_logo_cc" style="background-image:url('${data[i].logo}')"></div>
                         <p class='txt_newBoton'> ${data[i].nombre.toUpperCase()} </p>
                     </a>
@@ -66,6 +67,13 @@ function paintCC(){
     secciones = document.getElementsByClassName('sec_container'); //nuevo
     nombresTiendas = document.getElementsByClassName('txt_newBoton'); //nuevo
     $("#grid").html(code);
+
+    //localStorage.removeItem('tiendaFilter');
+    if(localStorage.getItem('tiendaFilter') !== null){
+        alert(`Tiendas de ${localStorage.getItem('tiendaFilter')}`);
+        filtro_cc(localStorage.getItem('tiendaFilter'));
+        localStorage.removeItem('tiendaFilter');
+    }
 }
 
 function busqueda(){ //nuevo
@@ -144,10 +152,15 @@ function filtro_categoria(tipo) {
         }
     }
     if(tipo == "general"){
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "none";
         for (let i = 0; i < data.length; i++) {
             data[i].style.display = "block";
         }
     }else{
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "block";
+        $("#txt_filtro").html(`${tipo}`);
         for (let i = 0; i < data.length; i++) {
             if (tipos[i] != tipo) {
                 data[i].style.display = "none";
@@ -229,12 +242,17 @@ function filtro_cc(tipo) {
     }
     //general - volver a mostrar todos los datos de la pantalla
     if(tipo == "general"){
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "none";
         for (let i = 0; i < data.length; i++) {
             data[i].style.display = "block";
         }
     }
     // se encarga de ocultar las tiendas
     else{
+        let sec_txt = document.getElementById('txt_filtro');
+        sec_txt.style.display = "block";
+        $("#txt_filtro").html(`${tipo}`);
         for (let i = 0; i < data.length; i++) {
             if (!cc[i].includes(id_cc)) {
                 data[i].style.display = "none";

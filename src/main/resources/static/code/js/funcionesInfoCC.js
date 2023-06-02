@@ -47,6 +47,17 @@ function paintInfo(data){
         `${data.horario}`
     );
 
+    let btn = document.getElementById('btn_tienda');
+    btn.onclick = function() {
+        setTiendaFilter(data.nombre);
+    };
+    let idCliente = localStorage.getItem("name_Cliente");
+    if (idCliente == ""){
+        btn.href = "../tiendas/ListaTienda_noLog.html";
+    }else{
+        btn.href = "../tiendas/ListaTiendas.html";
+    }
+
     $("#insertMapa").html(code[0]);
     $("#insertNombre").html(code[1]);
     $("#insertLogo").html(code[2]);
@@ -56,4 +67,8 @@ function paintInfo(data){
     $("#insertImage4").html(htmlFotos[3]);
     $("#insertDireccion").html(code[3]);
     $("#insertHorario").html(code[4]);
+}
+
+function setTiendaFilter(nombreCC) {
+    window.localStorage.setItem('tiendaFilter', nombreCC);
 }
