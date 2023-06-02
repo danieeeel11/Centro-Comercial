@@ -57,6 +57,7 @@ function paintInfo(){
     }
 
     let lista_cc = dataTienda.id_cc.split(",");
+    let lista_locales = dataTienda.locales.split(",");
 
     let sec = document.getElementById('fondo');
     /*sec.style.backgroundImage = `url("${dataTienda.logo}")`;*/
@@ -73,6 +74,7 @@ function paintInfo(){
                             <a href="../lista/infoCC.html" onclick="setId(${dataAllCC[j].id})" class='btn newBoton' style="background-image:url('${linksFotos[0]}')">
                                 <div class="sec_logo_cc" style="background-image:url('${dataAllCC[j].logo}')"></div>
                                 <p class='txt_newBoton'> ${dataAllCC[j].nombre.toUpperCase()} </p>
+                                <p class="txt_local">Local ${lista_locales[i]}</p>
                             </a>
                         </div>
                     </div>

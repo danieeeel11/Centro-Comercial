@@ -15,12 +15,13 @@ public class Tiendas {
     private String tipo_productos;
     private String nombre_productos;
     private String imagenes_productos;
+    private String locales;
 
     public Tiendas(){
 
     }
 
-    public Tiendas(int id, String id_cc, String nombre, String logo, String tipo_productos, String nombre_productos, String imagenes_productos) {
+    public Tiendas(int id, String id_cc, String nombre, String logo, String tipo_productos, String nombre_productos, String imagenes_productos, String locales) {
         this.id = id;
         this.id_cc = id_cc;
         this.nombre = nombre;
@@ -28,6 +29,7 @@ public class Tiendas {
         this.tipo_productos = tipo_productos;
         this.nombre_productos = nombre_productos;
         this.imagenes_productos = imagenes_productos;
+        this.locales = locales;
     }
 
     public Integer getId() {
@@ -85,4 +87,8 @@ public class Tiendas {
     public void setImagenes_productos(String imagenes_productos) {
         this.imagenes_productos = imagenes_productos;
     }
+
+    public String getLocales() {return locales;}
+
+    public void setLocales(String locales) {this.locales = locales;}
 }

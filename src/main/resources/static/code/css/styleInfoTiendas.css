@@ -217,6 +217,25 @@
     /**/
     transition: all 0.6s ease-in-out;
 }
+.txt_local{
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    /*padding-top: 5px;*/
+    text-align: right;
+    vertical-align: middle;
+    /*backdrop-filter: blur(10px);*/
+    top: 45%;
+    right: 15px;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #444444;
+    border-radius: 5px;
+    color: #444444;
+    /**/
+    transition: all 0.6s ease-in-out;
+}
 
 /*Slider de imagenes*/
 .container {
