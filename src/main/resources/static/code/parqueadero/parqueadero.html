@@ -33,19 +33,96 @@
         <h1 class='txt_user'>Pago Parqueadero</h1>
       </div>
       <div class='sec_placa'>
-        <p class="txt_info4">Ingrese su placa </p>
+        <!--<p class="txt_info4">Ingrese su placa </p>-->
+        <input type="text" id="entrada" class="txt_info4" placeholder='Ingrese su placa' maxlength="6" style="text-transform: uppercase;">
+        <button class="btn carga" onclick=validarEntrada()>Buscar informacion</button>
         <a class="btn mediop" href="mediopago.html">Medio de pago</a>
       </div>
+    
 
     </div>
 
 
     <div class="sec_info">
+      <script>
+
+        function validarEntrada() {
+                    var input = document.getElementById("entrada").value;
+                    
+                    // Verificar si el campo de entrada está llenado
+                    if (input.trim() !== "") {
+                        // Verificar si cumple con el formato de las primeras tres letras y los últimos tres números
+                        var letras = input.substring(0, 3);
+                        var numeros = input.substring(input.length - 3);
+                        
+                        if (/^[A-Za-z]{3}$/.test(letras) && /^[0-9]{3}$/.test(numeros)) {
+                            // Llamar a la función si se cumple la condición
+                            cargardatos();
+                        } else {
+                            alert("El formato del campo de entrada es incorrecto. Debe tener tres letras seguidas de tres números.");
+                        }
+                    } else {
+                        alert("El campo de entrada está vacío. Por favor, llénelo.");
+                    }
+                }
+        
+                function otraFuncion() {
+                    alert("La función ha sido llamada correctamente.");
+                }
+            function generarUbicacion() {
+                    // Generar una letra aleatoria entre A y Z
+                    var letra = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                    
+                    // Generar un número aleatorio entre 1 y 100
+                    var numero = Math.floor(Math.random() * 100) + 1;
+                    
+                    // Construir la ubicación combinando la letra y el número
+                    var ubicacion = letra + numero;
+                    
+                    // Mostrar la ubicación en la página
+                    document.getElementById("ubicacion").textContent = "Usted está ubicado en el sótano, parqueadero " + ubicacion; 
+                }
+        
+                function generarUbicacionYTiempo() {
+                    // Generar una letra aleatoria entre A y Z
+                    var letra = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                    
+                    // Generar un número aleatorio entre 1 y 100
+                    var numero = Math.floor(Math.random() * 100) + 1;
+                    
+                    // Construir la ubicación combinando la letra y el número
+                    var ubicacion = letra + numero;
+                    
+                    // Generar un tiempo aleatorio entre 15 minutos y 12 horas
+                    var tiempoEnMinutos = Math.floor(Math.random() * (12 * 60 - 15) + 15);
+                    
+                    // Calcular las horas y los minutos a partir del tiempo en minutos
+                    var horas = Math.floor(tiempoEnMinutos / 60);
+                    var minutos = tiempoEnMinutos % 60;
+                    
+                    // Mostrar la ubicación y el tiempo en la página
+                    
+                    document.getElementById("tiempo").textContent = "Tiempo de estacionamiento: " + horas + " h y " + minutos + " min";
+                    // Calcular el monto a pagar
+                    var monto = tiempoEnMinutos * 500;
+                    document.getElementById("monto").textContent = "Monto a pagar: " + monto.toLocaleString("es-CO", {style: "currency", currency: "COP"});
+                }
+        
+                /*window.onload = function() {
+                    generarUbicacion();
+                    generarUbicacionYTiempo();
+                };*/
+        
+                function cargardatos(){
+                  generarUbicacion();
+                  generarUbicacionYTiempo();
+                }
+          </script>
       <div class="sec_info_mid">
         <div class="sec_mid1">
-          <p class="txt_info1">Usted está ubicado en el sótano1, parqueadero D9 </p>
-          <p class="txt_info2">Tiempo: 1h 20 min </p>
-          <p class="txt_info3">Total a pagar: $10.000</p>
+          <p class="txt_info1" id="ubicacion"></p>
+      <p class="txt_info2" id="tiempo"></p>
+      <p class="txt_info3" id="monto"></p>
         </div>
         <div class="sec_mid2">
           <div class="sec_maps" id="insert3">
